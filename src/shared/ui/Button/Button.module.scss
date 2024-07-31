@@ -1,0 +1,21 @@
+.button {
+	width: 160px;
+	height: 45px;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: 0.2s ease;
+}
+.clear {
+	background-color: transparent;
+}
+.outlined {
+	border: 2px solid white;
+}
+.fill {
+	background-color: var(--blue);
+}
+.circle {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}

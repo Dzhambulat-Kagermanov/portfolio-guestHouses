@@ -1,0 +1,23 @@
+.container {
+	position: sticky;
+	top: 0;
+	left: 0;
+	box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.25);
+	z-index: var(--z-header);
+	background-color: white;
+	height: var(--header-height);
+	max-height: var(--header-height);
+}
+.header {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.logo {
+	position: sticky;
+	left: 50%;
+	translate: -50% 0;
+	color: var(--grey);
+}
+.button {
+}

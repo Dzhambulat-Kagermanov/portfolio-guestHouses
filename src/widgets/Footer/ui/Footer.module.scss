@@ -1,0 +1,21 @@
+.footerTop {
+	padding: 20px 0;
+	background-color: var(--grey-light-200);
+	row-gap: 20px;
+}
+.inner {
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 20px;
+}
+.info {
+	color: white;
+}
+.footerBottom {
+	padding: 20px 0;
+	background-color: var(--grey-light-100);
+	h6 {
+		font-size: 12px;
+		color: white;
+	}
+}

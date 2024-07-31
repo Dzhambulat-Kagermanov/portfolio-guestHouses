@@ -1,0 +1,81 @@
+.card {
+	--main-color: var(--blue);
+	--border-width: 25px;
+	--border-height: 10px;
+	--border1: 0px solid transparent;
+	--border2: 0px solid transparent;
+	--border3: 0px solid transparent;
+	--border4: 0px solid transparent;
+
+	color: white;
+
+	background-color: var(--main-color);
+	border-radius: 8px;
+	padding: 30px 20px;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 2;
+		border-top: var(--border1);
+		border-right: var(--border2);
+		border-bottom: var(--border3);
+		border-left: var(--border4);
+	}
+}
+
+.top {
+	--border1: none;
+	--border2: var(--border-width) solid transparent;
+	--border3: var(--border-height) solid var(--main-color);
+	--border4: var(--border-width) solid transparent;
+	&::before {
+		left: 50%;
+		translate: -50% 0;
+		bottom: 100%;
+	}
+}
+.right {
+	--border1: var(--border-width) solid transparent;
+	--border2: none;
+	--border3: var(--border-width) solid transparent;
+	--border4: var(--border-height) solid var(--main-color);
+	&::before {
+		left: 100%;
+		translate: 0 -50%;
+		top: 50%;
+	}
+}
+.bottom {
+	--border1: var(--border-height) solid var(--main-color);
+	--border2: var(--border-width) solid transparent;
+	--border3: none;
+	--border4: var(--border-width) solid transparent;
+	&::before {
+		left: 50%;
+		translate: -50% 0;
+		top: 100%;
+	}
+}
+.left {
+	--border1: var(--border-width) solid transparent;
+	--border2: var(--border-height) solid var(--main-color);
+	--border3: var(--border-width) solid transparent;
+	--border4: none;
+	&::before {
+		right: 100%;
+		translate: 0 -50%;
+		top: 50%;
+	}
+}
+
+.review {
+	text-align: center;
+	color: inherit;
+	font-size: 14px;
+}
+.author {
+	text-align: center;
+	color: inherit;
+	font-size: 20px;
+}

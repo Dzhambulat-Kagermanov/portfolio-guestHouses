@@ -1,0 +1,46 @@
+.container {
+}
+.rooms {
+	margin-bottom: var(--modules-margin-bottom);
+}
+.title {
+	text-align: center;
+	color: var(--grey);
+}
+.sliderWrapper {
+	margin: 20px 0 0 0;
+}
+.slider {
+	margin: 0;
+	overflow: visible !important;
+}
+.slide {
+	width: calc(100% - 30px);
+}
+.cardContent {
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	row-gap: 10px;
+}
+.cardContentItem {
+}
+.button {
+	color: white;
+	width: 100px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: var(--yellow);
+	&:hover {
+		scale: 1.1;
+		background-color: var(--yellow-hover);
+	}
+	&:active {
+		transition: 0.02s linear;
+		scale: 1.05;
+		background-color: var(--yellow);
+	}
+	p {
+		font-size: 12px;
+	}
+}

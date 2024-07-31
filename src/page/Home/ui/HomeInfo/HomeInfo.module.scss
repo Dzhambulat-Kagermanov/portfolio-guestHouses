@@ -1,0 +1,27 @@
+.container {
+	margin-bottom: var(--modules-margin-bottom);
+}
+.info {
+	border-radius: 5px;
+	border: 1px solid var(--grey-light-300);
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+.title {
+	text-align: center;
+	font-size: 18px;
+	color: var(--grey);
+}
+.image {
+	object-fit: cover;
+	margin: 20px auto;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+.paragraphs {
+}
+.paragraphItems {
+	font-size: 14px;
+	text-align: center;
+}

@@ -1,0 +1,28 @@
+.container {
+	margin-bottom: var(--modules-margin-bottom);
+}
+.review {
+}
+.slider {
+	overflow: visible !important;
+}
+.title {
+	text-align: center;
+	color: var(--grey);
+}
+.sliderWrapper {
+	margin: 25px 0 20px 0;
+}
+.slider {
+}
+.slide {
+}
+.userBlock {
+	margin: 0 auto;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--yellow);
+}

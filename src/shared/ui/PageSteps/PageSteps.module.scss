@@ -1,0 +1,60 @@
+.steps {
+	--circle-height: 23px;
+	position: relative;
+	z-index: 1;
+}
+.line {
+	position: absolute;
+	top: calc(var(--circle-height) / 2);
+	left: 0;
+	width: calc(100% - 40px);
+	left: 50%;
+	translate: -50% 0;
+	height: 2px;
+	background-color: var(--grey-light-300);
+}
+.group {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: space-evenly;
+}
+.item {
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 15px;
+	align-items: center;
+}
+.circle {
+	height: var(--circle-height);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	position: relative;
+	background-color: var(--grey-light-300);
+	&::before {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		translate: -50% -50%;
+		width: 13px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background-color: white;
+	}
+}
+.label {
+	color: var(--grey-light-300);
+	font-size: 13px;
+}
+
+.activeItem {
+	.circle {
+		background-color: var(--blue);
+		&::before {
+			content: '';
+		}
+	}
+	.label {
+		color: var(--blue);
+	}
+}
