@@ -7,9 +7,9 @@ const BookingLayout: FC<IChildren> = ({ children }) => {
 		<>
 			<PageSteps
 				steps={[
-					{ label: '11111111', state: false },
-					{ label: '22222222', state: true },
-					{ label: '33333333', state: false },
+					{ label: 'Номер и Цена', activePath: '/rooms' },
+					{ label: 'Бронь и Оплата', activePath: '/booking' },
+					{ label: 'Подтверждение', activePath: '/confirmation' },
 				]}
 			/>
 			{children}

@@ -1,52 +1,60 @@
+'use client'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
+import { usePathname } from 'next/navigation'
 import { FC, ReactNode } from 'react'
 import cls from './PageSteps.module.scss'
 
 interface Props extends IClassName {
-	steps: { label: string; state: boolean }[]
-	stepsVariants?: 'multi' | 'one-by-one'
+	steps: { label: string; activePath: string }[]
 	visibleOnlyActive?: boolean
 	customMarker?: { default: ReactNode; active: ReactNode }
 	labelClass?: string
-	lineClass?: string
 }
 const PageSteps: FC<Props> = ({
 	steps,
 	className,
-	stepsVariants,
 	visibleOnlyActive,
 	customMarker,
 	labelClass,
-	lineClass,
 }) => {
+	const PATH = usePathname()
+
+	const ActiveItemIndex = steps.findIndex(({ activePath }) => {
+		return activePath === PATH
+	})
+
 	return (
 		<Container innerClass={cn(cls.steps, [className])}>
-			<div className={cn(cls.line, [lineClass])} />
 			<ul className={cn(cls.group)}>
-				{visibleOnlyActive
-					? 1
-					: steps.map(({ label, state }, index) => (
-							<li
-								className={cn(cls.item, [], { [cls.activeItem]: state })}
-								key={index}
-							>
-								{customMarker ? (
-									state ? (
-										customMarker.active
-									) : (
-										customMarker.default
-									)
-								) : (
-									<div className={cn(cls.circle)} />
-								)}
-								<Typography weight='SB' className={cn(cls.label, [labelClass])}>
-									{label}
-								</Typography>
-							</li>
-					  ))}
+				{(visibleOnlyActive
+					? steps.filter(({ activePath }) => activePath === PATH)
+					: steps
+				).map(({ label, activePath }, index) => (
+					<li
+						className={cn(cls.item, [], {
+							[cls.activeItem]: index <= ActiveItemIndex,
+							[cls.activeItemFull]: visibleOnlyActive,
+							[cls.activeItemFull]: index < ActiveItemIndex,
+						})}
+						key={index}
+					>
+						{customMarker ? (
+							activePath === PATH ? (
+								customMarker.active
+							) : (
+								customMarker.default
+							)
+						) : (
+							<div className={cn(cls.circle)} />
+						)}
+						<Typography weight='SB' className={cn(cls.label, [labelClass])}>
+							{label}
+						</Typography>
+					</li>
+				))}
 			</ul>
 		</Container>
 	)
