@@ -7,6 +7,7 @@ const BookingLayout: FC<IChildren> = ({ children }) => {
 	return (
 		<>
 			<PageSteps
+				visibleOnlyActive
 				className={cls.pageSteps}
 				steps={[
 					{ label: 'Номер и Цена', activePath: '/rooms' },
