@@ -24,6 +24,7 @@ const HomeInfo: FC<Props> = ({ className }) => {
 				alt='Директор'
 			/>
 			<Paragraph
+				title='Валентина Васильевна - Директор'
 				className={cls.paragraphs}
 				paragraphsClass={cn(cls.paragraphItems)}
 				paragraphs={[
