@@ -8,24 +8,42 @@ interface Props extends IClassName {
 	paragraphs: string[]
 	paragraphsClass?: string
 	rowGap?: number
+	title?: string
+	titleClass?: string
 }
 const Paragraph: FC<Props> = ({
 	paragraphs,
 	paragraphsClass,
 	className,
 	rowGap,
+	titleClass,
+	title,
 }) => {
 	return (
-		<div className={cn(cls.text, [className])} style={{ rowGap: rowGap || 25 }}>
-			{paragraphs.map((el, index) => (
-				<Typography
-					key={index}
-					weight='M'
-					className={cn(cls.paragraph, [paragraphsClass])}
-				>
-					{el}
+		<div className={cn(cls.text, [className])}>
+			{title && (
+				<Typography weight='SB' className={cn(cls.title, [titleClass])}>
+					{title}
 				</Typography>
-			))}
+			)}
+			<ul
+				className={cn(cls.group)}
+				style={{
+					//@ts-ignore
+					'--paragraphs-rowGap': rowGap ? `${rowGap}px` : '25px',
+				}}
+			>
+				{paragraphs.map((el, index) => (
+					<li className={cn(cls.item)} key={index}>
+						<Typography
+							weight='M'
+							className={cn(cls.paragraph, [paragraphsClass])}
+						>
+							{el}
+						</Typography>
+					</li>
+				))}
+			</ul>
 		</div>
 	)
 }

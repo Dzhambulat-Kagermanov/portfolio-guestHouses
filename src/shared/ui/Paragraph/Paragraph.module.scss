@@ -1,7 +1,17 @@
 .text {
-	display: flex;
-	flex-flow: wrap column;
 }
 .paragraph {
 	color: var(--grey-light-100);
+}
+.title {
+	text-align: center;
+	font-size: 18px;
+	color: var(--grey);
+	margin: 0 0 8px 0;
+}
+.group {
+	--paragraphs-rowGap: 25px;
+	row-gap: var(--paragraphs-rowGap);
+	display: flex;
+	flex-flow: wrap column;
 }
