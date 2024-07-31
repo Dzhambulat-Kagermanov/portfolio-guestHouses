@@ -1,0 +1,34 @@
+.container {
+	background-color: var(--yellow);
+}
+.changeData {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.group {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+.item {
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
+	flex-grow: 1;
+}
+.itemText {
+	color: white;
+	font-size: 14px;
+}
+.button {
+	width: 260px;
+	height: 40px;
+	margin: 25px 0 0 0;
+	color: white;
+	p {
+		font-size: 14px;
+	}
+	&:hover {
+		scale: 1.05;
+	}
+}
