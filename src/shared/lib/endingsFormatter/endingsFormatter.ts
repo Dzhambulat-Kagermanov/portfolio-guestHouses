@@ -4,7 +4,7 @@ import { TFuncObjParamResult } from '@/shared/types/shared'
 
 // Данная функция параметром принимает объект содержащий следующие свойства:
 // singPluralEnding - слово с окончанием в исчислении от 2 до 4
-// pluralEnding - слово с окончанием в исчислении от 5 до бесконечности или если кол-во предмета равно 0
+// pluralEnding - слово с окончанием в исчислении от 5 до бесконечности или если кол-во предмета равно 0ё
 // itemQuantity - количество предмета по которому будет выбираться singularEnding, singPluralEnding или pluralEnding. Если количество предмета равно 0 то вернётся значение pluralEnding. В остальных случаях singularEnding вернётся в исходном виде.
 
 type TEndingVariants = {
