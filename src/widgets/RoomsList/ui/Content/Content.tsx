@@ -35,12 +35,12 @@ const Content: FC<Props> = ({ className, services, description, title }) => {
 					slideClass={cn(cls.slide)}
 					freeMode
 					resistanceRatio={0}
-					items={services.map(({ id, label, night, price }) => (
+					items={services.map(({ id, label, nightText, price }) => (
 						<ServiceGroup
 							className={cn(cls.serviceGroup)}
 							labelText={label}
 							key={id}
-							nightsText={night}
+							nightsText={nightText}
 							price={price}
 						/>
 					))}
