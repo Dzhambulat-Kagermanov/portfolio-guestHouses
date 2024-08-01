@@ -1,0 +1,35 @@
+.container {
+	margin-bottom: var(--modules-margin-bottom);
+}
+.cardInfo {
+}
+.table {
+	margin: 30px 0 0 0;
+}
+.contentWrapper {
+	margin: 0 auto;
+	width: 90%;
+}
+.titleWrapper {
+	padding: 10px 40px;
+	color: white;
+	background-color: var(--yellow);
+	.title {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 22px;
+	}
+}
+.description {
+	margin: 25px 0 40px 0;
+}
+.slider {
+}
+.button {
+	height: 37px;
+	margin: 20px auto 0 auto;
+	color: white;
+	p {
+		font-size: 14px;
+	}
+}

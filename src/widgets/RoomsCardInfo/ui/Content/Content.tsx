@@ -1,0 +1,39 @@
+import { cn } from '@/shared/lib'
+import { IClassName } from '@/shared/types/shared'
+import { Paragraph } from '@/shared/ui/Paragraph/Paragraph'
+import { Typography } from '@/shared/ui/Typography/Typography'
+import { FC } from 'react'
+import { IRoomsContentProps } from '../RoomsCardInfo'
+import cls from './Content.module.scss'
+
+interface Props extends IClassName, IRoomsContentProps {}
+const Content: FC<Props> = ({ conditions, description, className }) => {
+	return (
+		<div className={cn(cls.content, [className])}>
+			<Paragraph
+				paragraphs={description}
+				paragraphsClass={cn(cls.descriptionText)}
+				rowGap={15}
+			/>
+			<Paragraph
+				paragraphsClass={cn(cls.conditionsText)}
+				rowGap={15}
+				paragraphs={conditions.map(({ description, title }, index) => (
+					<>
+						<Typography
+							key={index}
+							weight='M'
+							tag='strong'
+							className={cn(cls.itemTitle)}
+						>
+							{title}
+						</Typography>
+						{description}
+					</>
+				))}
+			/>
+		</div>
+	)
+}
+
+export default Content

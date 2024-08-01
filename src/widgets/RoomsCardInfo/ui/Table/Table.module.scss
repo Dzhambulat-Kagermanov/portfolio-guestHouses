@@ -1,0 +1,72 @@
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	color: white;
+	--first-column-bckg-1: rgb(248, 169, 38);
+	--first-column-bckg-2: rgb(250, 197, 91);
+	--second-column-bckg-1: rgb(233, 220, 108);
+	--head-bckg-color: rgb(48, 153, 148);
+	--caption-color-bckg: rgb(32, 99, 96);
+	--border-color: var(--black);
+	--font-size-primary: 14px;
+	--font-size-second: 12px;
+
+	border-radius: 5px 5px 0 0;
+	border: 1px solid var(--border-color);
+	caption {
+		background-color: var(--caption-color-bckg);
+		border-radius: 5px 5px 0 0;
+		border: 1px solid var(--border-color);
+		border-bottom: none;
+		padding: 7px;
+		p {
+			font-size: var(--font-size-primary);
+		}
+	}
+	td,
+	th {
+		border: 1px solid var(--border-color);
+	}
+	tr:not(:last-child) {
+		border-bottom: 1px solid var(--border-color);
+	}
+	.head {
+		background-color: var(--head-bckg-color);
+		.row {
+			.cell {
+				padding: 4px 7px;
+				p {
+					font-size: var(--font-size-second);
+				}
+			}
+		}
+	}
+	.body {
+		background-color: var(--second-column-bckg-1);
+		.row {
+			p {
+				font-size: var(--font-size-primary);
+			}
+			.cell {
+				padding: 7px;
+				p {
+					font-size: var(--font-size-primary);
+				}
+			}
+			&:nth-child(even) {
+				.cell:nth-child(1) {
+					background-color: var(--first-column-bckg-2);
+				}
+			}
+			&:nth-child(odd) {
+				.cell:nth-child(1) {
+					background-color: var(--first-column-bckg-1);
+				}
+			}
+			.cell:nth-child(2) {
+				background-color: var(--second-column-bckg-1);
+			}
+		}
+	}
+}

@@ -1,7 +1,8 @@
+import { RoomsCard } from '@/page/RoomsCard'
 import { FC } from 'react'
 
 const page: FC = ({}) => {
-	return 1
+	return <RoomsCard />
 }
 
 export default page

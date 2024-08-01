@@ -1,0 +1,18 @@
+.content {
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 40px;
+}
+.descriptionText {
+	font-family: MontserratR;
+	font-size: 13px;
+	color: var(--grey-light-200);
+}
+.conditionsText {
+	font-size: 13px;
+	color: var(--grey-light-200);
+}
+.itemTitle {
+	color: var(--grey);
+	font-size: inherit;
+}
