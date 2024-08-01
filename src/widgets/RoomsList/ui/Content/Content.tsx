@@ -47,8 +47,10 @@ const Content: FC<Props> = ({ className, services, description, title }) => {
 				/>
 			)}
 			<Button
-				theme='outlined'
-				className={cn(cls.button)}
+				theme='fill'
+				className={cn(cls.button, [], {
+					[cls.active]: servicesState,
+				})}
 				onClick={() => {
 					setServicesState(current => !current)
 				}}

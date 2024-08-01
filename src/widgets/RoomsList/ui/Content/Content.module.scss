@@ -28,13 +28,17 @@
 }
 .button {
 	margin: 15px auto 0 auto;
-	border-color: var(--blue);
 	border-radius: 20px;
-	color: var(--blue);
+	color: white;
 	p {
 		font-size: 14px;
 	}
 	&:hover {
 		scale: 1.06;
+	}
+	&.active {
+		border: 2px solid var(--blue);
+		background-color: transparent;
+		color: var(--blue);
 	}
 }
