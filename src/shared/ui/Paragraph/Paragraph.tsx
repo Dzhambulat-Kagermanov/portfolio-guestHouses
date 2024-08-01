@@ -1,11 +1,11 @@
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Typography } from '../Typography/Typography'
 import cls from './Paragraph.module.scss'
 
 interface Props extends IClassName {
-	paragraphs: string[]
+	paragraphs: ReactNode[]
 	paragraphsClass?: string
 	rowGap?: number
 	title?: string
@@ -22,7 +22,11 @@ const Paragraph: FC<Props> = ({
 	return (
 		<div className={cn(cls.text, [className])}>
 			{title && (
-				<Typography weight='SB' className={cn(cls.title, [titleClass])}>
+				<Typography
+					tag='h2'
+					weight='SB'
+					className={cn(cls.title, [titleClass])}
+				>
 					{title}
 				</Typography>
 			)}
