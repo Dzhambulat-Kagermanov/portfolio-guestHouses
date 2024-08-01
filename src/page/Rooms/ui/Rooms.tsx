@@ -1,5 +1,6 @@
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
+import { RoomsInfo } from '@/widgets/RoomsInfo'
 import { RoomsList } from '@/widgets/RoomsList'
 import { FC } from 'react'
 import cls from './Rooms.module.scss'
@@ -9,7 +10,7 @@ const Rooms: FC<Props> = ({ className }) => {
 	return (
 		<div className={cn(cls.rooms, [className])}>
 			<RoomsList />
-			Rooms
+			<RoomsInfo />
 		</div>
 	)
 }
