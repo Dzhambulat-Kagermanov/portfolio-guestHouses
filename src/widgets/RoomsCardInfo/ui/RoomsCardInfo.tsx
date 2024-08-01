@@ -9,19 +9,20 @@ import cls from './RoomsCardInfo.module.scss'
 import Slider from './Slider/Slider'
 import Table from './Table/Table'
 
+export type TConditionsProps = {
+	title: string
+	description: string
+}[]
 export interface IRoomsContentProps {
 	description: string[]
-	conditions: {
-		title: string
-		description: string
-	}[]
+	conditions: TConditionsProps
 }
-interface Props extends IClassName, IRoomsContentProps {
+export interface IRoomsCardInfoProps extends IClassName, IRoomsContentProps {
 	title: string
 	tableData: { title: ReactNode; items: ReactNode[] }[]
 	roomImages: string[]
 }
-const RoomsCardInfo: FC<Props> = ({
+const RoomsCardInfo: FC<IRoomsCardInfoProps> = ({
 	className,
 	conditions,
 	description,

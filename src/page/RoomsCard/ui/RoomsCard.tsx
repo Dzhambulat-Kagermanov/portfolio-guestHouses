@@ -1,7 +1,7 @@
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
-import { RoomsCardInfo } from '@/widgets/RoomsCardInfo'
+import { RoomsCardInfo, TTableGroupProps } from '@/widgets/RoomsCardInfo'
 import { FC } from 'react'
 import cls from './RoomsCard.module.scss'
 
@@ -37,7 +37,7 @@ const RoomsCard: FC<Props> = ({ className }) => {
 		'/images/Home/Rooms/item-1.png',
 		'/images/Home/Rooms/item-1.png',
 	]
-	const TABLE_DATA = [
+	const TABLE_DATA: TTableGroupProps = [
 		{
 			title: <Typography weight='SB'>Сервис</Typography>,
 			items: [

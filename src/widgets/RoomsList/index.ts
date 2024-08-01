@@ -1,1 +1,1 @@
-export { RoomsList } from './ui/RoomsList'
+export { RoomsList, type IRoomsCardProps } from './ui/RoomsList'

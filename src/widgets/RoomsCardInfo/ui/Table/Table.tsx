@@ -3,17 +3,17 @@ import { IClassName } from '@/shared/types/shared'
 import { FC, ReactNode } from 'react'
 import cls from './Table.module.scss'
 
-type TGroup = {
+export type TTableGroupProps = {
 	title: ReactNode
 	items: ReactNode[]
-}
+}[]
 
 interface Props extends IClassName {
 	caption: ReactNode
-	groups: TGroup[]
+	groups: TTableGroupProps
 }
 const Table: FC<Props> = ({ className, groups, caption }) => {
-	function distributingElementsAcrossRows(groups: TGroup[]) {
+	function distributingElementsAcrossRows(groups: TTableGroupProps) {
 		const res: ReactNode[][] = []
 
 		for (let i = 0; i < groups.length; i++) {

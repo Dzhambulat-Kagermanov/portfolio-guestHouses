@@ -11,7 +11,7 @@ import cls from './Content.module.scss'
 
 interface Props extends IClassName {
 	title: string
-	services: { id: number; label: string; night: string; price: number }[]
+	services: { id: number; label: string; nightText: string; price: number }[]
 	description: string
 }
 const Content: FC<Props> = ({ className, services, description, title }) => {

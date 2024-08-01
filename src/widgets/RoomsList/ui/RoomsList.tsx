@@ -5,15 +5,54 @@ import { FC } from 'react'
 import Card from './Card/Card'
 import cls from './RoomsList.module.scss'
 
-interface Props extends IClassName {}
-const RoomsList: FC<Props> = ({ className }) => {
+export type TRoomsServicesProps = {
+	id: number
+	price: number
+	nightText: string
+	label: string
+}[]
+
+export interface IRoomsCardProps {
+	availableRooms: number
+	maxGuestsInRoom: number
+	roomsServices: TRoomsServicesProps
+	title: string
+	description: string
+	previewImg: string
+}
+interface Props {
+	group: IRoomsCardProps[]
+}
+const RoomsList: FC<Props & IClassName> = ({ group, className }) => {
 	return (
 		<Container
 			containerClass={cn(cls.container)}
 			innerClass={cn(cls.list, [className])}
 		>
 			<ul className={cls.group}>
-				<Card />
+				{group.map(
+					(
+						{
+							availableRooms,
+							description,
+							maxGuestsInRoom,
+							previewImg,
+							roomsServices,
+							title,
+						},
+						index
+					) => (
+						<Card
+							key={index}
+							availableRooms={availableRooms}
+							description={description}
+							maxGuestsInRoom={maxGuestsInRoom}
+							previewImg={previewImg}
+							roomsServices={roomsServices}
+							title={title}
+						/>
+					)
+				)}
 			</ul>
 		</Container>
 	)
