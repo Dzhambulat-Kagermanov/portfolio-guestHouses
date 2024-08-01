@@ -67,6 +67,11 @@ span {
 	white-space: break-spaces;
 	text-wrap: balance;
 }
+button {
+	cursor: pointer;
+	display: block;
+	background-color: transparent;
+}
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
