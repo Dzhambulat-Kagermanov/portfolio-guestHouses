@@ -9,8 +9,9 @@ const CalendarIn: FC<IIconsProps> = ({
 }) => {
 	return (
 		<svg
-			width='23'
-			height='21'
+			className={className}
+			width={width}
+			height={height}
 			viewBox='0 0 23 21'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'
