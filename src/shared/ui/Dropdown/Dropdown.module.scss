@@ -55,10 +55,22 @@
 	}
 }
 .items {
+	width: 100%;
 	min-height: 35px;
 	padding: 8px 12px;
 	border-bottom: 1px solid var(--borderColor);
 	&:last-child {
 		border-bottom: none;
 	}
+}
+
+.label {
+	font-size: inherit;
+	color: var(--grey-light-100);
+	margin: 0 0 4px 0;
+}
+.error {
+	margin: 4px 0 0 0;
+	font-size: 14px;
+	color: var(--red);
 }
