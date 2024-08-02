@@ -12,11 +12,11 @@
 	border: 1px solid var(--grey-light-400);
 	display: flex;
 	background-color: white;
+	padding: 5px 8px;
+	min-height: 70px;
 }
 .textArea {
 	font-family: MontserratM;
-	padding: 5px 0;
-	height: 70px;
 	min-height: auto;
 	flex-grow: 1;
 	border: none;

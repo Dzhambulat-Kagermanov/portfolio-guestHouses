@@ -12,6 +12,7 @@ interface Props
 	error?: string
 	name: string
 	textAreaClass?: string
+	contentClass?: string
 	currentValue?: (textarea: ReactNode) => void
 }
 const Textarea: FC<Props> = ({
@@ -21,6 +22,7 @@ const Textarea: FC<Props> = ({
 	className,
 	textAreaClass,
 	currentValue,
+	contentClass,
 	...other
 }) => {
 	return (
@@ -30,7 +32,7 @@ const Textarea: FC<Props> = ({
 					{label}
 				</Typography>
 			)}
-			<div className={cn(cls.content)}>
+			<div className={cn(cls.content, [contentClass])}>
 				<textarea
 					{...other}
 					className={cn(cls.textArea, [textAreaClass])}
