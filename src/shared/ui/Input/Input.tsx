@@ -24,9 +24,11 @@ const Input: FC<Props> = ({
 }) => {
 	return (
 		<label className={cn(cls.label, [className])}>
-			<Typography weight='M' className={cn(cls.labelText)} tag='h2'>
-				{label}
-			</Typography>
+			{label && (
+				<Typography weight='M' className={cn(cls.labelText)} tag='h2'>
+					{label}
+				</Typography>
+			)}
 			<div className={cn(cls.content)}>
 				<input
 					{...other}
@@ -39,9 +41,11 @@ const Input: FC<Props> = ({
 				/>
 				<div className={cn(cls.icon)}>{icon}</div>
 			</div>
-			<Typography weight='M' className={cn(cls.error)} tag='h3'>
-				{error}
-			</Typography>
+			{error && (
+				<Typography weight='M' className={cn(cls.error)} tag='h3'>
+					{error}
+				</Typography>
+			)}
 		</label>
 	)
 }
