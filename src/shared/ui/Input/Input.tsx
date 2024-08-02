@@ -11,6 +11,7 @@ interface Props extends IClassName, InputHTMLAttributes<HTMLInputElement> {
 	inputClass?: string
 	icon?: ReactNode
 	iconPos?: 'left' | 'right'
+	currentValue?: (inputValue: ReactNode) => void
 }
 const Input: FC<Props> = ({
 	label,
@@ -20,6 +21,7 @@ const Input: FC<Props> = ({
 	inputClass,
 	icon,
 	iconPos,
+	currentValue,
 	...other
 }) => {
 	return (
@@ -34,6 +36,10 @@ const Input: FC<Props> = ({
 					{...other}
 					className={cn(cls.input, [inputClass])}
 					name={name}
+					onChange={event => {
+						const value = event.target.value
+						currentValue && currentValue(value)
+					}}
 					style={{
 						margin: iconPos && iconPos === 'left' ? '0 8px 0 0' : '0 0 0 8px',
 						order: iconPos && iconPos === 'left' ? 2 : -1,

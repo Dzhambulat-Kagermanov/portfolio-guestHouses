@@ -1,3 +1,4 @@
+'use client'
 import { Calendar, User } from '@/shared/icons'
 import { dateFormatter } from '@/shared/lib'
 import { cn } from '@/shared/lib/cn/cn'
@@ -6,7 +7,7 @@ import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
 import { Input } from '@/shared/ui/Input/Input'
 import { Typography } from '@/shared/ui/Typography/Typography'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import cls from './HomeForm.module.scss'
 
 interface Props extends IClassName {
