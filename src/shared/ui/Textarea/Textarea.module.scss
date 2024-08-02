@@ -1,0 +1,32 @@
+.label {
+	font-size: 16px;
+}
+.labelText {
+	font-size: inherit;
+	color: var(--grey-light-100);
+	margin: 0 0 4px 0;
+}
+.content {
+	overflow: hidden;
+	border-radius: 8px;
+	border: 1px solid var(--grey-light-400);
+	display: flex;
+	background-color: white;
+}
+.textArea {
+	font-family: MontserratM;
+	padding: 5px 0;
+	height: 70px;
+	min-height: auto;
+	flex-grow: 1;
+	border: none;
+	outline: none;
+	font-size: inherit;
+	color: var(--grey);
+	resize: none;
+}
+.error {
+	margin: 4px 0 0 0;
+	font-size: 14px;
+	color: var(--red);
+}
