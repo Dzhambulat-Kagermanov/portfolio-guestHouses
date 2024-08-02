@@ -1,3 +1,4 @@
+'use client'
 import { cn } from '@/shared/lib/cn/cn'
 import { IClassName } from '@/shared/types/shared'
 import { FC, InputHTMLAttributes, ReactNode } from 'react'
