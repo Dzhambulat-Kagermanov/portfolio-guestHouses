@@ -21,9 +21,11 @@ export interface IRoomsCardInfoProps extends IClassName, IRoomsContentProps {
 	title: string
 	tableData: { title: ReactNode; items: ReactNode[] }[]
 	roomImages: string[]
+	roomsVariant: string
 }
 const RoomsCardInfo: FC<IRoomsCardInfoProps> = ({
 	className,
+	roomsVariant,
 	conditions,
 	description,
 	roomImages,
@@ -39,6 +41,9 @@ const RoomsCardInfo: FC<IRoomsCardInfoProps> = ({
 				<div className={cn(cls.titleWrapper)}>
 					<Typography weight='SB' className={cn(cls.title)}>
 						{title}
+					</Typography>
+					<Typography weight='M' className={cn(cls.roomsVariant)}>
+						{roomsVariant}
 					</Typography>
 				</div>
 				<Content

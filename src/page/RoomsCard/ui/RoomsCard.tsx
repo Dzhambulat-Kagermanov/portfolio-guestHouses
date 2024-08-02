@@ -57,10 +57,12 @@ const RoomsCard: FC<Props> = ({ className }) => {
 			],
 		},
 	]
+	const ROOMS_VARIANT = 'С питанием для 1'
 
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
 			<RoomsCardInfo
+				roomsVariant={ROOMS_VARIANT}
 				tableData={TABLE_DATA}
 				className={cn(cls.cardInfo)}
 				conditions={CONDITIONS}
