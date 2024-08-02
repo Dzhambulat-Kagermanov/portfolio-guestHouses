@@ -10,6 +10,7 @@ interface Props extends IClassName, InputHTMLAttributes<HTMLInputElement> {
 	error?: string
 	name: string
 	inputClass?: string
+	contentClass?: string
 	icon?: ReactNode
 	iconPos?: 'left' | 'right'
 	currentValue?: (inputValue: ReactNode) => void
@@ -22,6 +23,7 @@ const Input: FC<Props> = ({
 	inputClass,
 	icon,
 	iconPos,
+	contentClass,
 	currentValue,
 	...other
 }) => {
@@ -32,7 +34,7 @@ const Input: FC<Props> = ({
 					{label}
 				</Typography>
 			)}
-			<div className={cn(cls.content)}>
+			<div className={cn(cls.content, [contentClass])}>
 				<input
 					{...other}
 					className={cn(cls.input, [inputClass])}
