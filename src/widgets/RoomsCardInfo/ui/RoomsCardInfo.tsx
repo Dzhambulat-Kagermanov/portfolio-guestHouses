@@ -3,6 +3,7 @@ import { IClassName } from '@/shared/types/shared'
 import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
+import { PageLogoTitle } from '@/widgets/PageLogoTitle'
 import { FC, ReactNode } from 'react'
 import Content from './Content/Content'
 import cls from './RoomsCardInfo.module.scss'
@@ -38,14 +39,15 @@ const RoomsCardInfo: FC<IRoomsCardInfoProps> = ({
 			innerClass={cn(cls.cardInfo, [className])}
 		>
 			<div className={cn(cls.contentWrapper)}>
-				<div className={cn(cls.titleWrapper)}>
-					<Typography weight='SB' className={cn(cls.title)}>
-						{title}
-					</Typography>
+				<PageLogoTitle
+					text={title}
+					className={cn(cls.titleWrapper)}
+					titleClass={cn(cls.title)}
+				>
 					<Typography weight='M' className={cn(cls.roomsVariant)}>
 						{roomsVariant}
 					</Typography>
-				</div>
+				</PageLogoTitle>
 				<Content
 					conditions={conditions}
 					description={description}
