@@ -10,6 +10,7 @@ interface Props extends IClassName {}
 const Booking: FC<Props> = ({ className }) => {
 	const TITLE = '2-х местный'
 	const NIGHT_PRICE = 2996
+	const BOOKING_SERVICES = ['1111111', '22222222', '3333333333', '44444444444']
 
 	return (
 		<div className={cn(cls.booking, [className])}>
@@ -19,7 +20,7 @@ const Booking: FC<Props> = ({ className }) => {
 				<br />
 				<span>{NIGHT_PRICE},00 руб</span>
 			</Typography>
-			<BookingForm />
+			<BookingForm dropDownServices={BOOKING_SERVICES} />
 			Booking
 		</div>
 	)

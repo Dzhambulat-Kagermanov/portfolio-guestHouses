@@ -5,10 +5,13 @@ import { Input } from '@/shared/ui/Input/Input'
 import { Textarea } from '@/shared/ui/Textarea/Textarea'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC } from 'react'
+import { TBookingDropDownServices } from '../BookingForm'
 import cls from './Content.module.scss'
 
-interface Props extends IClassName {}
-const Content: FC<Props> = ({ className }) => {
+interface Props extends IClassName {
+	dropDownServices: TBookingDropDownServices
+}
+const Content: FC<Props> = ({ className, dropDownServices }) => {
 	return (
 		<div className={cn(cls.content, [className])}>
 			<Typography weight='SB' className={cn(cls.title)}>
@@ -48,7 +51,7 @@ const Content: FC<Props> = ({ className }) => {
 				<Dropdown
 					className={cn(cls.dropdown)}
 					icon={{ visible: true }}
-					items={['111111', '222222', '333333']}
+					items={dropDownServices}
 					borderColor='var(--grey-light-400)'
 					expandVariant='overlay'
 					onSelectVariant='expand'
