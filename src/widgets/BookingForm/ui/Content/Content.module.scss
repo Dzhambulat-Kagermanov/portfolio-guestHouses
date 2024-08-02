@@ -1,0 +1,43 @@
+.content {
+	padding: 20px;
+	border: 1px solid var(--grey-light-400);
+	border-radius: 5px;
+	margin: 20px 0 0 0;
+}
+.title {
+	font-size: 18px;
+	color: var(--grey);
+	margin: 0 0 20px 0;
+	text-align: center;
+}
+.group {
+}
+.group1 {
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 15px;
+	.inputWrapper {
+		border-radius: 0;
+	}
+	.input {
+	}
+	.dropdown {
+		width: 100%;
+		.dropdownPlaceholder {
+			color: var(--grey-light-200);
+			font-size: 14px;
+		}
+	}
+}
+.group2 {
+	margin: 15px 0 0 0;
+	.textareaWrapper {
+		border-radius: 0;
+	}
+	.textarea {
+		height: 200px;
+		&::placeholder {
+			translate: 0 -3px;
+		}
+	}
+}

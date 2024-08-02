@@ -1,6 +1,7 @@
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
+import { BookingForm } from '@/widgets/BookingForm'
 import { BookingLogoTitle } from '@/widgets/BookingLogoTitle'
 import { FC } from 'react'
 import cls from './Booking.module.scss'
@@ -18,6 +19,7 @@ const Booking: FC<Props> = ({ className }) => {
 				<br />
 				<span>{NIGHT_PRICE},00 руб</span>
 			</Typography>
+			<BookingForm />
 			Booking
 		</div>
 	)
