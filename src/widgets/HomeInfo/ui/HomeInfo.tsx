@@ -37,4 +37,4 @@ const HomeInfo: FC<Props> = ({ className }) => {
 	)
 }
 
-export default HomeInfo
+export { HomeInfo }

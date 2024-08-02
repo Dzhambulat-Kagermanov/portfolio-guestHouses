@@ -55,4 +55,4 @@ const HomeForm: FC<Props> = ({ className }) => {
 	)
 }
 
-export default HomeForm
+export { HomeForm }

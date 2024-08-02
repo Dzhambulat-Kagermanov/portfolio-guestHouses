@@ -62,4 +62,4 @@ const HomeReview: FC<Props> = ({ className }) => {
 	)
 }
 
-export default HomeReview
+export { HomeReview }

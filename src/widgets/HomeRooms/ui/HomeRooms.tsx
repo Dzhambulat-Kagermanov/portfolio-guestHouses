@@ -66,4 +66,4 @@ const HomeRooms: FC<Props> = ({ className }) => {
 	)
 }
 
-export default HomeRooms
+export { HomeRooms }
