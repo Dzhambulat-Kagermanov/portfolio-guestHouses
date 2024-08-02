@@ -23,6 +23,11 @@
 	outline: none;
 	font-size: inherit;
 	color: var(--grey);
+	&::placeholder {
+		font-family: inherit;
+		font-size: inherit;
+		color: var(--grey-light-400);
+	}
 }
 .icon {
 	padding: 0 10px;

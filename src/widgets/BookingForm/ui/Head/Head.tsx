@@ -10,6 +10,7 @@ const Head: FC<Props> = ({ className }) => {
 	return (
 		<div className={cn(cls.head, [className])}>
 			<Input
+				type='date'
 				contentClass={cn(cls.inputWrapper)}
 				className={cn(cls.input)}
 				name='booking-dateIn'
@@ -18,6 +19,7 @@ const Head: FC<Props> = ({ className }) => {
 				iconPos='right'
 			/>
 			<Input
+				type='date'
 				contentClass={cn(cls.inputWrapper)}
 				className={cn(cls.input)}
 				name='booking-dateOut'

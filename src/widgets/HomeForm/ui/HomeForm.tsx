@@ -18,6 +18,9 @@ const HomeForm: FC<Props> = ({ className }) => {
 		<Container containerClass={cn(cls.container)}>
 			<form className={cn(cls.form, [className])}>
 				<Input
+					min={'2024-01-01'}
+					max={'2025-12-31'}
+					type='date'
 					placeholder={dateFormatter({ nowDate: true })}
 					label='Дата въезда'
 					error='test'
@@ -28,6 +31,7 @@ const HomeForm: FC<Props> = ({ className }) => {
 					iconPos='right'
 				/>
 				<Input
+					type='date'
 					placeholder={dateFormatter({ nowDate: true })}
 					label='Дата выезда'
 					error='test'

@@ -25,6 +25,9 @@ const Input: FC<Props> = ({
 	iconPos,
 	contentClass,
 	currentValue,
+	onFocus,
+	onBlur,
+	type,
 	...other
 }) => {
 	return (
@@ -36,6 +39,15 @@ const Input: FC<Props> = ({
 			)}
 			<div className={cn(cls.content, [contentClass])}>
 				<input
+					onFocus={event => {
+						if (type === 'date') event.target.type = 'date'
+						onFocus && onFocus(event)
+					}}
+					onBlur={event => {
+						if (type === 'date') event.target.type = 'text'
+						onBlur && onBlur(event)
+					}}
+					type={type === 'date' ? 'text' : type}
 					{...other}
 					className={cn(cls.input, [inputClass])}
 					name={name}
