@@ -48,7 +48,7 @@ const Dropdown: FC<Props> = ({
 	const [activeItemIndex, setActiveItemIndex] = useState<number | undefined>(
 		defaultItemIndexIsValid ? defaultActiveItemIndex : undefined
 	)
-	const [isExpand, setIsExpand] = useState<boolean>(true)
+	const [isExpand, setIsExpand] = useState<boolean>(false)
 
 	useEffect(() => {
 		onSelect &&
