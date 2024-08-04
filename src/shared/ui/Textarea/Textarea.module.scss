@@ -24,6 +24,11 @@
 	font-size: inherit;
 	color: var(--grey);
 	resize: none;
+	&::placeholder {
+		font-family: inherit;
+		font-size: inherit;
+		color: var(--grey-light-400);
+	}
 }
 .error {
 	margin: 4px 0 0 0;
