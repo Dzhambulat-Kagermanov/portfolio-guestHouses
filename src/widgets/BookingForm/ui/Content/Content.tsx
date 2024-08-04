@@ -20,8 +20,6 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 		formState: { errors },
 	} = useFormContext()
 
-	console.log(errors)
-
 	return (
 		<div className={cn(cls.content, [className])}>
 			<Typography weight='SB' className={cn(cls.title)}>

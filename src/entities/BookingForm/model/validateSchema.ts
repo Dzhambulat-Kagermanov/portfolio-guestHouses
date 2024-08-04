@@ -94,12 +94,6 @@ export const validateSchema = yup.object().shape({
 			test: (value, context) => {
 				let state = true
 
-				console.log(
-					'in: ',
-					context.parent['booking-dateIn'].replace('-', '.').split('.')
-				)
-				console.log('out: ', value.replace('-', '.').split('.'))
-
 				const splitDateInVal: string[] = context.parent['booking-dateIn']
 					.replace('-', '.')
 					.split('.')
