@@ -17,9 +17,9 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 	const {
 		register,
 		setValue,
+		setError,
 		formState: { errors },
 	} = useFormContext()
-
 	return (
 		<div className={cn(cls.content, [className])}>
 			<Typography weight='SB' className={cn(cls.title)}>
@@ -62,9 +62,9 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 					placeholder='Номер телефона'
 				/>
 				<ValidationDropDown
+					setValidationValue={setValue}
 					error={errors['booking-services']?.message}
 					{...register('booking-services')}
-					setValidationValue={setValue}
 					name='booking-services'
 					className={cn(cls.dropdown)}
 					icon={{ visible: true }}
