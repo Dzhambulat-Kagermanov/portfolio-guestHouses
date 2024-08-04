@@ -7,7 +7,7 @@ import { Button } from '../Button/Button'
 import { Typography } from '../Typography/Typography'
 import cls from './Dropdown.module.scss'
 
-interface Props extends IClassName {
+export interface IDropDownProps extends IClassName {
 	items: ReactNode[]
 	defaultActiveItemIndex?: number
 	placeholder?: ReactNode
@@ -19,11 +19,11 @@ interface Props extends IClassName {
 	borderColor?: string
 	onSelectVariant?: 'expand' | 'no-expand'
 	label?: string
-	error?: string
+	error?: any
 	errorClass?: string
 	labelClass?: string
 }
-const Dropdown: FC<Props> = ({
+const Dropdown: FC<IDropDownProps> = ({
 	items,
 	className,
 	defaultActiveItemIndex,
