@@ -38,13 +38,15 @@ const Textarea: FC<Props> = forwardRef(
 				)}
 				<div className={cn(cls.content, [contentClass])}>
 					<textarea
-						{...other}
+						//@ts-ignore
+						ref={ref}
 						className={cn(cls.textArea, [textAreaClass])}
 						name={name}
 						onChange={event => {
 							const value = event.target.value
 							currentValue && currentValue(value)
 						}}
+						{...other}
 					/>
 				</div>
 				{error && (
