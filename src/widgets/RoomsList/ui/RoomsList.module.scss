@@ -2,11 +2,12 @@
 	margin-bottom: var(--modules-margin-bottom);
 	overflow: visible;
 }
-.roomsCardContent {
+.list {
 }
-.availableRooms {
-}
-.maxGuestsInRoom {
+.roomsData {
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 25px;
 }
 .head {
 	position: relative;

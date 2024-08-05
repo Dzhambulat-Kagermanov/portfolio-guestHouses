@@ -1,8 +1,8 @@
-import { RoomsElementAddService } from '@/features/RoomsElementAddService'
 import { getCards } from '@/shared/api'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
+import { RoomsCard } from '@/widgets/RoomsCard'
 import { FC } from 'react'
 import cls from './RoomsList.module.scss'
 
@@ -28,7 +28,7 @@ const RoomsList: FC<Props & IClassName> = async ({ className }) => {
 						},
 						index
 					) => (
-						<RoomsElementAddService
+						<RoomsCard
 							previewDescription={previewDescription}
 							availableRooms={availableRooms}
 							maxGuests={maxGuests}
@@ -37,6 +37,7 @@ const RoomsList: FC<Props & IClassName> = async ({ className }) => {
 							slug={slug}
 							title={title}
 							className={cn(cls.item)}
+							key={index}
 						/>
 					)
 				)}
