@@ -1,55 +1,42 @@
+import { RoomsElementAddService } from '@/features/RoomsElementAddService'
+import { getCards } from '@/shared/api'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
 import { FC } from 'react'
-import Card from './Card/Card'
 import cls from './RoomsList.module.scss'
 
-export type TRoomsServicesProps = {
-	id: number
-	price: number
-	nightText: string
-	label: string
-}[]
-
-export interface IRoomsCardProps {
-	availableRooms: number
-	maxGuestsInRoom: number
-	roomsServices: TRoomsServicesProps
-	title: string
-	description: string
-	previewImg: string
-}
-interface Props {
-	group: IRoomsCardProps[]
-}
-const RoomsList: FC<Props & IClassName> = ({ group, className }) => {
+interface Props {}
+const RoomsList: FC<Props & IClassName> = async ({ className }) => {
+	const roomsCard = await getCards()
 	return (
 		<Container
 			containerClass={cn(cls.container)}
 			innerClass={cn(cls.list, [className])}
 		>
-			<ul className={cls.group}>
-				{group.map(
+			<ul className={cls.roomsData}>
+				{roomsCard.data.map(
 					(
 						{
 							availableRooms,
 							description,
-							maxGuestsInRoom,
+							maxGuests,
 							previewImg,
-							roomsServices,
+							services,
 							title,
+							slug,
 						},
 						index
 					) => (
-						<Card
-							key={index}
+						<RoomsElementAddService
 							availableRooms={availableRooms}
 							description={description}
-							maxGuestsInRoom={maxGuestsInRoom}
+							maxGuests={maxGuests}
 							previewImg={previewImg}
-							roomsServices={roomsServices}
+							services={services}
+							slug={slug}
 							title={title}
+							className={cn(cls.item)}
 						/>
 					)
 				)}

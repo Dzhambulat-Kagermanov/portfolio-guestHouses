@@ -1,12 +1,14 @@
+import { RoomsCardInfo, TTableGroupProps } from '@/entities/RoomsCardInfo'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
-import { RoomsCardInfo, TTableGroupProps } from '@/widgets/RoomsCardInfo'
 import { FC } from 'react'
 import cls from './RoomsCard.module.scss'
 
-interface Props extends IClassName {}
-const RoomsCard: FC<Props> = ({ className }) => {
+interface Props extends IClassName {
+	slug: string
+}
+const RoomsCard: FC<Props> = ({ className, slug }) => {
 	const TITLE = 'Семейный'
 	const DESCRIPTION = [
 		'Идеальный выбор для семейного отдыха в Абхазии! Просторный трехместный номер с возможностью установки дополнительной кровати позволяет это!',
@@ -62,6 +64,7 @@ const RoomsCard: FC<Props> = ({ className }) => {
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
 			<RoomsCardInfo
+				slug={slug}
 				roomsVariant={ROOMS_VARIANT}
 				tableData={TABLE_DATA}
 				className={cn(cls.cardInfo)}

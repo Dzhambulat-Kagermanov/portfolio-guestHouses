@@ -1,0 +1,108 @@
+{
+	"rooms": [
+		{
+			"slug": "2х-комнатный",
+			"title": "2х-комнатный",
+			"availableRooms": 5,
+			"conditions": [
+				{ "description": "Test test test test test", "title": "TESTEST" }
+			],
+			"description": [
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur.",
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur."
+			],
+			"maxGuests": 4,
+			"previewImg": "/images/Home/Rooms/item-1.png",
+			"roomImages": [
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png"
+			],
+			"services": [
+				{ "price": 1340, "title": "TEEST" },
+				{ "price": 2340, "title": "TEEST" },
+				{ "price": 3340, "title": "TEEST" },
+				{ "price": 4340, "title": "TEEST" }
+			]
+		},
+		{
+			"slug": "delux",
+			"title": "Delux",
+			"availableRooms": 5,
+			"conditions": [
+				{ "description": "Test test test test test", "title": "TESTEST" }
+			],
+			"description": [
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur.",
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur."
+			],
+			"maxGuests": 4,
+			"previewImg": "/images/Home/Rooms/item-1.png",
+			"roomImages": [
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png"
+			],
+			"services": [
+				{ "price": 1340, "title": "TEEST" },
+				{ "price": 2340, "title": "TEEST" },
+				{ "price": 3340, "title": "TEEST" },
+				{ "price": 4340, "title": "TEEST" }
+			]
+		},
+		{
+			"slug": "delux+",
+			"title": "Delux+",
+			"availableRooms": 5,
+			"conditions": [
+				{ "description": "Test test test test test", "title": "TESTEST" }
+			],
+			"description": [
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur.",
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur."
+			],
+			"maxGuests": 4,
+			"previewImg": "/images/Home/Rooms/item-1.png",
+			"roomImages": [
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png"
+			],
+			"services": [
+				{ "price": 1340, "title": "TEEST" },
+				{ "price": 2340, "title": "TEEST" },
+				{ "price": 3340, "title": "TEEST" },
+				{ "price": 4340, "title": "TEEST" }
+			]
+		},
+		{
+			"slug": "семейный",
+			"title": "Семейный",
+			"availableRooms": 5,
+			"conditions": [
+				{ "description": "Test test test test test", "title": "TESTEST" }
+			],
+			"description": [
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur.",
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi quo, fuga officia natus quod quaerat quis placeat dolores maxime pariatur? Ipsam voluptatibus laboriosam cumque dicta deserunt possimus voluptates consectetur."
+			],
+			"maxGuests": 4,
+			"previewImg": "/images/Home/Rooms/item-1.png",
+			"roomImages": [
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png"
+			],
+			"services": [
+				{ "price": 1340, "title": "TEEST" },
+				{ "price": 2340, "title": "TEEST" },
+				{ "price": 3340, "title": "TEEST" },
+				{ "price": 4340, "title": "TEEST" }
+			]
+		}
+	]
+}
