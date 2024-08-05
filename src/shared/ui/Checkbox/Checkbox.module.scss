@@ -1,0 +1,12 @@
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: 10px;
+}
+.checkbox {
+	width: 20px;
+	aspect-ratio: 1;
+	border-radius: 0;
+	border: 1px solid var(--grey-light-400);
+}
