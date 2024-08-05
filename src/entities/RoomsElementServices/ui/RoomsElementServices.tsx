@@ -17,7 +17,7 @@ const RoomsElementServices: FC<Props> = ({
 	return (
 		<div className={cn(cls.service, [className])}>
 			<Typography weight='SB' className={cn(cls.price)}>
-				{service.price}
+				{`${service.price} руб`}
 			</Typography>
 			<Typography weight='R' className={cn(cls.night)}>
 				за 1 ночь, за номер

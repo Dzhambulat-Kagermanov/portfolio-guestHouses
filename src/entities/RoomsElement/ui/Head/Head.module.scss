@@ -1,14 +1,32 @@
 .head {
+	position: relative;
 	& > img {
+		width: 100%;
+		height: auto;
 	}
 }
 .guests {
-	img {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	display: flex;
+	align-items: center;
+	column-gap: 4px;
+	color: white;
+	svg {
+		width: 16px;
+		aspect-ratio: 1;
 	}
 	p {
+		font-size: 18px;
 	}
 }
 .availableRooms {
+	padding: 7px 10px;
+	background-color: var(--yellow);
+	text-align: center;
+	color: white;
 	p {
+		font-size: 14px;
 	}
 }

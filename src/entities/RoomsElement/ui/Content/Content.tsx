@@ -12,11 +12,16 @@ interface Props
 	extends IClassName,
 		Omit<
 			IRoomsCardInfoData,
-			keyof { conditions: ''; roomImages: ''; services: '' }
+			'conditions' | 'roomImages' | 'services' | 'description'
 		> {
 	services: ReactNode[]
 }
-const Content: FC<Props> = ({ description, services, className, title }) => {
+const Content: FC<Props> = ({
+	previewDescription,
+	services,
+	className,
+	title,
+}) => {
 	const [servicesIsExpand, setServicesIsExpand] = useState<boolean>(false)
 	return (
 		<div className={cn(cls.content, [className])}>
@@ -24,10 +29,13 @@ const Content: FC<Props> = ({ description, services, className, title }) => {
 				{title}
 			</Typography>
 			<Typography weight='R' tag='h3' className={cn(cls.description)}>
-				{description}
+				{previewDescription}
 			</Typography>
 			{servicesIsExpand && (
 				<Slider
+					resistanceRatio={0}
+					slidesPerView='auto'
+					spaceBetween={15}
 					className={cn(cls.slider)}
 					wrapperClass={cn(cls.sliderWrapper)}
 					slideClass={cn(cls.slide)}
@@ -35,10 +43,11 @@ const Content: FC<Props> = ({ description, services, className, title }) => {
 				/>
 			)}
 			<Button
+				theme='outlined'
 				onClick={() => {
 					setServicesIsExpand(current => !current)
 				}}
-				className={cn(cls.expandBtn)}
+				className={cn(cls.button, [], { [cls.expandBtn]: servicesIsExpand })}
 			>
 				<Typography weight='M'>
 					{servicesIsExpand ? 'Скрыть' : 'Подробнее'}

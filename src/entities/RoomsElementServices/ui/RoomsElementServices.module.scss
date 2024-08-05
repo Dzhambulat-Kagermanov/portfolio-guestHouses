@@ -1,8 +1,19 @@
 .service {
 }
 .price {
+	text-align: center;
+	font-size: 16px;
+	color: var(--yellow);
 }
 .night {
+	text-align: center;
+	font-size: 10px;
+	color: var(--grey-light-200);
+	margin: -5px 0 5px 0;
 }
 .serviceName {
+	text-align: center;
+	font-size: 10px;
+	color: var(--grey-light-200);
+	margin: 5px 0 0 0;
 }

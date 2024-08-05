@@ -1,16 +1,41 @@
 .content {
+	padding: 10px 20px 25px 20px;
 }
 .title {
+	font-size: 18px;
+	color: var(--grey);
+	text-align: center;
 }
 .description {
+	margin: 12px 0 25px 0;
+	text-align: center;
+	color: var(--grey);
+	font-size: 13px;
+	line-height: 1.1rem;
 }
 .sliderWrapper {
+	overflow: hidden;
+	margin: 0 0 10px 0;
 }
 .slider {
+	cursor: grab;
+	overflow: visible;
 }
 .slide {
+	width: 45%;
+}
+.button {
+	color: var(--white);
+	border-color: transparent;
+	background-color: var(--blue);
+	margin: 0 auto;
+	border-radius: 20px;
+	p {
+		font-size: 14px;
+	}
 }
 .expandBtn {
-	p {
-	}
+	background-color: transparent;
+	border-color: var(--blue);
+	color: var(--blue);
 }

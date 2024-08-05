@@ -9,27 +9,28 @@ import cls from './RoomsElementAddService.module.scss'
 
 interface Props
 	extends IClassName,
-		Omit<IRoomsCardAllData, 'conditions' | 'roomImages'> {}
+		Omit<IRoomsCardAllData, 'conditions' | 'roomImages' | 'description'> {}
 const RoomsElementAddService: FC<Props> = ({
 	availableRooms,
-	description,
 	maxGuests,
 	previewImg,
 	services,
 	title,
 	className,
 	slug,
+	previewDescription,
 }) => {
 	return (
 		<RoomsElement
+			previewDescription={previewDescription}
 			className={cn(cls.roomsElem, [className])}
 			title={title}
 			availableRooms={availableRooms}
-			description={description}
 			maxGuests={maxGuests}
 			previewImg={previewImg}
 			services={services.map((service, index) => (
 				<RoomsElementServices
+					className={cn(cls.services)}
 					key={index}
 					featureBtn={<FeatureButton slug={slug} className={cls.featureBtn} />}
 					service={service}

@@ -11,13 +11,12 @@ interface Props
 	extends IClassName,
 		Omit<
 			IRoomsCardData,
-			keyof {
-				conditions: ''
-				services: ''
-				title: ''
-				description: ''
-				roomImages: ''
-			}
+			| 'conditions'
+			| 'services'
+			| 'title'
+			| 'description'
+			| 'roomImages'
+			| 'previewDescription'
 		> {}
 const Head: FC<Props> = ({
 	className,
@@ -38,7 +37,7 @@ const Head: FC<Props> = ({
 				<User color='white' />
 			</div>
 			<div className={cn(cls.availableRooms)}>
-				<Typography weight='B'>В наличии {availableRooms} номеров</Typography>
+				<Typography weight='R'>В наличии {availableRooms} номеров</Typography>
 			</div>
 		</div>
 	)

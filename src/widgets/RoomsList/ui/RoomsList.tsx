@@ -19,7 +19,7 @@ const RoomsList: FC<Props & IClassName> = async ({ className }) => {
 					(
 						{
 							availableRooms,
-							description,
+							previewDescription,
 							maxGuests,
 							previewImg,
 							services,
@@ -29,8 +29,8 @@ const RoomsList: FC<Props & IClassName> = async ({ className }) => {
 						index
 					) => (
 						<RoomsElementAddService
+							previewDescription={previewDescription}
 							availableRooms={availableRooms}
-							description={description}
 							maxGuests={maxGuests}
 							previewImg={previewImg}
 							services={services}

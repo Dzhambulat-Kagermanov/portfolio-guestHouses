@@ -8,7 +8,10 @@ import cls from './RoomsElement.module.scss'
 
 interface Props
 	extends IClassName,
-		Omit<IRoomsCardAllData, 'services' | 'slug' | 'conditions' | 'roomImages'> {
+		Omit<
+			IRoomsCardAllData,
+			'services' | 'slug' | 'conditions' | 'roomImages' | 'description'
+		> {
 	services: ReactNode[]
 }
 const RoomsElement: FC<Props> = ({
@@ -16,8 +19,8 @@ const RoomsElement: FC<Props> = ({
 	availableRooms,
 	maxGuests,
 	previewImg,
-	description,
 	services,
+	previewDescription,
 	title,
 }) => {
 	return (
@@ -29,7 +32,7 @@ const RoomsElement: FC<Props> = ({
 				className={cn(cls.head)}
 			/>
 			<Content
-				description={description}
+				previewDescription={previewDescription}
 				services={services}
 				className={cn(cls.content)}
 				title={title}

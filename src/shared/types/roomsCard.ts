@@ -5,6 +5,7 @@ export interface IRoomsCardInfoData {
 	services: TService[]
 	title: string
 	description: string[]
+	previewDescription: string
 	roomImages: string[]
 }
 export interface IRoomsCardData extends IRoomsCardInfoData {
