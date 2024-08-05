@@ -5,6 +5,7 @@ import { IClassName } from '@/shared/types/shared'
 import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
+import { ValidationCheckbox } from '@/shared/ui/ValidationCheckbox/ValidationCheckbox'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FC, ReactNode } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -50,6 +51,13 @@ const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
 					<Content
 						className={cn(cls.content)}
 						dropDownServices={dropDownServices}
+					/>
+					<ValidationCheckbox
+						className={cn(cls.checkbox)}
+						{...formMethods.register('booking-isPayLater')}
+						// @ts-ignore
+						setValidationValue={formMethods.setValue}
+						label={<Typography weight='M'>Оплатить позже</Typography>}
 					/>
 					<div className={cn(cls.btnWrapper)}>
 						<Button className={cn(cls.btn)} type='submit'>
