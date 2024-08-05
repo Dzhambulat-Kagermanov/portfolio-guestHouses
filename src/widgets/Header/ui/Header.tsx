@@ -1,5 +1,5 @@
 'use client'
-import { type TModalState, useModal } from '@/app/providers/zustand/store'
+import { type TModalState, useModal } from '@/shared/hooks'
 import { cn } from '@/shared/lib/cn/cn'
 import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
