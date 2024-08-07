@@ -26,4 +26,6 @@ const ValidationCheckbox: FC<Props> = forwardRef(
 	}
 )
 
+ValidationCheckbox.displayName = 'ValidationCheckbox'
+
 export { ValidationCheckbox }

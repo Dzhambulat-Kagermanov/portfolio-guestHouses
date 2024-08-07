@@ -61,4 +61,6 @@ const Textarea: FC<Props> = forwardRef(
 	}
 )
 
+Textarea.displayName = 'Textarea'
+
 export { Textarea }

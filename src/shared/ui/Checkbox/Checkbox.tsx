@@ -43,4 +43,6 @@ const Checkbox: FC<ICheckboxProps> = forwardRef(
 	}
 )
 
+Checkbox.displayName = 'Checkbox'
+
 export default Checkbox

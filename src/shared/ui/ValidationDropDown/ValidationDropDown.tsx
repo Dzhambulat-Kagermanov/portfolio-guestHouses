@@ -37,4 +37,6 @@ const ValidationDropDown: FC<Props> = forwardRef(
 	}
 )
 
+ValidationDropDown.displayName = 'ValidationDropDown'
+
 export { ValidationDropDown }
