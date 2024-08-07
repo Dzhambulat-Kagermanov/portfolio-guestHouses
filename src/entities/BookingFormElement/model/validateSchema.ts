@@ -114,8 +114,12 @@ export const bookingDateOutValidation = yup
 		},
 	})
 export const bookingGuestsValidation = yup
-	.string()
+	.number()
+	.nullable()
 	.required('Укажите количество гостей')
+	.transform((_, originalValue) => {
+		return originalValue === '' ? null : NaN
+	})
 	.test({
 		name: 'guest-valid-value',
 		message: 'Некорректная запись. Вводите только числа',
@@ -127,9 +131,10 @@ export const bookingGuestsValidation = yup
 		name: 'guest-valid-interval',
 		message: 'Минимальное количество гостей 1',
 		test: val => {
-			return +val > 0
+			return val > 0
 		},
 	})
+	.typeError('Можно вводить только цифры')
 export const bookingFirstNameValidation = yup
 	.string()
 	.required('Введите имя')
@@ -171,4 +176,5 @@ export const validateSchema = yup.object().shape({
 	'booking-phone': bookingPhoneValidation,
 	'booking-services': bookingServicesValidation,
 	'booking-isPayLater': bookingIsPayLaterValidation,
+	'booking-aboutMeInfo': yup.string(),
 })
