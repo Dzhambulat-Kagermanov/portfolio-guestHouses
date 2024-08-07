@@ -13,11 +13,13 @@ export type TBookingForm = {
 	services?: string
 }
 interface IUseBookingFormData {
-	setValue: (change: keyof TBookingForm, value: any) => void
+	formContext: any
+	setValue: (change: keyof TBookingForm | 'formContext', value: any) => void
 }
 
 export const useBookingFormData = create<IUseBookingFormData & TBookingForm>(
 	(set, get) => ({
+		formContext: undefined,
 		setValue: (change, value) =>
 			set(state => ({
 				[change]: value,

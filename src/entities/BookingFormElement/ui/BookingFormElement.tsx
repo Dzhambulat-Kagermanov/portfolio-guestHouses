@@ -1,15 +1,15 @@
 'use client'
-import { validateSchema } from '@/entities/BookingForm/model/validateSchema'
+import { useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
-import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { ValidationCheckbox } from '@/shared/ui/ValidationCheckbox/ValidationCheckbox'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FC, ReactNode } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import cls from './BookingForm.module.scss'
+import { validateSchema } from '../model/validateSchema'
+import cls from './BookingFormElement.module.scss'
 import Content from './Content/Content'
 import Head from './Head/Head'
 
@@ -17,8 +17,13 @@ export type TBookingDropDownServices = ReactNode[]
 
 interface Props extends IClassName {
 	dropDownServices: TBookingDropDownServices
+	submitBtn: ReactNode
 }
-const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
+const BookingFormElement: FC<Props> = ({
+	className,
+	dropDownServices,
+	submitBtn,
+}) => {
 	const formMethods = useForm({
 		resolver: yupResolver(validateSchema),
 		defaultValues: {
@@ -32,10 +37,7 @@ const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
 		},
 		mode: 'onChange',
 	})
-
-	const onSubmit = (data: any) => {
-		console.log(data)
-	}
+	useBookingFormData(state => state.setValue)('formContext', formMethods)
 
 	return (
 		<Container
@@ -43,11 +45,7 @@ const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
 			innerClass={cn(cls.wrapper, [className])}
 		>
 			<FormProvider {...formMethods}>
-				<form
-					method='post'
-					className={cn(cls.form)}
-					onSubmit={formMethods.handleSubmit(onSubmit)}
-				>
+				<form method='post' className={cn(cls.form)}>
 					<Head className={cn(cls.head)} />
 					<Content
 						className={cn(cls.content)}
@@ -61,11 +59,9 @@ const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
 						label={<Typography weight='M'>Оплатить позже</Typography>}
 					/>
 					<div className={cn(cls.btnWrapper)}>
-						<Button className={cn(cls.btn)} type='submit'>
-							<Typography weight='M'>Отправить</Typography>
-						</Button>
+						{submitBtn}
 						<Typography weight='R'>
-							Нажмите отправить, что бы получить сведения об оплате
+							Нажмите "Продолжить", что бы получить сведения об оплате
 						</Typography>
 					</div>
 				</form>
@@ -74,4 +70,4 @@ const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
 	)
 }
 
-export { BookingForm }
+export { BookingFormElement }

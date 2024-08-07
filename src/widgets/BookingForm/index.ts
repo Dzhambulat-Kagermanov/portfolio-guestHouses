@@ -1,1 +1,1 @@
-export { BookingForm } from './ui/BookingForm'
+export { BookingForm } from './ui'

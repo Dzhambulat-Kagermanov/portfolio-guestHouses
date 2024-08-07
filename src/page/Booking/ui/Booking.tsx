@@ -20,8 +20,7 @@ const Booking: FC<Props> = ({ className }) => {
 				<br />
 				<span>{NIGHT_PRICE},00 руб</span>
 			</Typography>
-			<BookingForm dropDownServices={BOOKING_SERVICES} />
-			Booking
+			<BookingForm />
 		</div>
 	)
 }

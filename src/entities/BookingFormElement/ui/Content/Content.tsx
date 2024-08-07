@@ -7,7 +7,7 @@ import { Typography } from '@/shared/ui/Typography/Typography'
 import { ValidationDropDown } from '@/shared/ui/ValidationDropDown/ValidationDropDown'
 import { FC } from 'react'
 import { useForm, useFormContext } from 'react-hook-form'
-import { TBookingDropDownServices } from '../BookingForm'
+import { TBookingDropDownServices } from '../BookingFormElement'
 import cls from './Content.module.scss'
 
 interface Props extends IClassName {
