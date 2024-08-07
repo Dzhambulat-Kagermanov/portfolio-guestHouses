@@ -5,7 +5,7 @@ import { FC } from 'react'
 export const metadata: Metadata = {
 	title: 'Guest House | Комната',
 }
-const page: FC = props => {
+const Room: FC = props => {
 	console.log(props)
 
 	return (
@@ -18,4 +18,4 @@ const page: FC = props => {
 	)
 }
 
-export default page
+export default Room
