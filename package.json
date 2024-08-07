@@ -9,7 +9,7 @@
 		"lint": "next lint",
 		"json-server": "json-server --watch db.json --port 5000",
 		"serve-dev": "concurrently \"npm run dev\" \"npm run json-server\"",
-		"serve-start": "concurrently \"npm run start\" \"npm run json-server\""
+		"deploy": "concurrently \"npm run json-server\" \"npm run build\" \"npm  run start\" "
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.0",
