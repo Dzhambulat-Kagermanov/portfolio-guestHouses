@@ -26,13 +26,13 @@ const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
 			'booking-dateOut': '',
 			'booking-email': '',
 			'booking-firstName': '',
-			'booking-guests': '',
 			'booking-patronymic': '',
 			'booking-phone': '',
 			'booking-secondName': '',
 		},
 		mode: 'onChange',
 	})
+
 	const onSubmit = (data: any) => {
 		console.log(data)
 	}
