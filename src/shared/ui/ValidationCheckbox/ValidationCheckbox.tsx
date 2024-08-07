@@ -7,8 +7,9 @@ interface Props extends ICheckboxProps {
 	name: string
 }
 const ValidationCheckbox: FC<Props> = forwardRef(
-	({ setValidationValue, name, onChange, ...other }, ref) => {
-		const [activeElem, setActiveElem] = useState<boolean | null>(null)
+	({ setValidationValue, name, onChange, defaultChecked, ...other }, ref) => {
+		const [activeElem, setActiveElem] = useState<boolean>()
+
 		setValidationValue(name, activeElem)
 		activeElem !== null &&
 			onChange({ target: { name: name, value: activeElem } })
@@ -16,6 +17,7 @@ const ValidationCheckbox: FC<Props> = forwardRef(
 		return (
 			<Checkbox
 				{...other}
+				defaultChecked={defaultChecked}
 				getActive={active => setActiveElem(active)}
 				//@ts-ignore
 				ref={ref}

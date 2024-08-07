@@ -18,15 +18,15 @@ export interface ICheckboxProps
 	getActive?: (active: boolean) => void
 }
 const Checkbox: FC<ICheckboxProps> = forwardRef(
-	({ className, label, checked, getActive, onClick, ...other }, ref) => {
-		const [isActive, setIsActive] = useState<boolean>(checked || false)
+	({ className, label, defaultChecked, getActive, onClick, ...other }, ref) => {
+		const [isActive, setIsActive] = useState<boolean>(defaultChecked || false)
 		useEffect(() => {
 			getActive && getActive(isActive)
 		}, [isActive])
 		return (
 			<label className={cn(cls.wrapper, [className])}>
 				<input
-					checked={checked}
+					defaultChecked={defaultChecked}
 					type='checkbox'
 					{...other}
 					//@ts-ignore
