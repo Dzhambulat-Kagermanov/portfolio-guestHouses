@@ -8,10 +8,10 @@ import { Typography } from '../Typography/Typography'
 import cls from './Dropdown.module.scss'
 
 export interface IDropDownProps extends IClassName {
-	items: ReactNode[]
+	items: string[]
 	defaultActiveItemIndex?: number
 	placeholder?: ReactNode
-	onSelect?: (activeItem: ReactNode) => void
+	onSelect?: (activeItem: string) => void
 	icon: { visible: boolean; customIcon?: ReactNode }
 	visibleActiveItemInContentVariant?: 'note-visible-active' | 'visible-active'
 	expandVariant?: 'overlay' | 'inline'
@@ -40,10 +40,9 @@ const Dropdown: FC<IDropDownProps> = ({
 	label,
 	labelClass,
 }) => {
-	const defaultItemIndexIsValid: boolean = !!(
-		defaultActiveItemIndex ||
-		(defaultActiveItemIndex === 0 && items[defaultActiveItemIndex])
-	)
+	const defaultItemIndexIsValid: boolean = !!(defaultActiveItemIndex
+		? defaultActiveItemIndex > 0 && items[defaultActiveItemIndex]
+		: defaultActiveItemIndex === 0)
 
 	const [activeItemIndex, setActiveItemIndex] = useState<number | undefined>(
 		defaultItemIndexIsValid ? defaultActiveItemIndex : undefined

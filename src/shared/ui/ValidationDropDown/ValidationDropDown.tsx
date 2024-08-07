@@ -5,14 +5,35 @@ interface Props extends IDropDownProps {
 	setValidationValue: (name: string, param: any) => void
 	onChange: (event: { target: { name: string; value: ReactNode } }) => void
 	name: string
+	defaultActiveElem?: string
 }
 const ValidationDropDown: FC<Props> = forwardRef(
-	({ setValidationValue, onSelect, name, onChange, ...other }, ref) => {
-		const [activeElem, setActiveElem] = useState<ReactNode>('')
+	(
+		{
+			setValidationValue,
+			onSelect,
+			name,
+			defaultActiveElem,
+			items,
+			onChange,
+			...other
+		},
+		ref
+	) => {
+		const [activeElem, setActiveElem] = useState<string>('')
 		setValidationValue(name, activeElem)
 		activeElem && onChange({ target: { name: name, value: activeElem } })
 
-		return <Dropdown {...other} onSelect={active => setActiveElem(active)} />
+		return (
+			<Dropdown
+				{...other}
+				defaultActiveItemIndex={items.findIndex(el => {
+					return el == defaultActiveElem
+				})}
+				items={items}
+				onSelect={active => setActiveElem(active)}
+			/>
+		)
 	}
 )
 
