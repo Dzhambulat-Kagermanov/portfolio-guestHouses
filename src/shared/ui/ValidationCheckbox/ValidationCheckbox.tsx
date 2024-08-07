@@ -8,9 +8,10 @@ interface Props extends ICheckboxProps {
 }
 const ValidationCheckbox: FC<Props> = forwardRef(
 	({ setValidationValue, name, onChange, ...other }, ref) => {
-		const [activeElem, setActiveElem] = useState<ReactNode>('')
+		const [activeElem, setActiveElem] = useState<boolean | null>(null)
 		setValidationValue(name, activeElem)
-		onChange({ target: { name: name, value: activeElem } })
+		activeElem !== null &&
+			onChange({ target: { name: name, value: activeElem } })
 
 		return (
 			<Checkbox

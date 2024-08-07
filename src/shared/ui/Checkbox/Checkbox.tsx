@@ -24,7 +24,7 @@ const Checkbox: FC<ICheckboxProps> = forwardRef(
 			getActive && getActive(isActive)
 		}, [isActive])
 		return (
-			<div className={cn(cls.wrapper, [className])}>
+			<label className={cn(cls.wrapper, [className])}>
 				<input
 					checked={checked}
 					type='checkbox'
@@ -38,7 +38,7 @@ const Checkbox: FC<ICheckboxProps> = forwardRef(
 					}}
 				/>
 				{label && label}
-			</div>
+			</label>
 		)
 	}
 )

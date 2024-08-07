@@ -3,6 +3,8 @@
 	flex-wrap: wrap;
 	align-items: center;
 	column-gap: 10px;
+	user-select: none;
+	cursor: pointer;
 }
 .checkbox {
 	width: 20px;

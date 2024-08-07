@@ -10,7 +10,7 @@ const ValidationDropDown: FC<Props> = forwardRef(
 	({ setValidationValue, onSelect, name, onChange, ...other }, ref) => {
 		const [activeElem, setActiveElem] = useState<ReactNode>('')
 		setValidationValue(name, activeElem)
-		onChange({ target: { name: name, value: activeElem } })
+		activeElem && onChange({ target: { name: name, value: activeElem } })
 
 		return <Dropdown {...other} onSelect={active => setActiveElem(active)} />
 	}
