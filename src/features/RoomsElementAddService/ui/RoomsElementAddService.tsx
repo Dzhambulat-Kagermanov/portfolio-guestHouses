@@ -32,7 +32,13 @@ const RoomsElementAddService: FC<Props> = ({
 				<RoomsElementServices
 					className={cn(cls.services)}
 					key={index}
-					featureBtn={<FeatureButton slug={slug} className={cls.featureBtn} />}
+					featureBtn={
+						<FeatureButton
+							service={service}
+							slug={slug}
+							className={cls.featureBtn}
+						/>
+					}
 					service={service}
 				/>
 			))}

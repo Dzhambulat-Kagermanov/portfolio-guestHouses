@@ -1,4 +1,5 @@
 import { cn } from '@/shared/lib'
+import { IRoomsCardAllData } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
 import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
@@ -10,30 +11,32 @@ import cls from './RoomsCardInfo.module.scss'
 import Slider from './Slider/Slider'
 import Table from './Table/Table'
 
-export type TConditionsProps = {
-	title: string
-	description: string
-}[]
-export interface IRoomsContentProps {
-	description: string[]
-	conditions: TConditionsProps
+export type TTableItem = { title: ReactNode; items: ReactNode[] }
+interface Props
+	extends Partial<
+			Omit<
+				IRoomsCardAllData,
+				| 'availableRooms'
+				| 'maxGuests'
+				| 'previewDescription'
+				| 'previewImg'
+				| 'services'
+				| 'slug'
+			>
+		>,
+		IClassName {
+	selectedService?: string
+	tableData: [TTableItem, TTableItem]
 }
-export interface IRoomsCardInfoProps extends IClassName, IRoomsContentProps {
-	title: string
-	tableData: { title: ReactNode; items: ReactNode[] }[]
-	roomImages: string[]
-	roomsVariant: string
-	slug: string
-}
-const RoomsCardInfo: FC<IRoomsCardInfoProps> = ({
+
+const RoomsCardInfo: FC<Props> = ({
 	className,
-	roomsVariant,
+	selectedService,
 	conditions,
 	description,
 	roomImages,
 	tableData,
 	title,
-	slug,
 }) => {
 	return (
 		<Container
@@ -42,12 +45,12 @@ const RoomsCardInfo: FC<IRoomsCardInfoProps> = ({
 		>
 			<div className={cn(cls.contentWrapper)}>
 				<PageLogoTitle
-					text={title}
+					title={title || 'Данные отсутствуют'}
 					className={cn(cls.titleWrapper)}
 					titleClass={cn(cls.title)}
 				>
 					<Typography weight='M' className={cn(cls.roomsVariant)}>
-						{roomsVariant}
+						{selectedService || 'Данные отсутствуют'}
 					</Typography>
 				</PageLogoTitle>
 				<Content
@@ -56,7 +59,7 @@ const RoomsCardInfo: FC<IRoomsCardInfoProps> = ({
 					className={cn(cls.description)}
 				/>
 			</div>
-			<Slider images={roomImages} className={cn(cls.slider)} />
+			{roomImages && <Slider images={roomImages} className={cn(cls.slider)} />}
 
 			<Table
 				caption={<Typography weight='SB'>Цена за 1 ночь</Typography>}

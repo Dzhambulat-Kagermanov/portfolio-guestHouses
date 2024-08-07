@@ -29,7 +29,7 @@ const Head: FC<Props> = ({
 			<Image
 				src={previewImg}
 				alt='Предварительное фото комнаты'
-				width={380}
+				width={300}
 				height={184}
 			/>
 			<div className={cn(cls.guests)}>

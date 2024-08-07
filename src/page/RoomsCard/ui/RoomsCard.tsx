@@ -1,79 +1,72 @@
 import { RoomsCardInfo, TTableGroupProps } from '@/entities/RoomsCardInfo'
+import { getCardsBySlug } from '@/shared/api/cards/getCardsData'
 import { cn } from '@/shared/lib'
+import { IRoomsCardAllData } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC } from 'react'
 import cls from './RoomsCard.module.scss'
 
-interface Props extends IClassName {
-	slug: string
+interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
+	selectedService?: string
 }
-const RoomsCard: FC<Props> = ({ className, slug }) => {
-	console.log(slug)
+const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
+	const card = await getCardsBySlug(decodeURIComponent(slug))
 
-	const TITLE = 'Семейный'
-	const DESCRIPTION = [
-		'Идеальный выбор для семейного отдыха в Абхазии! Просторный трехместный номер с возможностью установки дополнительной кровати позволяет это!',
-		'Для детей до 3-х лет бесплатно предоставляется детская кроватка (по предварительному запросу).',
-	]
-	const CONDITIONS = [
-		{
-			title: 'Оснащение номера: ',
-			description:
-				'Комплект банных принадлежностей,мини-холодильник, современный телевизор с кабельными каналами, кондиционер',
-		},
-		{
-			title: 'Площадь номера: ',
-			description: '11 м2',
-		},
-		{
-			title: 'Спальные места: ',
-			description: '2 односпальные или 1 двуспальная кровать',
-		},
-		{
-			title: 'Оплата: ',
-			description: 'Взимается 30 процентов от общей стоимости проживания',
-		},
-	]
-	const IMAGES = [
-		'/images/Home/Rooms/item-1.png',
-		'/images/Home/Rooms/item-1.png',
-		'/images/Home/Rooms/item-1.png',
-		'/images/Home/Rooms/item-1.png',
-	]
-	const TABLE_DATA: TTableGroupProps = [
-		{
-			title: <Typography weight='SB'>Сервис</Typography>,
-			items: [
-				<Typography weight='SB'>Без питания</Typography>,
-				<Typography weight='SB'>С питанием для 1х</Typography>,
-				<Typography weight='SB'>С питанием для 2х</Typography>,
-				<Typography weight='SB'>С питанием для 3х</Typography>,
-			],
-		},
-		{
-			title: <Typography weight='SB'>Цены</Typography>,
-			items: [
-				<Typography weight='SB'>1900</Typography>,
-				<Typography weight='SB'>2400</Typography>,
-				<Typography weight='SB'>2800</Typography>,
-				<Typography weight='SB'>3200</Typography>,
-			],
-		},
-	]
-	const ROOMS_VARIANT = 'С питанием для 1'
+	const TABLE_DATA: TTableGroupProps = card
+		? [
+				{
+					title: <Typography weight='SB'>Сервис</Typography>,
+					items: card?.services.map(({ title }, index) => {
+						return (
+							<Typography key={index} weight='SB'>
+								{title}
+							</Typography>
+						)
+					}),
+				},
+				{
+					title: <Typography weight='SB'>Цены</Typography>,
+					items: card?.services.map(({ price }, index) => {
+						return (
+							<Typography key={index} weight='SB'>
+								{price}
+							</Typography>
+						)
+					}),
+				},
+		  ]
+		: [
+				{
+					title: 'Сервис',
+					items: [
+						'Данные отсутствуют',
+						'Данные отсутствуют',
+						'Данные отсутствуют',
+						'Данные отсутствуют',
+					],
+				},
+				{
+					title: 'Цены',
+					items: [
+						'Данные отсутствуют',
+						'Данные отсутствуют',
+						'Данные отсутствуют',
+						'Данные отсутствуют',
+					],
+				},
+		  ]
 
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
 			<RoomsCardInfo
-				slug={slug}
-				roomsVariant={ROOMS_VARIANT}
+				selectedService={selectedService}
 				tableData={TABLE_DATA}
 				className={cn(cls.cardInfo)}
-				conditions={CONDITIONS}
-				description={DESCRIPTION}
-				roomImages={IMAGES}
-				title={TITLE}
+				conditions={card?.conditions}
+				description={card?.description}
+				roomImages={card?.roomImages}
+				title={card?.title}
 			/>
 		</div>
 	)
