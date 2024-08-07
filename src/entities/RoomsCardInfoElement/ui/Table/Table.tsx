@@ -1,10 +1,10 @@
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { FC, ReactNode } from 'react'
-import { TTableItem } from '../RoomsCardInfo'
+import { TTableItem } from '..'
 import cls from './Table.module.scss'
 
-type TTableItemsGroup = [TTableItem, TTableItem]
+export type TTableItemsGroup = [TTableItem, TTableItem]
 
 interface Props extends IClassName {
 	caption: ReactNode

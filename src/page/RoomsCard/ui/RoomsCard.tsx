@@ -1,4 +1,7 @@
-import { RoomsCardInfo, TTableGroupProps } from '@/entities/RoomsCardInfo'
+import {
+	RoomsCardInfoElement,
+	TTableItemsGroup,
+} from '@/entities/RoomsCardInfoElement'
 import { getCardsBySlug } from '@/shared/api/cards/getCardsData'
 import { cn } from '@/shared/lib'
 import { IRoomsCardAllData } from '@/shared/types'
@@ -13,7 +16,7 @@ interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 	const card = await getCardsBySlug(decodeURIComponent(slug))
 
-	const TABLE_DATA: TTableGroupProps = card
+	const TABLE_DATA: TTableItemsGroup = card
 		? [
 				{
 					title: <Typography weight='SB'>Сервис</Typography>,
@@ -59,7 +62,7 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
-			<RoomsCardInfo
+			<RoomsCardInfoElement
 				selectedService={selectedService}
 				tableData={TABLE_DATA}
 				className={cn(cls.cardInfo)}

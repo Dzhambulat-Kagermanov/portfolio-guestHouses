@@ -2,7 +2,7 @@
 import { FP_Object } from 'shared/types/shared'
 
 type TParam = string | number
-type TFormat = 'DMY' | 'MDY' | 'YDM' | 'YMD' | 'DYM' | 'MYD'
+export type TFormat = 'DMY' | 'MDY' | 'YDM' | 'YMD' | 'DYM' | 'MYD'
 type TDateParams = {
 	day: TParam
 	month: TParam

@@ -1,3 +1,3 @@
 export { cn } from './cn/cn'
-export { dateFormatter } from './dateFormatter/dateFormatter'
+export { dateFormatter, type TFormat } from './dateFormatter/dateFormatter'
 export { pathValidating } from './pathValidating/pathValidating'

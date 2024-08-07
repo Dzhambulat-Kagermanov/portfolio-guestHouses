@@ -7,7 +7,7 @@ import { Typography } from '@/shared/ui/Typography/Typography'
 import { PageLogoTitle } from '@/widgets/PageLogoTitle'
 import { FC, ReactNode } from 'react'
 import Content from './Content/Content'
-import cls from './RoomsCardInfo.module.scss'
+import cls from './index.module.scss'
 import Slider from './Slider/Slider'
 import Table from './Table/Table'
 
@@ -29,7 +29,7 @@ interface Props
 	tableData: [TTableItem, TTableItem]
 }
 
-const RoomsCardInfo: FC<Props> = ({
+const RoomsCardInfoElement: FC<Props> = ({
 	className,
 	selectedService,
 	conditions,
@@ -74,4 +74,4 @@ const RoomsCardInfo: FC<Props> = ({
 	)
 }
 
-export { RoomsCardInfo }
+export { RoomsCardInfoElement }

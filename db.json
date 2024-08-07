@@ -21,10 +21,34 @@
 				"/images/Home/Rooms/item-1.png"
 			],
 			"services": [
-				{ "price": 1340, "title": "TEEST" },
-				{ "price": 2340, "title": "TEEST" },
-				{ "price": 3340, "title": "TEEST" },
-				{ "price": 4340, "title": "TEEST" }
+				{
+					"price": {
+						"withTaxes": 1900,
+						"withoutTaxes": 1800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 2500,
+						"withoutTaxes": 2400
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3000,
+						"withoutTaxes": 2800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3500,
+						"withoutTaxes": 3400
+					},
+					"title": "TEEST"
+				}
 			]
 		},
 		{
@@ -48,10 +72,34 @@
 				"/images/Home/Rooms/item-1.png"
 			],
 			"services": [
-				{ "price": 1340, "title": "TEEST" },
-				{ "price": 2340, "title": "TEEST" },
-				{ "price": 3340, "title": "TEEST" },
-				{ "price": 4340, "title": "TEEST" }
+				{
+					"price": {
+						"withTaxes": 1900,
+						"withoutTaxes": 1800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 2500,
+						"withoutTaxes": 2400
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3000,
+						"withoutTaxes": 2800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3500,
+						"withoutTaxes": 3400
+					},
+					"title": "TEEST"
+				}
 			]
 		},
 		{
@@ -75,10 +123,34 @@
 				"/images/Home/Rooms/item-1.png"
 			],
 			"services": [
-				{ "price": 1340, "title": "TEEST" },
-				{ "price": 2340, "title": "TEEST" },
-				{ "price": 3340, "title": "TEEST" },
-				{ "price": 4340, "title": "TEEST" }
+				{
+					"price": {
+						"withTaxes": 1900,
+						"withoutTaxes": 1800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 2500,
+						"withoutTaxes": 2400
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3000,
+						"withoutTaxes": 2800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3500,
+						"withoutTaxes": 3400
+					},
+					"title": "TEEST"
+				}
 			]
 		},
 		{
@@ -102,10 +174,34 @@
 				"/images/Home/Rooms/item-1.png"
 			],
 			"services": [
-				{ "price": 1340, "title": "TEEST" },
-				{ "price": 2340, "title": "TEEST" },
-				{ "price": 3340, "title": "TEEST" },
-				{ "price": 4340, "title": "TEEST" }
+				{
+					"price": {
+						"withTaxes": 1900,
+						"withoutTaxes": 1800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 2500,
+						"withoutTaxes": 2400
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3000,
+						"withoutTaxes": 2800
+					},
+					"title": "TEEST"
+				},
+				{
+					"price": {
+						"withTaxes": 3500,
+						"withoutTaxes": 3400
+					},
+					"title": "TEEST"
+				}
 			]
 		}
 	]
