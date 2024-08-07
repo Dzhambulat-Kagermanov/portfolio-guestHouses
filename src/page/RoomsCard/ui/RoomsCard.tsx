@@ -9,6 +9,8 @@ interface Props extends IClassName {
 	slug: string
 }
 const RoomsCard: FC<Props> = ({ className, slug }) => {
+	console.log(slug)
+
 	const TITLE = 'Семейный'
 	const DESCRIPTION = [
 		'Идеальный выбор для семейного отдыха в Абхазии! Просторный трехместный номер с возможностью установки дополнительной кровати позволяет это!',

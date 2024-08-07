@@ -10,7 +10,12 @@ const BookingFormSaveDataOnSubmit: FC<Props> = ({ className }) => {
 	return (
 		<BookingFormElement
 			className={cn(cls.form, [className])}
-			dropDownServices={[1111111111, 22222222222, 33333333333, 4444444444]}
+			dropDownServices={[
+				'1111111111',
+				'22222222222',
+				'33333333333',
+				'4444444444',
+			]}
 			submitBtn={<FeatureButton className={cn(cls.button)} />}
 		/>
 	)
