@@ -20,7 +20,7 @@ const FeatureButton: FC<Props> = ({ className }) => {
 			//@ts-ignore
 			setValue(key.replace('booking-', ''), data[key])
 		}
-		router.push('/booking/details')
+		// router.push('/booking/details')
 	}
 
 	return (

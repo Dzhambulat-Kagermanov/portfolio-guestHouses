@@ -1,12 +1,11 @@
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
-import { Dropdown } from '@/shared/ui/Dropdown/Dropdown'
 import { Input } from '@/shared/ui/Input/Input'
 import { Textarea } from '@/shared/ui/Textarea/Textarea'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { ValidationDropDown } from '@/shared/ui/ValidationDropDown/ValidationDropDown'
 import { FC } from 'react'
-import { useForm, useFormContext } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import { TBookingDropDownServices } from '../BookingFormElement'
 import cls from './Content.module.scss'
 
@@ -17,9 +16,10 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 	const {
 		register,
 		setValue,
-		setError,
+		getValues,
 		formState: { errors },
 	} = useFormContext()
+
 	return (
 		<div className={cn(cls.content, [className])}>
 			<Typography weight='SB' className={cn(cls.title)}>
@@ -62,6 +62,7 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 					placeholder='Номер телефона'
 				/>
 				<ValidationDropDown
+					defaultActiveElem={getValues()['booking-services']}
 					setValidationValue={setValue}
 					error={errors['booking-services']?.message}
 					{...register('booking-services')}

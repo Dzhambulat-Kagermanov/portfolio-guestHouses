@@ -6,14 +6,14 @@ import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { ValidationCheckbox } from '@/shared/ui/ValidationCheckbox/ValidationCheckbox'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { validateSchema } from '../model/validateSchema'
 import cls from './BookingFormElement.module.scss'
 import Content from './Content/Content'
 import Head from './Head/Head'
 
-export type TBookingDropDownServices = ReactNode[]
+export type TBookingDropDownServices = string[]
 
 interface Props extends IClassName {
 	dropDownServices: TBookingDropDownServices
@@ -27,17 +27,26 @@ const BookingFormElement: FC<Props> = ({
 	const formMethods = useForm({
 		resolver: yupResolver(validateSchema),
 		defaultValues: {
-			'booking-dateIn': '',
-			'booking-dateOut': '',
-			'booking-email': '',
-			'booking-firstName': '',
-			'booking-patronymic': '',
-			'booking-phone': '',
-			'booking-secondName': '',
+			'booking-aboutMeInfo':
+				useBookingFormData(state => state.aboutMeInfo) || '',
+			'booking-dateIn': useBookingFormData(state => state.dateIn) || '',
+			'booking-dateOut': useBookingFormData(state => state.dateOut) || '',
+			'booking-email': useBookingFormData(state => state.email) || '',
+			'booking-firstName': useBookingFormData(state => state.firstName) || '',
+			'booking-patronymic': useBookingFormData(state => state.patronymic) || '',
+			'booking-phone': useBookingFormData(state => state.phone) || '',
+			'booking-secondName': useBookingFormData(state => state.secondName) || '',
+			'booking-guests': useBookingFormData(state => state.guests) || 1,
+			'booking-isPayLater':
+				useBookingFormData(state => state.isPayLater) || false,
+			'booking-services': useBookingFormData(state => state.services) || '',
 		},
 		mode: 'onChange',
 	})
-	useBookingFormData(state => state.setValue)('formContext', formMethods)
+	const setBookingFormValue = useBookingFormData(state => state.setValue)
+	useEffect(() => {
+		setBookingFormValue('formContext', formMethods)
+	})
 
 	return (
 		<Container
@@ -52,6 +61,7 @@ const BookingFormElement: FC<Props> = ({
 						dropDownServices={dropDownServices}
 					/>
 					<ValidationCheckbox
+						defaultChecked={formMethods.getValues('booking-isPayLater')}
 						className={cn(cls.checkbox)}
 						{...formMethods.register('booking-isPayLater')}
 						// @ts-ignore

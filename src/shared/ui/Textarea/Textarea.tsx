@@ -24,6 +24,7 @@ const Textarea: FC<Props> = forwardRef(
 			className,
 			textAreaClass,
 			currentValue,
+			onChange,
 			contentClass,
 			...other
 		},
@@ -45,6 +46,7 @@ const Textarea: FC<Props> = forwardRef(
 						onChange={event => {
 							const value = event.target.value
 							currentValue && currentValue(value)
+							onChange && onChange(event)
 						}}
 						{...other}
 					/>
