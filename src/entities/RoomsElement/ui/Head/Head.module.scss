@@ -3,6 +3,8 @@
 	& > img {
 		width: 100%;
 		height: auto;
+		max-height: 184px;
+		object-fit: cover;
 	}
 }
 .guests {
