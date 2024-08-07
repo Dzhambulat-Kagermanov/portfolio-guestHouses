@@ -31,6 +31,7 @@ const BookingForm: FC<Props> = ({ className, dropDownServices }) => {
 			'booking-phone': '',
 			'booking-secondName': '',
 		},
+		mode: 'onChange',
 	})
 	const onSubmit = (data: any) => {
 		console.log(data)
