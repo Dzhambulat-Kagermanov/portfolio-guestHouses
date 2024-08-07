@@ -13,17 +13,7 @@
 	flex-flow: wrap column;
 	align-items: center;
 	row-gap: 8px;
-	.btn {
-		color: white;
-		width: 180px;
-		height: 40px;
-		p {
-			font-size: 14px;
-		}
-		&:hover {
-			scale: 1.1;
-		}
-	}
+
 	& > p {
 		text-align: center;
 		color: var(--grey-light-300);
