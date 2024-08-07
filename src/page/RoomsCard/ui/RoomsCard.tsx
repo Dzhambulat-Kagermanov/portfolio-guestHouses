@@ -30,7 +30,7 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 					items: card?.services.map(({ price }, index) => {
 						return (
 							<Typography key={index} weight='SB'>
-								{price}
+								{price.withoutTaxes}
 							</Typography>
 						)
 					}),

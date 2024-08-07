@@ -1,4 +1,10 @@
-export type TService = { title: string; price: number }
+export type TService = {
+	title: string
+	price: {
+		withTaxes: number
+		withoutTaxes: number
+	}
+}
 
 export interface IRoomsCardInfoData {
 	conditions: { title: string; description: string }[]
