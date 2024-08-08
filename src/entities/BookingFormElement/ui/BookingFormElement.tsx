@@ -25,7 +25,10 @@ const BookingFormElement: FC<Props> = ({
 	submitBtn,
 }) => {
 	const setBookingFormValue = useBookingFormData(state => state.setValue)
-
+	useEffect(() => {
+		setBookingFormValue('title', title)
+		setBookingFormValue('formContext', formMethods)
+	})
 	const formMethods = useForm({
 		resolver: yupResolver(validateSchema),
 		defaultValues: {
@@ -45,10 +48,6 @@ const BookingFormElement: FC<Props> = ({
 				useBookingFormData(state => state.selectedService) || '',
 		},
 		mode: 'onChange',
-	})
-	useEffect(() => {
-		setBookingFormValue('title', title)
-		setBookingFormValue('formContext', formMethods)
 	})
 
 	return (
