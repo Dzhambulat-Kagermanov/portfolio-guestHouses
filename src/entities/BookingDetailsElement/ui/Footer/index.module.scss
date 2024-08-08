@@ -1,0 +1,21 @@
+.footer {
+	background-color: var(--yellow);
+	padding: 12px 0 25px 0;
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 15px;
+}
+.group {
+	column-gap: 15px;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	h2 {
+		font-size: 14px;
+		&:nth-child(2) {
+			text-align: end;
+			font-size: 16px;
+		}
+	}
+}

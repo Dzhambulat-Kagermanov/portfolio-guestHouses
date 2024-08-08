@@ -21,7 +21,7 @@ const Footer: FC<Props> = ({ className, service, title, nightsQnt }) => {
 				<Typography weight='M' tag='h2'>
 					{title || notFound()}
 				</Typography>
-				<Typography weight='M' tag='h2'>
+				<Typography weight='SB' tag='h2'>
 					{service?.price.withTaxes && nightsQnt
 						? `${service.price.withTaxes} * ${nightsQnt} = ${
 								service?.price.withTaxes * nightsQnt
@@ -33,7 +33,7 @@ const Footer: FC<Props> = ({ className, service, title, nightsQnt }) => {
 				<Typography weight='M' tag='h2'>
 					Кол-во ночей
 				</Typography>
-				<Typography weight='M' tag='h2'>
+				<Typography weight='SB' tag='h2'>
 					{nightsQnt
 						? `${nightsQnt} ${endingsFormatter({
 								itemQuantity: nightsQnt,

@@ -1,6 +1,17 @@
 .head {
+	padding: 12px 0 20px 0;
+	border-bottom: 1px solid var(--grey-light-400);
 }
 .paragraphsWrapper {
 }
 .paragraph {
+	color: var(--grey-light-200);
+	font-family: MontserratR;
+	font-size: 14px;
+	display: flex;
+	flex-flow: wrap column;
+	span {
+		font-size: 16px;
+		font-family: MontserratM;
+	}
 }

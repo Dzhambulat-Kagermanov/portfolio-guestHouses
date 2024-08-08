@@ -14,6 +14,9 @@ const Content: FC<Props> = ({ className, service, nightsQnt }) => {
 	return (
 		<div className={cn(cls.content, [className])}>
 			<Paragraph
+				className={cn(cls.paragraphsWrapper)}
+				paragraphsClass={cn(cls.paragraph)}
+				rowGap={10}
 				paragraphs={[
 					<>
 						<span>Выбранный сервис: </span>

@@ -1,9 +1,8 @@
 'use client'
 import { TBookingForm, useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { IRoomsCardAllData, TService } from '@/shared/types'
+import { TService } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
-import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { ValidationCheckbox } from '@/shared/ui/ValidationCheckbox/ValidationCheckbox'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -51,34 +50,29 @@ const BookingFormElement: FC<Props> = ({
 	})
 
 	return (
-		<Container
-			containerClass={cn(cls.container)}
-			innerClass={cn(cls.wrapper, [className])}
-		>
-			<FormProvider {...formMethods}>
-				<form method='post' className={cn(cls.form)}>
-					<Head className={cn(cls.head)} />
-					<Content
-						className={cn(cls.content)}
-						dropDownServices={dropDownServices}
-					/>
-					<ValidationCheckbox
-						defaultChecked={formMethods.getValues('booking-isPayLater')}
-						className={cn(cls.checkbox)}
-						{...formMethods.register('booking-isPayLater')}
-						// @ts-ignore
-						setValidationValue={formMethods.setValue}
-						label={<Typography weight='M'>Оплатить позже</Typography>}
-					/>
-					<div className={cn(cls.btnWrapper)}>
-						{submitBtn}
-						<Typography weight='R'>
-							Нажмите "Продолжить", что бы получить сведения об оплате
-						</Typography>
-					</div>
-				</form>
-			</FormProvider>
-		</Container>
+		<FormProvider {...formMethods}>
+			<form method='post' className={cn(cls.form)}>
+				<Head className={cn(cls.head)} />
+				<Content
+					className={cn(cls.content)}
+					dropDownServices={dropDownServices}
+				/>
+				<ValidationCheckbox
+					defaultChecked={formMethods.getValues('booking-isPayLater')}
+					className={cn(cls.checkbox)}
+					{...formMethods.register('booking-isPayLater')}
+					// @ts-ignore
+					setValidationValue={formMethods.setValue}
+					label={<Typography weight='M'>Оплатить позже</Typography>}
+				/>
+				<div className={cn(cls.btnWrapper)}>
+					{submitBtn}
+					<Typography weight='R'>
+						Нажмите "Продолжить", что бы получить сведения об оплате
+					</Typography>
+				</div>
+			</form>
+		</FormProvider>
 	)
 }
 

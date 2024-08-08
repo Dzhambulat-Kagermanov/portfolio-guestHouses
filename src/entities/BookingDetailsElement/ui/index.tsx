@@ -32,29 +32,31 @@ const BookingDetailsElement: FC<Props> = ({
 }) => {
 	return (
 		<div className={cn(cls.details, [className])}>
-			<Head
-				className={cn(cls.head)}
-				dateIn={dateIn}
-				dateOut={dateOut}
-				email={email}
-				firstName={firstName}
-				isPayLater={isPayLater}
-				nightsQnt={nightsQnt}
-				patronymic={patronymic}
-				phone={phone}
-				secondName={secondName}
-			/>
-			<Content
-				className={cn(cls.content)}
-				nightsQnt={nightsQnt}
-				service={service}
-			/>
-			<Footer
-				className={cn(cls.footer)}
-				nightsQnt={nightsQnt}
-				service={service}
-				title={title}
-			/>
+			<div className={cn(cls.main)}>
+				<Head
+					className={cn(cls.head)}
+					dateIn={dateIn}
+					dateOut={dateOut}
+					email={email}
+					firstName={firstName}
+					isPayLater={isPayLater}
+					nightsQnt={nightsQnt}
+					patronymic={patronymic}
+					phone={phone}
+					secondName={secondName}
+				/>
+				<Content
+					className={cn(cls.content)}
+					nightsQnt={nightsQnt}
+					service={service}
+				/>
+				<Footer
+					className={cn(cls.footer)}
+					nightsQnt={nightsQnt}
+					service={service}
+					title={title}
+				/>
+			</div>
 			{featureBtn}
 		</div>
 	)

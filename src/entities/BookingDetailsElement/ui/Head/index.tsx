@@ -23,6 +23,7 @@ const Head: FC<Props> = ({
 	return (
 		<div className={cn(cls.head, [className])}>
 			<Paragraph
+				rowGap={10}
 				className={cn(cls.paragraphsWrapper)}
 				paragraphsClass={cn(cls.paragraph)}
 				paragraphs={[

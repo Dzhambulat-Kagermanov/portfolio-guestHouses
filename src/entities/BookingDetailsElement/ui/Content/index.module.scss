@@ -1,0 +1,18 @@
+.content {
+	padding: 20px 0;
+}
+.paragraphsWrapper {
+}
+.paragraph {
+	text-align: center;
+	color: var(--grey);
+	font-size: 16px;
+	font-family: MontserratSB;
+	display: flex;
+	flex-flow: wrap column;
+	span {
+		font-size: 14px;
+		color: var(--grey-light-200);
+		font-family: MontserratM;
+	}
+}

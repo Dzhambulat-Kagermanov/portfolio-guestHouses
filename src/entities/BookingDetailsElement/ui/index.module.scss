@@ -1,0 +1,20 @@
+.details {
+}
+.main {
+	border: 1px solid var(--grey-light-400);
+	border-radius: 8px;
+	overflow: hidden;
+	--padding: 12px;
+}
+.head {
+	margin-right: var(--padding);
+	margin-left: var(--padding);
+}
+.content {
+	padding-right: var(--padding);
+	padding-left: var(--padding);
+}
+.footer {
+	padding-right: var(--padding);
+	padding-left: var(--padding);
+}
