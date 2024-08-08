@@ -13,7 +13,7 @@ export type TBookingForm = {
 	phone?: string
 	guests?: number
 	isPayLater?: boolean
-	services?: string
+	selectedService?: string
 	aboutMeInfo?: string
 	nightsQnt?: number
 	title?: string
@@ -46,7 +46,7 @@ export const useBookingFormData = create<IUseBookingFormData & TBookingForm>()(
 					patronymic: undefined,
 					phone: undefined,
 					secondName: undefined,
-					services: undefined,
+					selectedService: undefined,
 					aboutMeInfo: undefined,
 					currentService: undefined,
 					nightsQnt: undefined,

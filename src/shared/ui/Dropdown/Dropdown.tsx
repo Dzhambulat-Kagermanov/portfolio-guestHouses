@@ -12,6 +12,7 @@ export interface IDropDownProps extends IClassName {
 	defaultActiveItemIndex?: number
 	placeholder?: ReactNode
 	onSelect?: (activeItem: string) => void
+	getActiveIndex?: (activeIndex: number) => void
 	icon: { visible: boolean; customIcon?: ReactNode }
 	visibleActiveItemInContentVariant?: 'note-visible-active' | 'visible-active'
 	expandVariant?: 'overlay' | 'inline'
@@ -28,6 +29,7 @@ const Dropdown: FC<IDropDownProps> = ({
 	className,
 	defaultActiveItemIndex,
 	onSelect,
+	getActiveIndex,
 	placeholder,
 	icon: { visible, customIcon },
 	visibleActiveItemInContentVariant = 'note-visible-active',
@@ -53,6 +55,10 @@ const Dropdown: FC<IDropDownProps> = ({
 		onSelect &&
 			onSelect(
 				activeItemIndex || activeItemIndex === 0 ? items[activeItemIndex] : ''
+			)
+		getActiveIndex &&
+			getActiveIndex(
+				activeItemIndex || activeItemIndex === 0 ? activeItemIndex : -1
 			)
 	}, [activeItemIndex])
 

@@ -1,6 +1,7 @@
 'use client'
 import { useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
+import { TService } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
@@ -13,10 +14,8 @@ import cls from './BookingFormElement.module.scss'
 import Content from './Content/Content'
 import Head from './Head/Head'
 
-export type TBookingDropDownServices = string[]
-
 interface Props extends IClassName {
-	dropDownServices: TBookingDropDownServices
+	dropDownServices: TService[]
 	submitBtn: ReactNode
 }
 const BookingFormElement: FC<Props> = ({
@@ -39,7 +38,8 @@ const BookingFormElement: FC<Props> = ({
 			'booking-guests': useBookingFormData(state => state.guests) || 1,
 			'booking-isPayLater':
 				useBookingFormData(state => state.isPayLater) || false,
-			'booking-services': useBookingFormData(state => state.services) || '',
+			'booking-services':
+				useBookingFormData(state => state.selectedService) || '',
 		},
 		mode: 'onChange',
 	})

@@ -1,4 +1,6 @@
+import { useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
+import { TService } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
 import { Input } from '@/shared/ui/Input/Input'
 import { Textarea } from '@/shared/ui/Textarea/Textarea'
@@ -6,11 +8,10 @@ import { Typography } from '@/shared/ui/Typography/Typography'
 import { ValidationDropDown } from '@/shared/ui/ValidationDropDown/ValidationDropDown'
 import { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { TBookingDropDownServices } from '../BookingFormElement'
 import cls from './Content.module.scss'
 
 interface Props extends IClassName {
-	dropDownServices: TBookingDropDownServices
+	dropDownServices: TService[]
 }
 const Content: FC<Props> = ({ className, dropDownServices }) => {
 	const {
@@ -19,6 +20,8 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 		getValues,
 		formState: { errors },
 	} = useFormContext()
+
+	const setCurrentService = useBookingFormData(state => state.setValue)
 
 	return (
 		<div className={cn(cls.content, [className])}>
@@ -62,6 +65,9 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 					placeholder='Номер телефона'
 				/>
 				<ValidationDropDown
+					getActiveIndex={active => {
+						setCurrentService('currentService', dropDownServices[active])
+					}}
 					defaultActiveElem={getValues()['booking-services']}
 					setValidationValue={setValue}
 					error={errors['booking-services']?.message}
@@ -69,7 +75,7 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 					name='booking-services'
 					className={cn(cls.dropdown)}
 					icon={{ visible: true }}
-					items={dropDownServices}
+					items={dropDownServices.map(({ title }) => title)}
 					borderColor='var(--grey-light-400)'
 					expandVariant='overlay'
 					onSelectVariant='expand'

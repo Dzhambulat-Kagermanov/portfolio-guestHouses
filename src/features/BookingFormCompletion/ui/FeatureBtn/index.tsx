@@ -34,7 +34,7 @@ const FeatureBtn: FC<Props> = ({
 	patronymic,
 	phone,
 	secondName,
-	services,
+	selectedService,
 }) => {
 	return (
 		<Button
@@ -73,7 +73,7 @@ const FeatureBtn: FC<Props> = ({
 					.then(res => true)
 					.catch(err => false)) &&
 				(await validateServicesValidation
-					.validate(services)
+					.validate(selectedService)
 					.then(res => true)
 					.catch(err => false)) &&
 				(await validateIsPayLaterValidation

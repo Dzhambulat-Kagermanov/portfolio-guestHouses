@@ -17,7 +17,7 @@ const BookingFormCompletion: FC<Props> = ({ className }) => {
 	const secondName = useBookingFormData(state => state.secondName)
 	const patronymic = useBookingFormData(state => state.patronymic)
 	const guests = useBookingFormData(state => state.guests)
-	const services = useBookingFormData(state => state.services)
+	const selectedService = useBookingFormData(state => state.selectedService)
 	const isPayLater = useBookingFormData(state => state.isPayLater)
 	const aboutMeInfo = useBookingFormData(state => state.aboutMeInfo)
 	const nightsQnt = useBookingFormData(state => state.getNightsQnt)()
@@ -49,7 +49,7 @@ const BookingFormCompletion: FC<Props> = ({ className }) => {
 					patronymic={patronymic}
 					phone={phone}
 					secondName={secondName}
-					services={services}
+					selectedService={selectedService}
 					aboutMeInfo={aboutMeInfo}
 					guests={guests}
 				/>
