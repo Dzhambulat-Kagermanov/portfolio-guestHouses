@@ -5,8 +5,9 @@ import { FC } from 'react'
 export const metadata: Metadata = {
 	title: 'Guest House | Бронирование',
 }
-const Booking: FC = () => {
-	return <BookingPage />
+const Booking: FC = props => {
+	//@ts-ignore
+	return <BookingPage slug={props.searchParams.slug} />
 }
 
 export default Booking

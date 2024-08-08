@@ -19,11 +19,16 @@ export type TBookingForm = {
 	title?: string
 	currentService?: TService
 }
+const currentServiceTemplate: TService = {
+	price: { withoutTaxes: 0, withTaxes: 0 },
+	title: '',
+}
 interface IUseBookingFormData {
 	formContext: any
 	setValue: (change: keyof TBookingForm | 'formContext', value: any) => void
 	resetValues: () => void
 	getNightsQnt: () => number
+	getPrice: () => typeof currentServiceTemplate.price | undefined
 }
 
 export const useBookingFormData = create<IUseBookingFormData & TBookingForm>()(
@@ -87,6 +92,14 @@ export const useBookingFormData = create<IUseBookingFormData & TBookingForm>()(
 					return new Date((secondsDateOut - secondsDateIn) * 1000).getDate() - 1
 				}
 				return NaN
+			},
+			getPrice: () => {
+				const withTaxes = get().currentService?.price.withTaxes
+				const withoutTaxes = get().currentService?.price.withoutTaxes
+				if (withTaxes && withoutTaxes) {
+					return { withoutTaxes: withoutTaxes, withTaxes: withTaxes }
+				}
+				return undefined
 			},
 		}),
 		{
