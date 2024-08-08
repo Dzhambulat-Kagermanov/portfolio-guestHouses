@@ -23,9 +23,11 @@ export interface IDropDownProps extends IClassName {
 	error?: any
 	errorClass?: string
 	labelClass?: string
+	itemWrapper?: (item: string) => ReactNode
 }
 const Dropdown: FC<IDropDownProps> = ({
 	items,
+	itemWrapper,
 	className,
 	defaultActiveItemIndex,
 	onSelect,
@@ -56,6 +58,7 @@ const Dropdown: FC<IDropDownProps> = ({
 			onSelect(
 				activeItemIndex || activeItemIndex === 0 ? items[activeItemIndex] : ''
 			)
+
 		getActiveIndex &&
 			getActiveIndex(
 				activeItemIndex || activeItemIndex === 0 ? activeItemIndex : -1
@@ -83,7 +86,9 @@ const Dropdown: FC<IDropDownProps> = ({
 					}}
 				>
 					{activeItemIndex || activeItemIndex === 0
-						? items[activeItemIndex]
+						? itemWrapper
+							? itemWrapper(items[activeItemIndex])
+							: items[activeItemIndex]
 						: placeholder || 'Выберите элемент'}
 					{(visible && customIcon) || (
 						<TriangleArrow
@@ -123,7 +128,7 @@ const Dropdown: FC<IDropDownProps> = ({
 									})
 								}}
 							>
-								{item}
+								{itemWrapper ? itemWrapper(item) : item}
 							</li>
 						)
 					})}

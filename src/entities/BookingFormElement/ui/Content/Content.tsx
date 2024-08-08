@@ -79,6 +79,7 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 					name='booking-services'
 					className={cn(cls.dropdown)}
 					icon={{ visible: true }}
+					itemWrapper={item => <Typography weight='M'>{item}</Typography>}
 					items={dropDownServices.map(({ title }) => title)}
 					borderColor='var(--grey-light-400)'
 					expandVariant='overlay'
