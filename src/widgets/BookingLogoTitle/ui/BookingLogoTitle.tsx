@@ -14,7 +14,7 @@ const BookingLogoTitle: FC<Props> = ({ className }) => {
 		>
 			<PageLogoTitle
 				titleClass={cn(cls.pageLogoTitle)}
-				text={
+				title={
 					<>
 						Valentina
 						<br />
