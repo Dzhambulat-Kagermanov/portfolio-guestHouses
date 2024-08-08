@@ -11,12 +11,17 @@ const Head: FC<Props> = ({ className }) => {
 	const {
 		register,
 		formState: { errors },
+		trigger,
 	} = useFormContext()
 
 	return (
 		<div className={cn(cls.head, [className])}>
 			<Input
-				{...register('booking-dateIn')}
+				{...register('booking-dateIn', {
+					onChange: () => {
+						trigger('booking-dateOut')
+					},
+				})}
 				error={errors['booking-dateIn']?.message}
 				type='date'
 				contentClass={cn(cls.inputWrapper)}
@@ -26,7 +31,11 @@ const Head: FC<Props> = ({ className }) => {
 				iconPos='right'
 			/>
 			<Input
-				{...register('booking-dateOut')}
+				{...register('booking-dateOut', {
+					onChange: () => {
+						trigger('booking-dateIn')
+					},
+				})}
 				error={errors['booking-dateOut']?.message}
 				type='date'
 				contentClass={cn(cls.inputWrapper)}
