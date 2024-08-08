@@ -26,28 +26,28 @@
 						"withTaxes": 1900,
 						"withoutTaxes": 1800
 					},
-					"title": "TEEST"
+					"title": "TEEST 1"
 				},
 				{
 					"price": {
 						"withTaxes": 2500,
 						"withoutTaxes": 2400
 					},
-					"title": "TEEST"
+					"title": "TEEST 2"
 				},
 				{
 					"price": {
 						"withTaxes": 3000,
 						"withoutTaxes": 2800
 					},
-					"title": "TEEST"
+					"title": "TEEST 3"
 				},
 				{
 					"price": {
 						"withTaxes": 3500,
 						"withoutTaxes": 3400
 					},
-					"title": "TEEST"
+					"title": "TEEST 4"
 				}
 			]
 		},
@@ -77,28 +77,28 @@
 						"withTaxes": 1900,
 						"withoutTaxes": 1800
 					},
-					"title": "TEEST"
+					"title": "TEEST 1"
 				},
 				{
 					"price": {
 						"withTaxes": 2500,
 						"withoutTaxes": 2400
 					},
-					"title": "TEEST"
+					"title": "TEEST 2"
 				},
 				{
 					"price": {
 						"withTaxes": 3000,
 						"withoutTaxes": 2800
 					},
-					"title": "TEEST"
+					"title": "TEEST 3"
 				},
 				{
 					"price": {
 						"withTaxes": 3500,
 						"withoutTaxes": 3400
 					},
-					"title": "TEEST"
+					"title": "TEEST 4"
 				}
 			]
 		},
@@ -128,28 +128,28 @@
 						"withTaxes": 1900,
 						"withoutTaxes": 1800
 					},
-					"title": "TEEST"
+					"title": "TEEST 1"
 				},
 				{
 					"price": {
 						"withTaxes": 2500,
 						"withoutTaxes": 2400
 					},
-					"title": "TEEST"
+					"title": "TEEST 2"
 				},
 				{
 					"price": {
 						"withTaxes": 3000,
 						"withoutTaxes": 2800
 					},
-					"title": "TEEST"
+					"title": "TEEST 3"
 				},
 				{
 					"price": {
 						"withTaxes": 3500,
 						"withoutTaxes": 3400
 					},
-					"title": "TEEST"
+					"title": "TEEST 4"
 				}
 			]
 		},
@@ -179,28 +179,28 @@
 						"withTaxes": 1900,
 						"withoutTaxes": 1800
 					},
-					"title": "TEEST"
+					"title": "TEEST 1"
 				},
 				{
 					"price": {
 						"withTaxes": 2500,
 						"withoutTaxes": 2400
 					},
-					"title": "TEEST"
+					"title": "TEEST 2"
 				},
 				{
 					"price": {
 						"withTaxes": 3000,
 						"withoutTaxes": 2800
 					},
-					"title": "TEEST"
+					"title": "TEEST 3"
 				},
 				{
 					"price": {
 						"withTaxes": 3500,
 						"withoutTaxes": 3400
 					},
-					"title": "TEEST"
+					"title": "TEEST 4"
 				}
 			]
 		}
