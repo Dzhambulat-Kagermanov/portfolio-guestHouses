@@ -67,6 +67,10 @@ const Content: FC<Props> = ({ className, dropDownServices }) => {
 				<ValidationDropDown
 					getActiveIndex={active => {
 						setCurrentService('currentService', dropDownServices[active])
+						setCurrentService(
+							'selectedService',
+							dropDownServices[active]?.title
+						)
 					}}
 					defaultActiveElem={getValues()['booking-services']}
 					setValidationValue={setValue}
