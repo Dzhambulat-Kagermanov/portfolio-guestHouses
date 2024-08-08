@@ -3,6 +3,7 @@ import { cn } from '@/shared/lib'
 import { TService } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
 import { Paragraph } from '@/shared/ui/Paragraph/Paragraph'
+import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
 
@@ -15,22 +16,26 @@ const Content: FC<Props> = ({ className, service, nightsQnt }) => {
 			<Paragraph
 				paragraphs={[
 					<>
-						<span>Итого цена за номер (без налогов)</span>
+						<span>Выбранный сервис: </span>
+						{service?.title ? `${service.title}` : notFound()}
+					</>,
+					<>
+						<span>Итого цена за номер (без налогов): </span>
 						{service?.price?.withoutTaxes
 							? `${service.price.withoutTaxes} руб`
-							: 'Данные отсутствуют'}
+							: notFound()}
 					</>,
 					<>
-						<span>Итого цена за номер (без налогов)</span>
+						<span>Итого цена за номер (с налогами): </span>
 						{service?.price?.withTaxes
 							? `${service.price.withTaxes} руб`
-							: 'Данные отсутствуют'}
+							: notFound()}
 					</>,
 					<>
-						<span>Итого к оплате</span>
+						<span>Итого к оплате: </span>
 						{nightsQnt && service?.price?.withTaxes
 							? `${service.price.withTaxes * nightsQnt} руб`
-							: 'Данные отсутствуют'}
+							: notFound()}
 					</>,
 				]}
 			/>
