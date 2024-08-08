@@ -1,7 +1,7 @@
 'use client'
-import { useBookingFormData } from '@/shared/hooks'
+import { TBookingForm, useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { TService } from '@/shared/types'
+import { IRoomsCardAllData, TService } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
@@ -14,15 +14,18 @@ import cls from './BookingFormElement.module.scss'
 import Content from './Content/Content'
 import Head from './Head/Head'
 
-interface Props extends IClassName {
+interface Props extends IClassName, Pick<TBookingForm, 'title'> {
 	dropDownServices: TService[]
 	submitBtn: ReactNode
 }
 const BookingFormElement: FC<Props> = ({
 	className,
+	title,
 	dropDownServices,
 	submitBtn,
 }) => {
+	useBookingFormData(state => state.setValue)('title', title)
+
 	const formMethods = useForm({
 		resolver: yupResolver(validateSchema),
 		defaultValues: {

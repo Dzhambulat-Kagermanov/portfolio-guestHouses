@@ -4,6 +4,7 @@ import { endingsFormatter } from '@/shared/lib/endingsFormatter/endingsFormatter
 import { IRoomsCardInfoData, TService } from '@/shared/types'
 import { IClassName } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
+import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
 
@@ -18,10 +19,14 @@ const Footer: FC<Props> = ({ className, service, title, nightsQnt }) => {
 		<div className={cn(cls.footer, [className])}>
 			<div className={cn(cls.group)}>
 				<Typography weight='M' tag='h2'>
-					{title || 'Данные отсутствуют'}
+					{title || notFound()}
 				</Typography>
 				<Typography weight='M' tag='h2'>
-					{service?.price ? `${service?.price} руб` : 'Данные отсутствуют'}
+					{service?.price.withTaxes && nightsQnt
+						? `${service.price.withTaxes} * ${nightsQnt} = ${
+								service?.price.withTaxes * nightsQnt
+						  } руб`
+						: notFound()}
 				</Typography>
 			</div>
 			<div className={cn(cls.group)}>
@@ -31,12 +36,12 @@ const Footer: FC<Props> = ({ className, service, title, nightsQnt }) => {
 				<Typography weight='M' tag='h2'>
 					{nightsQnt
 						? `${nightsQnt} ${endingsFormatter({
-								itemQuantity: 2,
+								itemQuantity: nightsQnt,
 								singPluralEnding: 'ночь',
 								pluralEnding: 'ночей',
 								singularEnding: 'ночи',
 						  })}`
-						: 'Данные отсутствуют'}
+						: notFound()}
 				</Typography>
 			</div>
 		</div>

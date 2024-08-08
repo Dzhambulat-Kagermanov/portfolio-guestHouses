@@ -2,6 +2,7 @@ import { TBookingForm } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Paragraph } from '@/shared/ui/Paragraph/Paragraph'
+import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
 
@@ -29,19 +30,19 @@ const Head: FC<Props> = ({
 						<span>Ваше полное имя: </span>{' '}
 						{firstName && secondName
 							? `${firstName} ${secondName}${patronymic && ` ${patronymic}`}`
-							: 'Данные отсутствуют'}
+							: notFound()}
 					</>,
 					<>
-						<span>Дата въезда: </span> {dateIn || 'Данные отсутствуют'}
+						<span>Дата въезда: </span> {dateIn || notFound()}
 					</>,
 					<>
-						<span>Дата выезда: </span> {dateOut || 'Данные отсутствуют'}
+						<span>Дата выезда: </span> {dateOut || notFound()}
 					</>,
 					<>
-						<span>Email: </span> {email || 'Данные отсутствуют'}
+						<span>Email: </span> {email || notFound()}
 					</>,
 					<>
-						<span>Мобильный телефон: </span> {phone || 'Данные отсутствуют'}
+						<span>Мобильный телефон: </span> {phone || notFound()}
 					</>,
 					<>
 						<span>Способ оплаты: </span>{' '}
@@ -49,7 +50,7 @@ const Head: FC<Props> = ({
 							? isPayLater
 								? 'Оплатить позже'
 								: 'Оплатить сейчас'
-							: 'Данные отсутствуют'}
+							: notFound()}
 					</>,
 				]}
 			/>

@@ -15,6 +15,7 @@ const BookingFormSaveDataOnSubmit: FC<Props> = async ({ className, slug }) => {
 
 	return (
 		<BookingFormElement
+			title={data.title}
 			className={cn(cls.form, [className])}
 			dropDownServices={data.services}
 			submitBtn={<FeatureButton className={cn(cls.button)} />}

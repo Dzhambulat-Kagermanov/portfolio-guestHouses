@@ -85,10 +85,6 @@ export const useBookingFormData = create<IUseBookingFormData & TBookingForm>()(
 						})
 					)
 
-					console.log(secondsDateIn)
-					console.log(secondsDateOut)
-					console.log(secondsDateOut - secondsDateIn)
-
 					return new Date((secondsDateOut - secondsDateIn) * 1000).getDate() - 1
 				}
 				return NaN
