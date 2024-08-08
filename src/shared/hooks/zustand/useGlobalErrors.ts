@@ -1,8 +1,9 @@
 import { create } from 'zustand'
 
+export type TError = { text: string; code?: number }
 interface Props {
-	error?: { text: string; code: number }
-	setError: (text: string, code: number) => void
+	error?: TError
+	setError: (text: string, code?: number) => void
 }
 
 export const useGlobalErrors = create<Props>((set, get) => ({
