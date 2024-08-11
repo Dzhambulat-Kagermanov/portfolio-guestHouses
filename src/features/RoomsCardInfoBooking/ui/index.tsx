@@ -35,7 +35,13 @@ const RoomsCardInfoBooking: FC<Props> = ({
 			tableData={tableData}
 			title={title}
 			className={cn(cls.cardInfo, [className])}
-			featureBtn={<FeatureBtn slug={slug} className={cn(cls.btn)} />}
+			featureBtn={
+				<FeatureBtn
+					slug={slug}
+					className={cn(cls.btn)}
+					selectedService={selectedService}
+				/>
+			}
 		/>
 	)
 }
