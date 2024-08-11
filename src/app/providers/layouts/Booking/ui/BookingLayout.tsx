@@ -13,9 +13,9 @@ const BookingLayout: FC<IChildren> = ({ children }) => {
 					{ label: 'Номер и Цена', activePath: ['/rooms', '/rooms/?'] },
 					{
 						label: 'Бронь и Оплата',
-						activePath: ['/booking', '/booking/details'],
+						activePath: '/booking',
 					},
-					{ label: 'Подтверждение', activePath: '/confirmation' },
+					{ label: 'Подтверждение', activePath: '/booking/details' },
 				]}
 			/>
 			{children}

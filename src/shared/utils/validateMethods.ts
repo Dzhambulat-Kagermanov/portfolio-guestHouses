@@ -33,7 +33,6 @@ export const validateDateInValidation = yup
 				return context.createError({
 					message: 'Введите дату выезда в формате дд.мм.гггг',
 				})
-				return false
 			}
 			if (val === context.parent['booking-dateOut']) {
 				return context.createError({
@@ -115,13 +114,7 @@ export const validateDateOutValidation = yup
 	})
 export const validateGuestsValidation = yup
 	.number()
-	.test({
-		name: 'guest-valid-interval',
-		message: 'Минимальное количество гостей 1',
-		test: val => {
-			return val > 0
-		},
-	})
+	.min(1, 'Минимальное количество гостей 1')
 	.nullable()
 	.required('Укажите количество гостей')
 	.transform((_, originalValue) => {

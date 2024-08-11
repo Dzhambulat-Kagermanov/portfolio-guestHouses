@@ -41,8 +41,6 @@ const BookingFormCompletion: FC<Props> = ({ className }) => {
 			featureBtn={
 				<FeatureBtn
 					className={cn(cls.btn)}
-					dateIn={dateIn}
-					dateOut={dateOut}
 					email={email}
 					firstName={firstName}
 					isPayLater={isPayLater}
