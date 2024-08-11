@@ -1,0 +1,1 @@
+export { RoomsCardInfoBooking } from './ui'

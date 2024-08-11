@@ -12,7 +12,7 @@ import Slider from './Slider/Slider'
 import Table from './Table/Table'
 
 export type TTableItem = { title: ReactNode; items: ReactNode[] }
-interface Props
+export interface IRoomsCardInfoProps
 	extends Omit<
 			IRoomsCardAllData,
 			| 'availableRooms'
@@ -27,13 +27,16 @@ interface Props
 	tableData: [TTableItem, TTableItem]
 }
 
-const RoomsCardInfoElement: FC<Props> = ({
+const RoomsCardInfoElement: FC<
+	IRoomsCardInfoProps & { featureBtn: ReactNode }
+> = ({
 	className,
 	selectedService,
 	conditions,
 	description,
 	roomImages,
 	tableData,
+	featureBtn,
 	title,
 }) => {
 	return (
@@ -64,10 +67,7 @@ const RoomsCardInfoElement: FC<Props> = ({
 				className={cn(cls.table)}
 				groups={tableData}
 			/>
-
-			<Button className={cn(cls.button)}>
-				<Typography weight='M'>Забронировать</Typography>
-			</Button>
+			{featureBtn}
 		</Container>
 	)
 }

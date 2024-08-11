@@ -6,7 +6,7 @@ import Content from './Content/Content'
 import Head from './Head/Head'
 import cls from './RoomsElement.module.scss'
 
-interface Props
+export interface IRoomsElementProps
 	extends IClassName,
 		Omit<
 			IRoomsCardAllData,
@@ -14,7 +14,7 @@ interface Props
 		> {
 	services: ReactNode[]
 }
-const RoomsElement: FC<Props> = ({
+const RoomsElement: FC<IRoomsElementProps> = ({
 	className,
 	availableRooms,
 	maxGuests,

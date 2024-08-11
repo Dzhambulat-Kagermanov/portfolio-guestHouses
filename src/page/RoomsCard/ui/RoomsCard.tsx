@@ -1,7 +1,5 @@
-import {
-	RoomsCardInfoElement,
-	TTableItemsGroup,
-} from '@/entities/RoomsCardInfoElement'
+import { TTableItemsGroup } from '@/entities/RoomsCardInfoElement'
+import { RoomsCardInfoBooking } from '@/features/RoomsCardInfoBooking'
 import { getCardsBySlug } from '@/shared/api/cards/getCardsData'
 import { cn } from '@/shared/lib'
 import { IRoomsCardAllData } from '@/shared/types'
@@ -43,7 +41,8 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
-			<RoomsCardInfoElement
+			<RoomsCardInfoBooking
+				slug={slug}
 				selectedService={selectedService}
 				tableData={TABLE_DATA}
 				className={cn(cls.cardInfo)}
