@@ -131,15 +131,22 @@ export const validateGuestsValidation = yup
 export const validateFirstNameValidation = yup
 	.string()
 	.required('Введите имя')
-	.matches(name, 'Некорректная запись. Минимальное кол-во букв 2')
+	.matches(
+		name,
+		'Некорректная запись. Можно использовать только буквы. Минимальное кол-во букв 2'
+	)
 export const validateSecondNameValidation = yup
 	.string()
 	.required('Введите фамилию')
-	.matches(name, 'Некорректная запись. Минимальное кол-во букв 2')
+	.matches(
+		name,
+		'Некорректная запись. Можно использовать только буквы. Минимальное кол-во букв 2'
+	)
 
 export const validatePatronymicValidation = yup.string().test({
 	name: 'guest-patronymic-match',
-	message: 'Некорректная запись. Минимальное кол-во букв 2',
+	message:
+		'Некорректная запись. Можно использовать только буквы. Минимальное кол-во букв 2',
 	test: val => {
 		if (!!val) return name.test(val)
 		return true
