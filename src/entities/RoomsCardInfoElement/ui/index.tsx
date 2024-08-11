@@ -13,19 +13,17 @@ import Table from './Table/Table'
 
 export type TTableItem = { title: ReactNode; items: ReactNode[] }
 interface Props
-	extends Partial<
-			Omit<
-				IRoomsCardAllData,
-				| 'availableRooms'
-				| 'maxGuests'
-				| 'previewDescription'
-				| 'previewImg'
-				| 'services'
-				| 'slug'
-			>
+	extends Omit<
+			IRoomsCardAllData,
+			| 'availableRooms'
+			| 'maxGuests'
+			| 'previewDescription'
+			| 'previewImg'
+			| 'services'
+			| 'slug'
 		>,
 		IClassName {
-	selectedService?: string
+	selectedService: string
 	tableData: [TTableItem, TTableItem]
 }
 
@@ -45,12 +43,12 @@ const RoomsCardInfoElement: FC<Props> = ({
 		>
 			<div className={cn(cls.contentWrapper)}>
 				<PageLogoTitle
-					title={title || 'Данные отсутствуют'}
+					title={title}
 					className={cn(cls.titleWrapper)}
 					titleClass={cn(cls.title)}
 				>
 					<Typography weight='M' className={cn(cls.roomsVariant)}>
-						{selectedService || 'Данные отсутствуют'}
+						{selectedService}
 					</Typography>
 				</PageLogoTitle>
 				<Content

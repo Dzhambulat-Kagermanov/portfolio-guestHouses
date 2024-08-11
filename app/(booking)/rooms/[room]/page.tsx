@@ -6,8 +6,6 @@ export const metadata: Metadata = {
 	title: 'Guest House | Комната',
 }
 const Room: FC = props => {
-	console.log(props)
-
 	return (
 		<RoomsCard
 			//@ts-ignore

@@ -8,38 +8,33 @@ import cls from './Content.module.scss'
 
 interface Props
 	extends IClassName,
-		Partial<Pick<IRoomsCardInfoData, 'conditions' | 'description'>> {}
+		Pick<IRoomsCardInfoData, 'conditions' | 'description'> {}
 const Content: FC<Props> = ({ conditions, description, className }) => {
 	return (
 		<div className={cn(cls.content, [className])}>
-			{description ? (
-				<Paragraph
-					paragraphs={description}
-					paragraphsClass={cn(cls.descriptionText)}
-					rowGap={15}
-				/>
-			) : (
-				'Данные отсутствуют'
-			)}
-			{conditions && (
-				<Paragraph
-					paragraphsClass={cn(cls.conditionsText)}
-					rowGap={15}
-					paragraphs={conditions.map(({ description, title }, index) => (
-						<>
-							<Typography
-								key={index}
-								weight='M'
-								tag='strong'
-								className={cn(cls.itemTitle)}
-							>
-								{title}
-							</Typography>
-							{description}
-						</>
-					))}
-				/>
-			)}
+			<Paragraph
+				paragraphs={description}
+				paragraphsClass={cn(cls.descriptionText)}
+				rowGap={15}
+			/>
+
+			<Paragraph
+				paragraphsClass={cn(cls.conditionsText)}
+				rowGap={15}
+				paragraphs={conditions.map(({ description, title }, index) => (
+					<>
+						<Typography
+							key={index}
+							weight='M'
+							tag='strong'
+							className={cn(cls.itemTitle)}
+						>
+							{title}
+						</Typography>
+						{description}
+					</>
+				))}
+			/>
 		</div>
 	)
 }
