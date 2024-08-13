@@ -1,3 +1,4 @@
+export { type IArticlesCardData } from './articlesCard'
 export {
 	type IRoomsCardAllData,
 	type IRoomsCardData,
