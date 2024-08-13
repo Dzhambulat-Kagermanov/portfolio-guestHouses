@@ -1,0 +1,8 @@
+.galleryGroup {
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 25px;
+	margin-bottom: var(--modules-margin-bottom);
+}
+.galleryItem {
+}

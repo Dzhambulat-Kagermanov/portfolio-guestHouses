@@ -1,5 +1,6 @@
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
+import { AboutGallery } from '@/widgets/AboutGallery'
 import { AboutInfo } from '@/widgets/AboutInfo'
 import { FC } from 'react'
 import cls from './About.module.scss'
@@ -46,6 +47,7 @@ const About: FC<Props> = ({ className }) => {
 					},
 				]}
 			/>
+			<AboutGallery className={cn(cls.gallery)} />
 		</div>
 	)
 }
