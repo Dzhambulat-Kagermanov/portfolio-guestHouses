@@ -19,7 +19,7 @@ const ArticlesList: FC<Props> = ({ data, className }) => {
 			<Typography weight='SB' className={cn(cls.title)}>
 				Статьи
 			</Typography>
-			<div className={cn(cls.articles)}>
+			<div className={cn(cls.content)}>
 				{data.map(array => {
 					return (
 						<div className={cn(cls.group)}>

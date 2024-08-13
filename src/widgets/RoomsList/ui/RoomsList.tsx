@@ -29,6 +29,7 @@ const RoomsList: FC<Props & IClassName> = async ({ className }) => {
 						index
 					) => (
 						<RoomsCard
+							tag='li'
 							previewDescription={previewDescription}
 							availableRooms={availableRooms}
 							maxGuests={maxGuests}
