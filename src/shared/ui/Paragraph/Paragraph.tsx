@@ -1,10 +1,10 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName, ITag } from '@/shared/types/shared'
 import { FC, ReactNode } from 'react'
 import { Typography } from '../Typography/Typography'
 import cls from './Paragraph.module.scss'
 
-interface Props extends IClassName {
+interface Props extends IClassName, ITag {
 	paragraphs: ReactNode[]
 	paragraphsClass?: string
 	rowGap?: number
@@ -15,12 +15,14 @@ const Paragraph: FC<Props> = ({
 	paragraphs,
 	paragraphsClass,
 	className,
+	tag = 'div',
 	rowGap,
 	titleClass,
 	title,
 }) => {
+	const Tag = tag
 	return (
-		<div className={cn(cls.text, [className])}>
+		<Tag className={cn(cls.text, [className])}>
 			{title && (
 				<Typography
 					tag='h2'
@@ -34,7 +36,8 @@ const Paragraph: FC<Props> = ({
 				className={cn(cls.group)}
 				style={{
 					//@ts-ignore
-					'--paragraphs-rowGap': rowGap ? `${rowGap}px` : '25px',
+					'--paragraphs-rowGap':
+						rowGap || rowGap === 0 ? `${rowGap}px` : '25px',
 				}}
 			>
 				{paragraphs.map((el, index) => (
@@ -48,7 +51,7 @@ const Paragraph: FC<Props> = ({
 					</li>
 				))}
 			</ul>
-		</div>
+		</Tag>
 	)
 }
 

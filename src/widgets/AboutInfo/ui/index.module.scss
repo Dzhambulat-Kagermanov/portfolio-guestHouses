@@ -1,0 +1,29 @@
+.container {
+	margin-bottom: var(--modules-margin-bottom);
+}
+.info {
+}
+.infoContent {
+	.infoTitle {
+		font-size: 24px;
+		text-transform: uppercase;
+	}
+	.infoDescription {
+		font-size: 16px;
+	}
+}
+.infoServices {
+	display: flex;
+	flex-flow: wrap column;
+	gap: 20px;
+	.infoServicesItem {
+		margin: 15px 0 0 0;
+		.infoServicesTitle {
+			font-size: 16px;
+			margin: 0 0 10px 0;
+		}
+		.infoServicesDescription {
+			font-size: 12px;
+		}
+	}
+}
