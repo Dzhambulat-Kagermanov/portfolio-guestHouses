@@ -1,3 +1,4 @@
+export { Arrow } from './Arrow/Arrow'
 export { Calendar } from './Calendar/Calendar'
 export { CalendarIn } from './CalendarIn/CalendarIn'
 export { CalendarOut } from './CalendarOut/CalendarOut'
