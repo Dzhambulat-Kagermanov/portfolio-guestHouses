@@ -1,0 +1,25 @@
+.form {
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	row-gap: 15px;
+}
+.inputWrapper {
+	width: 100%;
+	max-width: 260px;
+}
+.submitBtn {
+	transition: 0.2s ease;
+	color: white;
+	width: 140px;
+	height: 36px;
+	transform-origin: center bottom;
+	&:hover {
+		background-color: var(--blue-hover);
+		scale: 1.1;
+	}
+	&:active {
+		background-color: var(--blue);
+		scale: 1.05;
+	}
+}
