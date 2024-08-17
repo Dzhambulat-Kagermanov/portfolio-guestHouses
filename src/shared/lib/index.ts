@@ -1,2 +1,4 @@
-export { cn } from './cn/cn'
-export { pathValidating } from './pathValidating/pathValidating'
+export { arrayChunks } from './arrayChunks'
+export { cn } from './cn'
+export { endingsFormatter } from './endingsFormatter'
+export { pathValidating } from './pathValidating'
