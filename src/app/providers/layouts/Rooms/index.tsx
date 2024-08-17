@@ -1,4 +1,4 @@
-import { IChildren } from '@/shared/types/shared'
+import { IChildren } from '@/shared/types'
 import { ChangeData } from '@/widgets/ChangeData'
 import { FC } from 'react'
 

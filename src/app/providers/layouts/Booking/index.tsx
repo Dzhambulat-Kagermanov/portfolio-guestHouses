@@ -1,7 +1,7 @@
-import { IChildren } from '@/shared/types/shared'
-import { PageSteps } from '@/shared/ui/PageSteps/PageSteps'
+import { IChildren } from '@/shared/types'
+import { PageSteps } from '@/shared/ui'
 import { FC } from 'react'
-import cls from './BookingLayout.module.scss'
+import cls from './index.module.scss'
 
 const BookingLayout: FC<IChildren> = ({ children }) => {
 	return (
