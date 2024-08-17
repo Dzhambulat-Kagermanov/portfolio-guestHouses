@@ -2,116 +2,120 @@ import { date, mail, name, phone } from '@/shared/utils/regexps'
 import moment from 'moment'
 import * as yup from 'yup'
 
-export const validateDateInValidation = yup
-	.string()
-	.required('Введите дату въезда')
-	.matches(date, 'Введите дату въезда в формате дд.мм.гггг')
-	.test({
-		name: 'bookingForm-validation-dateInIsPast',
-		message: 'Нельзя указывать прошедшую дату',
-		test: val => {
-			let res = true
-			const splitVal = val.split('-')
-			const nowDate = moment().format('YYYY.MM.DD').split('.')
+export const validateDateInValidation = (dateOutInpName: string) => {
+	return yup
+		.string()
+		.required('Введите дату въезда')
+		.matches(date, 'Введите дату въезда в формате дд.мм.гггг')
+		.test({
+			name: 'bookingForm-validation-dateInIsPast',
+			message: 'Нельзя указывать прошедшую дату',
+			test: val => {
+				let res = true
+				const splitVal = val.split('-')
+				const nowDate = moment().format('YYYY.MM.DD').split('.')
 
-			for (let i = 0; i < splitVal.length; i++) {
-				const date = +splitVal[i].replace(/(?<=^|-)0+/, '')
-				const dateNow = +nowDate[i].replace(/(?<=^|-)0+/, '')
-				if (date < dateNow) {
-					res = false
-					break
+				for (let i = 0; i < splitVal.length; i++) {
+					const date = +splitVal[i].replace(/(?<=^|-)0+/, '')
+					const dateNow = +nowDate[i].replace(/(?<=^|-)0+/, '')
+					if (date < dateNow) {
+						res = false
+						break
+					}
 				}
-			}
 
-			return res
-		},
-	})
-	.test({
-		name: 'bookingForm-validating-dateIn',
-		test: (val, context) => {
-			if (!date.test(context.parent['booking-dateOut'])) {
-				return context.createError({
-					message: 'Введите дату выезда в формате дд.мм.гггг',
-				})
-			}
-			if (val === context.parent['booking-dateOut']) {
-				return context.createError({
-					message: 'Дата въезда не может быть равна дате выезда',
-				})
-			}
-			let res = true
-			const splitDateIn = val.split('-')
-			const splitDateOut = context.parent['booking-dateOut'].split('-')
-
-			for (let i = 0; i < splitDateIn.length; i++) {
-				const dateIn = +splitDateIn[i].replace(/(?<=^|-)0+/, '')
-				const dateOut = +splitDateOut[i].replace(/(?<=^|-)0+/, '')
-
-				if (dateIn > dateOut) {
+				return res
+			},
+		})
+		.test({
+			name: 'bookingForm-validating-dateIn',
+			test: (val, context) => {
+				if (!date.test(context.parent[dateOutInpName])) {
 					return context.createError({
-						message: 'Дата въезда не может быть больше даты выезда',
+						message: 'Введите дату выезда в формате дд.мм.гггг',
 					})
 				}
-			}
-
-			return res
-		},
-	})
-export const validateDateOutValidation = yup
-	.string()
-	.required('Введите дату выезда')
-	.matches(date, 'Введите дату выезда в формате дд.мм.гггг')
-	.test({
-		name: 'bookingForm-validation-dateOutIsPast',
-		message: 'Нельзя указывать прошедшую дату',
-		test: val => {
-			let res = true
-			const splitVal = val.split('-')
-			const nowDate = moment().format('YYYY.MM.DD').split('.')
-
-			for (let i = 0; i < splitVal.length; i++) {
-				const date = +splitVal[i].replace(/(?<=^|-)0+/, '')
-				const dateNow = +nowDate[i].replace(/(?<=^|-)0+/, '')
-				if (date < dateNow) {
-					res = false
-					break
-				}
-			}
-
-			return res
-		},
-	})
-	.test({
-		name: 'bookingForm-validating-dateOut',
-		test: (val, context) => {
-			if (!date.test(context.parent['booking-dateIn'])) {
-				return context.createError({
-					message: 'Введите дату въезда в формате дд.мм.гггг',
-				})
-			}
-			if (val === context.parent['booking-dateIn']) {
-				return context.createError({
-					message: 'Дата выезда не может быть равна дате въезда',
-				})
-			}
-			let res = true
-			const splitDateIn = context.parent['booking-dateIn'].split('-')
-			const splitDateOut = val.split('-')
-
-			for (let i = 0; i < splitDateIn.length; i++) {
-				const dateIn = +splitDateIn[i].replace(/(?<=^|-)0+/, '')
-				const dateOut = +splitDateOut[i].replace(/(?<=^|-)0+/, '')
-
-				if (dateIn > dateOut) {
+				if (val === context.parent[dateOutInpName]) {
 					return context.createError({
-						message: 'Дата выезда не может больше даты въезда',
+						message: 'Дата въезда не может быть равна дате выезда',
 					})
 				}
-			}
+				let res = true
+				const splitDateIn = val.split('-')
+				const splitDateOut = context.parent[dateOutInpName].split('-')
 
-			return res
-		},
-	})
+				for (let i = 0; i < splitDateIn.length; i++) {
+					const dateIn = +splitDateIn[i].replace(/(?<=^|-)0+/, '')
+					const dateOut = +splitDateOut[i].replace(/(?<=^|-)0+/, '')
+
+					if (dateIn > dateOut) {
+						return context.createError({
+							message: 'Дата въезда не может быть больше даты выезда',
+						})
+					}
+				}
+
+				return res
+			},
+		})
+}
+export const validateDateOutValidation = (dateInInpName: string) => {
+	return yup
+		.string()
+		.required('Введите дату выезда')
+		.matches(date, 'Введите дату выезда в формате дд.мм.гггг')
+		.test({
+			name: 'bookingForm-validation-dateOutIsPast',
+			message: 'Нельзя указывать прошедшую дату',
+			test: val => {
+				let res = true
+				const splitVal = val.split('-')
+				const nowDate = moment().format('YYYY.MM.DD').split('.')
+
+				for (let i = 0; i < splitVal.length; i++) {
+					const date = +splitVal[i].replace(/(?<=^|-)0+/, '')
+					const dateNow = +nowDate[i].replace(/(?<=^|-)0+/, '')
+					if (date < dateNow) {
+						res = false
+						break
+					}
+				}
+
+				return res
+			},
+		})
+		.test({
+			name: 'bookingForm-validating-dateOut',
+			test: (val, context) => {
+				if (!date.test(context.parent[dateInInpName])) {
+					return context.createError({
+						message: 'Введите дату въезда в формате дд.мм.гггг',
+					})
+				}
+				if (val === context.parent[dateInInpName]) {
+					return context.createError({
+						message: 'Дата выезда не может быть равна дате въезда',
+					})
+				}
+				let res = true
+				const splitDateIn = context.parent[dateInInpName].split('-')
+				const splitDateOut = val.split('-')
+
+				for (let i = 0; i < splitDateIn.length; i++) {
+					const dateIn = +splitDateIn[i].replace(/(?<=^|-)0+/, '')
+					const dateOut = +splitDateOut[i].replace(/(?<=^|-)0+/, '')
+
+					if (dateIn > dateOut) {
+						return context.createError({
+							message: 'Дата выезда не может больше даты въезда',
+						})
+					}
+				}
+
+				return res
+			},
+		})
+}
 export const validateGuestsValidation = yup
 	.number()
 	.min(1, 'Минимальное количество гостей 1')

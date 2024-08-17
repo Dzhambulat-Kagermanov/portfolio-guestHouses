@@ -14,8 +14,8 @@ import {
 import * as yup from 'yup'
 
 export const validateSchema = yup.object().shape({
-	'booking-dateIn': validateDateInValidation,
-	'booking-dateOut': validateDateOutValidation,
+	'booking-dateIn': validateDateInValidation('booking-dateOut'),
+	'booking-dateOut': validateDateOutValidation('booking-dateIn'),
 	'booking-guests': validateGuestsValidation,
 	'booking-firstName': validateFirstNameValidation,
 	'booking-secondName': validateSecondNameValidation,
