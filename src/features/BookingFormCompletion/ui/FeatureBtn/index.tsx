@@ -1,9 +1,8 @@
 'use client'
 import { TBookingForm, useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Button } from '@/shared/ui/Button/Button'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName } from '@/shared/types'
+import { Button, Typography } from '@/shared/ui'
 import {
 	validateAboutMeInfo,
 	validateEmailValidation,
@@ -14,7 +13,7 @@ import {
 	validatePhoneValidation,
 	validateSecondNameValidation,
 	validateServicesValidation,
-} from '@/shared/utils/validateMethods'
+} from '@/shared/utils'
 import { useRouter } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'

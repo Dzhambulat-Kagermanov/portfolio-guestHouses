@@ -4,8 +4,7 @@ import {
 	TTableItemsGroup,
 } from '@/entities/RoomsCardInfoElement'
 import { cn } from '@/shared/lib'
-import { IRoomsCardAllData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName, IRoomsCardAllData } from '@/shared/types'
 import { FC } from 'react'
 import FeatureBtn from './FeatureBtn'
 import cls from './index.module.scss'

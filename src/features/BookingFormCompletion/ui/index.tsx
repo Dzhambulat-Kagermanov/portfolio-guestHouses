@@ -2,7 +2,7 @@
 import { BookingDetailsElement } from '@/entities/BookingDetailsElement'
 import { useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
 import { FC } from 'react'
 import FeatureBtn from './FeatureBtn'
 import cls from './index.module.scss'
