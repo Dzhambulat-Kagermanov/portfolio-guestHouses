@@ -34,7 +34,7 @@ const GalleryItem: FC<Props> = ({ photos, title, className }) => {
 				loop
 				slidesPerView={'auto'}
 				navigation={{
-					nextEl: `.${cls.rightBtn}-${title}`,
+					nextEl: `.${cls.rightBtn}-${title.replaceAll(' ', '-')}`,
 					prevEl: `.${cls.leftBtn}-${title}`,
 				}}
 				modules={[Navigation]}
@@ -47,7 +47,7 @@ const GalleryItem: FC<Props> = ({ photos, title, className }) => {
 							theme='clear'
 							className={cn(cls.sliderBtn, [
 								cls.leftBtn,
-								`${cls.leftBtn}-${title}`,
+								`${cls.leftBtn}-${title.replaceAll(' ', '-')}`,
 							])}
 						>
 							<Arrow color='var(--grey)' />
@@ -56,7 +56,7 @@ const GalleryItem: FC<Props> = ({ photos, title, className }) => {
 							theme='clear'
 							className={cn(cls.sliderBtn, [
 								cls.rightBtn,
-								`${cls.rightBtn}-${title}`,
+								`${cls.rightBtn}-${title.replaceAll(' ', '-')}`,
 							])}
 						>
 							<Arrow color='var(--grey)' />
