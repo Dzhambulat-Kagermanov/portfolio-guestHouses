@@ -1,9 +1,9 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
 import { AboutGallery } from '@/widgets/AboutGallery'
 import { AboutInfo } from '@/widgets/AboutInfo'
 import { FC } from 'react'
-import cls from './About.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const About: FC<Props> = ({ className }) => {

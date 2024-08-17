@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-export const HomeAsync = dynamic(() => import('./Home'), {
+export const AboutAsync = dynamic(() => import('.'), {
 	ssr: false,
 	loading: () => <p>...Loading</p>,
 })

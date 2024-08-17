@@ -1,13 +1,12 @@
 import { TTableItemsGroup } from '@/entities/RoomsCardInfoElement'
 import { RoomsCardInfoBooking } from '@/features/RoomsCardInfoBooking'
-import { getCardsBySlug } from '@/shared/api/cards/getCardsData'
+import { getCardsBySlug } from '@/shared/api'
 import { cn } from '@/shared/lib'
-import { IRoomsCardAllData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName, IRoomsCardAllData } from '@/shared/types'
+import { Typography } from '@/shared/ui'
 import { notFound } from 'next/navigation'
 import { FC } from 'react'
-import cls from './RoomsCard.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 	selectedService: string

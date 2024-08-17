@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-export const BookingAsync = dynamic(() => import('./Booking'), {
+export const HomeAsync = dynamic(() => import('.'), {
 	ssr: false,
 	loading: () => <p>...Loading</p>,
 })

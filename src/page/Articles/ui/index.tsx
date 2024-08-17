@@ -1,11 +1,9 @@
 import { getArticles } from '@/shared/api'
-import { cn } from '@/shared/lib'
-import { arrayChunks } from '@/shared/lib/arrayChunks'
-import { IArticlesCardData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
+import { arrayChunks, cn } from '@/shared/lib'
+import { IArticlesCardData, IClassName } from '@/shared/types'
 import { ArticlesList } from '@/widgets/ArticlesList'
 import { FC } from 'react'
-import cls from './Articles.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const Articles: FC<Props> = async ({ className }) => {

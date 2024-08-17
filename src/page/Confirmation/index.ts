@@ -1,1 +1,1 @@
-export { ConfirmationAsync as ConfirmationPage } from './ui/ConfirmationAsync'
+export { ConfirmationAsync as ConfirmationPage } from './ui/async'

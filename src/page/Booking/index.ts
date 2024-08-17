@@ -1,1 +1,1 @@
-export { BookingAsync as BookingPage } from './ui/BookingAsync'
+export { BookingAsync as BookingPage } from './ui/async'

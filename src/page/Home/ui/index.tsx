@@ -1,11 +1,11 @@
-import { cn } from '@/shared/lib/cn/cn'
-import { IClassName } from '@/shared/types/shared'
+import { cn } from '@/shared/lib'
+import { IClassName } from '@/shared/types'
 import { HomeForm } from '@/widgets/HomeForm'
 import { HomeInfo } from '@/widgets/HomeInfo'
 import { HomeReview } from '@/widgets/HomeReview'
 import { HomeRooms } from '@/widgets/HomeRooms'
 import { FC } from 'react'
-import cls from './Home.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const Home: FC<Props> = ({ className }) => {

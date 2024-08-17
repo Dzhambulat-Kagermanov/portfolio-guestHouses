@@ -1,5 +1,5 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
 import { BookingFormDetails } from '@/widgets/BookingFormDetails'
 import { FC } from 'react'
 import cls from './index.module.scss'
