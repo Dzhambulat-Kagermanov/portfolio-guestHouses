@@ -1,5 +1,6 @@
 'use client'
-import { IHomeFormInputs, useHomeFormData } from '@/shared/hooks'
+import { validateSchema } from '@/entities/HomeFormElement/model/validateSchema'
+import { useHomeFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Button, Typography } from '@/shared/ui'
@@ -13,10 +14,12 @@ const FeatureBtn: FC<Props> = ({ className }) => {
 	const setValue = useHomeFormData(state => state.setValue)
 	const router = useRouter()
 
-	const onSubmit = (data: IHomeFormInputs) => {
-		setValue('dateIn', data.dateIn)
-		setValue('dateOut', data.dateOut)
-		setValue('guests', data.guests)
+	const onSubmit = (data: typeof validateSchema.fields) => {
+		console.log(data)
+
+		setValue('dateIn', data['home-dateIn'])
+		setValue('dateOut', data['home-dateOut'])
+		setValue('guests', data['home-guests'])
 		router.push('/rooms')
 	}
 	return (

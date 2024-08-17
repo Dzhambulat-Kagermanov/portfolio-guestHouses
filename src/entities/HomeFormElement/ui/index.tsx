@@ -5,7 +5,6 @@ import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Input } from '@/shared/ui'
 import { yupResolver } from '@hookform/resolvers/yup'
-import moment from 'moment'
 import { FC, ReactNode, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { validateSchema } from '../model/validateSchema'
@@ -19,12 +18,9 @@ const HomeFormElement: FC<Props> = ({ className, featureBtn }) => {
 	const formMethods = useForm({
 		resolver: yupResolver(validateSchema),
 		defaultValues: {
-			'home-dateIn':
-				useHomeFormData(state => state.dateIn) || moment().format('YYYY-MM-DD'),
-			'home-dateOut':
-				useHomeFormData(state => state.dateOut) ||
-				moment().add(3, 'd').format('YYYY-MM-DD'),
-			'home-guests': useHomeFormData(state => state.guests) || 1,
+			'home-dateIn': useHomeFormData(state => state.dateIn),
+			'home-dateOut': useHomeFormData(state => state.dateOut),
+			'home-guests': useHomeFormData(state => state.guests),
 		},
 		mode: 'onChange',
 	})

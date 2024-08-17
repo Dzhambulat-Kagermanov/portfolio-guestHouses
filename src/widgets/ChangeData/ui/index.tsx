@@ -1,3 +1,5 @@
+'use client'
+import { useHomeFormData } from '@/shared/hooks'
 import { Calendar, CalendarIn, CalendarOut, User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
@@ -7,6 +9,8 @@ import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const ChangeData: FC<Props> = ({ className }) => {
+	console.log(useHomeFormData(state => state))
+
 	return (
 		<Container
 			containerClass={cn(cls.container)}
@@ -16,25 +20,25 @@ const ChangeData: FC<Props> = ({ className }) => {
 				<li className={cn(cls.item)}>
 					<Calendar color='white' />
 					<Typography weight='SB' className={cn(cls.itemText)}>
-						2-ое суток
+						{useHomeFormData(state => state.getNightsQnt)()}
 					</Typography>
 				</li>
 				<li className={cn(cls.item)}>
 					<User color='white' />
 					<Typography weight='SB' className={cn(cls.itemText)}>
-						2 взрослых
+						{useHomeFormData(state => state.guests)}
 					</Typography>
 				</li>
 				<li className={cn(cls.item)}>
 					<CalendarIn color='white' />
 					<Typography weight='SB' className={cn(cls.itemText)}>
-						4 апреля
+						{useHomeFormData(state => state.dateIn)}
 					</Typography>
 				</li>
 				<li className={cn(cls.item)}>
 					<CalendarOut color='white' />
 					<Typography weight='SB' className={cn(cls.itemText)}>
-						6 апреля
+						{useHomeFormData(state => state.dateOut)}
 					</Typography>
 				</li>
 			</ul>
