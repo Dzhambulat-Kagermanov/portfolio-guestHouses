@@ -6,3 +6,4 @@ export {
 	type IRoomsCardInfoData,
 	type TService,
 } from './roomsCard'
+export * from './shared'
