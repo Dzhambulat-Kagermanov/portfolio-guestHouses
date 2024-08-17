@@ -3,7 +3,7 @@ import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
 import { PageLogoTitle } from '@/widgets/PageLogoTitle'
 import { FC } from 'react'
-import cls from './BookingLogoTitle.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const BookingLogoTitle: FC<Props> = ({ className }) => {

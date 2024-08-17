@@ -1,1 +1,1 @@
-export { ChangeData } from './ui/ChangeData'
+export { ChangeData } from './ui'

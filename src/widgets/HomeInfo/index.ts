@@ -1,1 +1,1 @@
-export { HomeInfo } from './ui/HomeInfo'
+export { HomeInfo } from './ui'

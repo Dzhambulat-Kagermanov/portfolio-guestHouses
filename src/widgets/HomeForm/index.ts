@@ -1,1 +1,1 @@
-export { HomeForm } from './ui/HomeForm'
+export { HomeForm } from './ui'

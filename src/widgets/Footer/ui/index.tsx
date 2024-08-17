@@ -4,8 +4,8 @@ import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import Link from 'next/link'
 import { FC } from 'react'
-import cls from './Footer.module.scss'
-import Info from './Group/Info'
+import cls from './index.module.scss'
+import Info from './Info'
 
 interface Props extends IClassName {}
 const Footer: FC<Props> = ({ className }) => {

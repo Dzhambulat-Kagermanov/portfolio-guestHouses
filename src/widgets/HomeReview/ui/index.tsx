@@ -6,7 +6,7 @@ import { Slider } from '@/shared/ui/Slider/Slider'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { ReviewCard } from '@/widgets/ReviewCard'
 import { FC } from 'react'
-import cls from './HomeReview.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const HomeReview: FC<Props> = ({ className }) => {

@@ -6,7 +6,7 @@ import { Slider } from '@/shared/ui/Slider/Slider'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { RoomsCard } from '@/widgets/RoomsCard'
 import { FC } from 'react'
-import cls from './HomeRooms.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const HomeRooms: FC<Props> = async ({ className }) => {

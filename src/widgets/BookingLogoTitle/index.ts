@@ -1,1 +1,1 @@
-export { BookingLogoTitle } from './ui/BookingLogoTitle'
+export { BookingLogoTitle } from './ui'

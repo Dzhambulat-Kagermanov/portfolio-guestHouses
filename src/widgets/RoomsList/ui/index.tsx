@@ -4,7 +4,7 @@ import { IClassName } from '@/shared/types/shared'
 import { Container } from '@/shared/ui/Container/Container'
 import { RoomsCard } from '@/widgets/RoomsCard'
 import { FC } from 'react'
-import cls from './RoomsList.module.scss'
+import cls from './index.module.scss'
 
 interface Props {}
 const RoomsList: FC<Props & IClassName> = async ({ className }) => {

@@ -2,7 +2,7 @@ import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC } from 'react'
-import cls from './ReviewCard.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	review: string

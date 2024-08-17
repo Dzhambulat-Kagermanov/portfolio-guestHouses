@@ -6,7 +6,7 @@ import { ActiveLink } from '@/shared/ui/ActiveLink/ActiveLink'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC } from 'react'
-import cls from './BurgerMenu.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const BurgerMenu: FC<Props> = ({ className }) => {

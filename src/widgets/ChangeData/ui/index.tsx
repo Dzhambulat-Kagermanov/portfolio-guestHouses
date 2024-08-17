@@ -5,7 +5,7 @@ import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC } from 'react'
-import cls from './ChangeData.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const ChangeData: FC<Props> = ({ className }) => {

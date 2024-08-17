@@ -2,7 +2,7 @@ import { cn } from '@/shared/lib/cn/cn'
 import { IClassName } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC, ReactNode } from 'react'
-import cls from './Info.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	items: ReactNode[]

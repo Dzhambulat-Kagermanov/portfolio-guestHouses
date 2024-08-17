@@ -1,1 +1,1 @@
-export { PageLogoTitle } from './ui/PageLogoTitle'
+export { PageLogoTitle } from './ui'

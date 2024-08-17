@@ -3,7 +3,7 @@ import { cn } from '@/shared/lib'
 import { IRoomsCardAllData } from '@/shared/types'
 import { IClassName, ITag } from '@/shared/types/shared'
 import React, { FC } from 'react'
-import cls from './RoomsCard.module.scss'
+import cls from './index.module.scss'
 
 interface Props
 	extends IClassName,

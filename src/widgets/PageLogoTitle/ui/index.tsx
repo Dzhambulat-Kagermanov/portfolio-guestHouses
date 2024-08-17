@@ -1,9 +1,8 @@
 import { cn } from '@/shared/lib'
-import { IRoomsCardInfoData } from '@/shared/types'
 import { IChildren, IClassName, ITag } from '@/shared/types/shared'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC, ReactNode } from 'react'
-import cls from './PageLogoTitle.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName, ITag, Partial<IChildren> {
 	title: ReactNode

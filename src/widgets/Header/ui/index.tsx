@@ -6,7 +6,7 @@ import { Container } from '@/shared/ui/Container/Container'
 import { Logo } from '@/shared/ui/Logo/Logo'
 import { MenuButton } from '@/shared/ui/MenuButton/MenuButton'
 import { FC } from 'react'
-import cls from './Header.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const Header: FC<Props> = ({ className }) => {

@@ -8,7 +8,7 @@ import { Input } from '@/shared/ui/Input/Input'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import moment from 'moment'
 import { FC } from 'react'
-import cls from './HomeForm.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	containerClass?: string

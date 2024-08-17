@@ -4,7 +4,7 @@ import { Container } from '@/shared/ui/Container/Container'
 import { Paragraph } from '@/shared/ui/Paragraph/Paragraph'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { FC } from 'react'
-import cls from './HomeInfo.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const HomeInfo: FC<Props> = ({ className }) => {
