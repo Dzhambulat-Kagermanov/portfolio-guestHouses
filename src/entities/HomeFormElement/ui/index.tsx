@@ -1,71 +1,78 @@
+'use client'
+import { useHomeFormData } from '@/shared/hooks'
 import { Calendar, User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
-import { Button, Input, Typography } from '@/shared/ui'
+import { Input } from '@/shared/ui'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { default as moment } from 'moment'
-import { FC } from 'react'
+import moment from 'moment'
+import { FC, ReactNode, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { validateSchema } from '../model/validateSchema'
 import cls from './index.module.scss'
 
-interface Props extends IClassName {}
-const HomeFormElement: FC<Props> = ({ className }) => {
-	const {
-		register,
-		formState: { errors },
-		handleSubmit,
-	} = useForm({
+interface Props extends IClassName {
+	featureBtn: ReactNode
+}
+const HomeFormElement: FC<Props> = ({ className, featureBtn }) => {
+	const setHomeFormValue = useHomeFormData(state => state.setValue)
+	const formMethods = useForm({
 		resolver: yupResolver(validateSchema),
 		defaultValues: {
-			'home-dateIn': moment().format('YYYY-MM-DD'),
-			'home-dateOut': moment().add(3, 'd').format('YYYY-MM-DD'),
-			'home-guests': 1,
+			'home-dateIn':
+				useHomeFormData(state => state.dateIn) || moment().format('YYYY-MM-DD'),
+			'home-dateOut':
+				useHomeFormData(state => state.dateOut) ||
+				moment().add(3, 'd').format('YYYY-MM-DD'),
+			'home-guests': useHomeFormData(state => state.guests) || 1,
 		},
 		mode: 'onChange',
 	})
 
-	const onSubmit = (data: any) => {
-		console.log(data)
-	}
+	useEffect(() => {
+		setHomeFormValue('formContext', formMethods)
+	}, [formMethods])
 
 	return (
-		<form
-			className={cn(cls.form, [className])}
-			onSubmit={handleSubmit(onSubmit)}
-		>
+		<form className={cn(cls.form, [className])}>
 			<Input
-				{...register('home-dateIn')}
+				{...formMethods.register('home-dateIn', {
+					onChange: () => {
+						formMethods.trigger('home-dateOut')
+					},
+				})}
 				type='date'
 				label='Дата въезда'
-				error={errors['home-dateIn']?.message}
+				error={formMethods.formState.errors['home-dateIn']?.message}
 				className={cn(cls.inputWrapper)}
 				inputClass={cn(cls.input)}
 				icon={<Calendar color='var(--grey-light-100)' />}
 				iconPos='right'
 			/>
 			<Input
-				{...register('home-dateOut')}
+				{...formMethods.register('home-dateOut', {
+					onChange: () => {
+						formMethods.trigger('home-dateIn')
+					},
+				})}
 				type='date'
 				label='Дата выезда'
-				error={errors['home-dateOut']?.message}
+				error={formMethods.formState.errors['home-dateOut']?.message}
 				className={cn(cls.inputWrapper)}
 				inputClass={cn(cls.input)}
 				icon={<Calendar color='var(--grey-light-100)' />}
 				iconPos='right'
 			/>
 			<Input
-				{...register('home-guests')}
+				{...formMethods.register('home-guests')}
 				label='Гости'
-				error={errors['home-guests']?.message}
+				error={formMethods.formState.errors['home-guests']?.message}
 				className={cn(cls.inputWrapper)}
 				inputClass={cn(cls.input)}
 				icon={<User color='var(--grey-light-100)' />}
 				iconPos='right'
 			/>
-			<Button type='submit' className={cn(cls.submitBtn)}>
-				<Typography weight='M'>Проверить</Typography>
-			</Button>
+			{featureBtn}
 		</form>
 	)
 }

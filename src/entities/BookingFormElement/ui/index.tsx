@@ -22,10 +22,6 @@ const BookingFormElement: FC<Props> = ({
 	submitBtn,
 }) => {
 	const setBookingFormValue = useBookingFormData(state => state.setValue)
-	useEffect(() => {
-		setBookingFormValue('title', title)
-		setBookingFormValue('formContext', formMethods)
-	})
 	const formMethods = useForm({
 		resolver: yupResolver(validateSchema),
 		defaultValues: {
@@ -46,10 +42,14 @@ const BookingFormElement: FC<Props> = ({
 		},
 		mode: 'onChange',
 	})
+	useEffect(() => {
+		setBookingFormValue('title', title)
+		setBookingFormValue('formContext', formMethods)
+	}, [formMethods])
 
 	return (
 		<FormProvider {...formMethods}>
-			<form method='post' className={cn(cls.form)}>
+			<form method='post' className={cn(cls.form, [className])}>
 				<Head className={cn(cls.head)} />
 				<Content
 					className={cn(cls.content)}

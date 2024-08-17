@@ -1,5 +1,5 @@
 'use client'
-import { HomeFormElement } from '@/entities/HomeFormElement'
+import { HomeFormSaveDataOnSubmit } from '@/features/HomeFormSaveDataOnSubmit'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Container } from '@/shared/ui'
@@ -15,7 +15,7 @@ const HomeForm: FC<Props> = ({ className }) => {
 			containerClass={cn(cls.container)}
 			innerClass={cn(cls.homeForm, [className])}
 		>
-			<HomeFormElement className={cn(cls.form)} />
+			<HomeFormSaveDataOnSubmit className={cn(cls.form)} />
 		</Container>
 	)
 }
