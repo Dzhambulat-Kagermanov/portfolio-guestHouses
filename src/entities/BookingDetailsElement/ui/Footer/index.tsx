@@ -37,9 +37,9 @@ const Footer: FC<Props> = ({ className, service, title, nightsQnt }) => {
 					{nightsQnt
 						? `${nightsQnt} ${endingsFormatter({
 								itemQuantity: nightsQnt,
-								singPluralEnding: 'ночь',
+								singPluralEnding: 'ночи',
 								pluralEnding: 'ночей',
-								singularEnding: 'ночи',
+								singularEnding: 'ночь',
 						  })}`
 						: notFound()}
 				</Typography>
