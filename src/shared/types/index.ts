@@ -1,3 +1,4 @@
+export { type IAboutGalleriesData } from './aboutGalleries'
 export { type IArticlesCardData } from './articlesCard'
 export {
 	type IRoomsCardAllData,
