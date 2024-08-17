@@ -1,4 +1,4 @@
-import { MainLayout } from '@/app/providers/layouts/Main'
+import { MainLayout } from '@/app/providers/layouts'
 import '@/app/styles/index.scss'
 import type { Metadata } from 'next'
 

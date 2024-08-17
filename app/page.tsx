@@ -1,5 +1,5 @@
-import { HomeAsync } from '@/page/Home'
+import { HomePage } from '@/page/Home'
 
 export default function Home() {
-	return <HomeAsync />
+	return <HomePage />
 }

@@ -1,5 +1,5 @@
-import { RoomsLayout } from '@/app/providers/layouts/Rooms'
-import { IChildren } from '@/shared/types/shared'
+import { RoomsLayout } from '@/app/providers/layouts'
+import { IChildren } from '@/shared/types'
 import { FC } from 'react'
 
 const layout: FC<IChildren> = ({ children }) => {
