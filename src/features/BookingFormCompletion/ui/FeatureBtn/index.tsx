@@ -55,7 +55,7 @@ const FeatureBtn: FC<Props> = ({
 					validatePatronymicValidation.validateSync(patronymic)
 					reset()
 					setTimeout(() => {
-						router.push('/rooms')
+						router.replace('/rooms')
 					}, 10)
 				} catch (err) {
 					alert(`Ошибка на стадии отправки. ${err}`)
