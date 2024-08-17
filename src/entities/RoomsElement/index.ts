@@ -1,1 +1,1 @@
-export { RoomsElement, type IRoomsElementProps } from './ui/RoomsElement'
+export { RoomsElement, type IRoomsElementProps } from './ui'

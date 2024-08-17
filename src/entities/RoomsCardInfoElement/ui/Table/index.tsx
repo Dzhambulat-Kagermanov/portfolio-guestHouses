@@ -1,8 +1,8 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
 import { FC, ReactNode } from 'react'
 import { TTableItem } from '..'
-import cls from './Table.module.scss'
+import cls from './index.module.scss'
 
 export type TTableItemsGroup = [TTableItem, TTableItem]
 

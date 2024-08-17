@@ -1,8 +1,8 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Slider as SliderUi } from '@/shared/ui/Slider/Slider'
+import { IClassName } from '@/shared/types'
+import { Slider as SliderUi } from '@/shared/ui'
 import { FC } from 'react'
-import cls from './Slider.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	images: string[]

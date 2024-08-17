@@ -1,17 +1,15 @@
 'use client'
 import { TBookingForm, useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { TService } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
-import { Typography } from '@/shared/ui/Typography/Typography'
-import { ValidationCheckbox } from '@/shared/ui/ValidationCheckbox'
+import { IClassName, TService } from '@/shared/types'
+import { Typography, ValidationCheckbox } from '@/shared/ui'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FC, ReactNode, useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { validateSchema } from '../model/validateSchema'
-import cls from './BookingFormElement.module.scss'
-import Content from './Content/Content'
-import Head from './Head/Head'
+import Content from './Content'
+import Head from './Head'
+import cls from './index.module.scss'
 
 interface Props extends IClassName, Pick<TBookingForm, 'title'> {
 	dropDownServices: TService[]

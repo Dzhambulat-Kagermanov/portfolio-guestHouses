@@ -1,2 +1,2 @@
 export { validateSchema } from './model/validateSchema'
-export { BookingFormElement } from './ui/BookingFormElement'
+export { BookingFormElement } from './ui'

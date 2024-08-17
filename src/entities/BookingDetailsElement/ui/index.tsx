@@ -1,7 +1,6 @@
 import { TBookingForm } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { IRoomsCardInfoData, TService } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName, IRoomsCardInfoData, TService } from '@/shared/types'
 import { FC, ReactNode } from 'react'
 import Content from './Content'
 import Footer from './Footer'

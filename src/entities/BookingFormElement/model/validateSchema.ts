@@ -10,7 +10,7 @@ import {
 	validatePhoneValidation,
 	validateSecondNameValidation,
 	validateServicesValidation,
-} from '@/shared/utils/validateMethods'
+} from '@/shared/utils'
 import * as yup from 'yup'
 
 export const validateSchema = yup.object().shape({

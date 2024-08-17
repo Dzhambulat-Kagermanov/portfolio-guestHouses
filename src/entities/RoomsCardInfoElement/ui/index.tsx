@@ -1,15 +1,12 @@
 import { cn } from '@/shared/lib'
-import { IRoomsCardAllData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
-import { Button } from '@/shared/ui/Button/Button'
-import { Container } from '@/shared/ui/Container/Container'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName, IRoomsCardAllData } from '@/shared/types'
+import { Container, Typography } from '@/shared/ui'
 import { PageLogoTitle } from '@/widgets/PageLogoTitle'
 import { FC, ReactNode } from 'react'
-import Content from './Content/Content'
+import Content from './Content'
 import cls from './index.module.scss'
-import Slider from './Slider/Slider'
-import Table from './Table/Table'
+import Slider from './Slider'
+import Table from './Table'
 
 export type TTableItem = { title: ReactNode; items: ReactNode[] }
 export interface IRoomsCardInfoProps

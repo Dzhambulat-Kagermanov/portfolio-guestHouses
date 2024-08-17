@@ -1,11 +1,10 @@
 import { User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
-import { IRoomsCardData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName, IRoomsCardData } from '@/shared/types'
+import { Typography } from '@/shared/ui'
 import Image from 'next/image'
 import { FC } from 'react'
-import cls from './Head.module.scss'
+import cls from './index.module.scss'
 
 interface Props
 	extends IClassName,

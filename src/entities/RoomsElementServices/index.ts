@@ -1,1 +1,1 @@
-export { RoomsElementServices } from './ui/RoomsElementServices'
+export { RoomsElementServices } from './ui'

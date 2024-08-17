@@ -1,12 +1,9 @@
 'use client'
 import { cn } from '@/shared/lib'
-import { IRoomsCardInfoData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
-import { Button } from '@/shared/ui/Button/Button'
-import { Slider } from '@/shared/ui/Slider/Slider'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName, IRoomsCardInfoData } from '@/shared/types'
+import { Button, Slider, Typography } from '@/shared/ui'
 import { FC, ReactNode, useState } from 'react'
-import cls from './Content.module.scss'
+import cls from './index.module.scss'
 
 interface Props
 	extends IClassName,

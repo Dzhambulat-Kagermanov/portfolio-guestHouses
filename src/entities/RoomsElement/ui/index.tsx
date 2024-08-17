@@ -1,10 +1,9 @@
 import { cn } from '@/shared/lib'
-import { IRoomsCardAllData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName, IRoomsCardAllData } from '@/shared/types'
 import { FC, ReactNode } from 'react'
-import Content from './Content/Content'
-import Head from './Head/Head'
-import cls from './RoomsElement.module.scss'
+import Content from './Content'
+import Head from './Head'
+import cls from './index.module.scss'
 
 export interface IRoomsElementProps
 	extends IClassName,

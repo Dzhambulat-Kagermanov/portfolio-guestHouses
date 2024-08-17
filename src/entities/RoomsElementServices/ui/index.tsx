@@ -1,9 +1,8 @@
 import { cn } from '@/shared/lib'
-import { TService } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName, TService } from '@/shared/types'
+import { Typography } from '@/shared/ui'
 import { FC, ReactNode } from 'react'
-import cls from './RoomsElementServices.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	service: TService
