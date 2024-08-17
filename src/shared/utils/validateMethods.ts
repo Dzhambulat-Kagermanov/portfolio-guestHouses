@@ -1,5 +1,5 @@
-import { dateFormatter } from '@/shared/lib'
 import { date, mail, name, phone } from '@/shared/utils/regexps'
+import moment from 'moment'
 import * as yup from 'yup'
 
 export const validateDateInValidation = yup
@@ -12,7 +12,7 @@ export const validateDateInValidation = yup
 		test: val => {
 			let res = true
 			const splitVal = val.split('-')
-			const nowDate = dateFormatter({ nowDate: true, format: 'YMD' }).split('.')
+			const nowDate = moment().format('YYYY.MM.DD').split('.')
 
 			for (let i = 0; i < splitVal.length; i++) {
 				const date = +splitVal[i].replace(/(?<=^|-)0+/, '')
@@ -67,7 +67,7 @@ export const validateDateOutValidation = yup
 		test: val => {
 			let res = true
 			const splitVal = val.split('-')
-			const nowDate = dateFormatter({ nowDate: true, format: 'YMD' }).split('.')
+			const nowDate = moment().format('YYYY.MM.DD').split('.')
 
 			for (let i = 0; i < splitVal.length; i++) {
 				const date = +splitVal[i].replace(/(?<=^|-)0+/, '')

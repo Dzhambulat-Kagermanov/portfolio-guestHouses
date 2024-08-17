@@ -1,13 +1,13 @@
 'use client'
 import { Calendar, User } from '@/shared/icons'
-import { dateFormatter } from '@/shared/lib'
 import { cn } from '@/shared/lib/cn/cn'
 import { IClassName } from '@/shared/types/shared'
 import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
 import { Input } from '@/shared/ui/Input/Input'
 import { Typography } from '@/shared/ui/Typography/Typography'
-import { FC, useState } from 'react'
+import moment from 'moment'
+import { FC } from 'react'
 import cls from './HomeForm.module.scss'
 
 interface Props extends IClassName {
@@ -21,7 +21,7 @@ const HomeForm: FC<Props> = ({ className }) => {
 					min={'2024-01-01'}
 					max={'2025-12-31'}
 					type='date'
-					placeholder={dateFormatter({ nowDate: true })}
+					placeholder={moment().format('DD.MM.YYYY')}
 					label='Дата въезда'
 					error='test'
 					name='home-arrival-date'
@@ -32,7 +32,7 @@ const HomeForm: FC<Props> = ({ className }) => {
 				/>
 				<Input
 					type='date'
-					placeholder={dateFormatter({ nowDate: true })}
+					placeholder={moment().add(1, 'd').format('DD.MM.YYYY')}
 					label='Дата выезда'
 					error='test'
 					name='home-date-departure'

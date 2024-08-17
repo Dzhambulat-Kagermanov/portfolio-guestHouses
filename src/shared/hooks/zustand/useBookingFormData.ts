@@ -1,5 +1,5 @@
-import { dateFormatter } from '@/shared/lib'
 import { TService } from '@/shared/types'
+import moment from 'moment'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -58,34 +58,13 @@ export const useBookingFormData = create<IUseBookingFormData & TBookingForm>()(
 					title: undefined,
 				})),
 			getNightsQnt: () => {
-				if (get().dateIn && get().dateOut) {
-					const splitDateIn = get().dateIn?.split('-')
-					const splitDateOut = get().dateOut?.split('-')
+				const dateIn = get().dateIn
+				const dateOut = get().dateOut
+				if (dateIn && dateOut) {
+					const secondsDateIn = moment(dateIn, 'YYYY-MM-DD')
+					const secondsDateOut = moment(dateOut, 'YYYY-MM-DD')
 
-					const secondsDateIn = Date.parse(
-						dateFormatter({
-							// @ts-ignore
-							day: splitDateIn[0],
-							// @ts-ignore
-							month: splitDateIn[1],
-							// @ts-ignore
-							year: splitDateIn[2],
-							format: 'YMD',
-						})
-					)
-					const secondsDateOut = Date.parse(
-						dateFormatter({
-							// @ts-ignore
-							day: splitDateOut[0],
-							// @ts-ignore
-							month: splitDateOut[1],
-							// @ts-ignore
-							year: splitDateOut[2],
-							format: 'YMD',
-						})
-					)
-
-					return new Date((secondsDateOut - secondsDateIn) * 1000).getDate() - 1
+					return (secondsDateOut.unix() - secondsDateIn.unix()) / 60 / 60 / 24
 				}
 				return NaN
 			},
