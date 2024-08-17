@@ -4,7 +4,7 @@ import { IClassName } from '@/shared/types/shared'
 import { Input } from '@/shared/ui/Input'
 import { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
-import cls from './Head.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const Head: FC<Props> = ({ className }) => {

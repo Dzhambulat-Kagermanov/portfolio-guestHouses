@@ -4,7 +4,7 @@ import { IClassName, TService } from '@/shared/types'
 import { Input, Textarea, Typography, ValidationDropDown } from '@/shared/ui'
 import { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
-import cls from './Content.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	dropDownServices: TService[]
