@@ -1,7 +1,7 @@
 import { BookingFormCompletion } from '@/features/BookingFormCompletion'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Container } from '@/shared/ui/Container/Container'
+import { IClassName } from '@/shared/types'
+import { Container } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
 

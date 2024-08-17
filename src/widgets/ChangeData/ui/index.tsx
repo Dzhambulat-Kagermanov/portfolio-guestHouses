@@ -1,9 +1,7 @@
 import { Calendar, CalendarIn, CalendarOut, User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Button } from '@/shared/ui/Button/Button'
-import { Container } from '@/shared/ui/Container/Container'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName } from '@/shared/types'
+import { Button, Container, Typography } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
 

@@ -1,5 +1,5 @@
+import { Dropdown, IDropDownProps } from '@/shared/ui'
 import { FC, forwardRef, ReactNode, useState } from 'react'
-import { Dropdown, IDropDownProps } from '../Dropdown/Dropdown'
 
 interface Props extends IDropDownProps {
 	setValidationValue: (name: string, param: any) => void

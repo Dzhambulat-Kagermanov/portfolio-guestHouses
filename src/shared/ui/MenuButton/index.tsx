@@ -1,8 +1,8 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
+import { Button } from '@/shared/ui'
 import { ButtonHTMLAttributes, FC } from 'react'
-import { Button } from '../Button/Button'
-import cls from './MenuButton.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName, ButtonHTMLAttributes<HTMLButtonElement> {}
 const MenuButton: FC<Props> = ({ className, ...other }) => {

@@ -1,8 +1,7 @@
 import { BookingFormSaveDataOnSubmit } from '@/features/BookingFormSaveDataOnSubmit'
 import { cn } from '@/shared/lib'
-import { IRoomsCardAllData } from '@/shared/types'
-import { IClassName } from '@/shared/types/shared'
-import { Container } from '@/shared/ui/Container/Container'
+import { IClassName, IRoomsCardAllData } from '@/shared/types'
+import { Container } from '@/shared/ui/'
 import { FC } from 'react'
 import cls from './index.module.scss'
 

@@ -1,6 +1,6 @@
 import { getAboutGalleries } from '@/shared/api'
 import { cn } from '@/shared/lib'
-import { IClassName, ITag } from '@/shared/types/shared'
+import { IClassName, ITag } from '@/shared/types'
 import { GalleryItem } from '@/widgets/GalleryItem'
 import { FC } from 'react'
 import cls from './index.module.scss'

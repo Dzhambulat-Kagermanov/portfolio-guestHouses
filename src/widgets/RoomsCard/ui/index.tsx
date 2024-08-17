@@ -1,7 +1,6 @@
 import { RoomsElementAddService } from '@/features/RoomsElementAddService'
 import { cn } from '@/shared/lib'
-import { IRoomsCardAllData } from '@/shared/types'
-import { IClassName, ITag } from '@/shared/types/shared'
+import { IClassName, IRoomsCardAllData, ITag } from '@/shared/types'
 import React, { FC } from 'react'
 import cls from './index.module.scss'
 

@@ -1,9 +1,9 @@
 import { CalendarIn, CalendarOut, User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types/shared'
-import { Input } from '@/shared/ui/Input/Input'
+import { Input } from '@/shared/ui/Input'
 import { FC } from 'react'
-import { useForm, useFormContext } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import cls from './Head.module.scss'
 
 interface Props extends IClassName {}

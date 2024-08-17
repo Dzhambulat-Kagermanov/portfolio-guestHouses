@@ -1,10 +1,8 @@
 'use client'
 import { TModalState, useModal } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { ActiveLink } from '@/shared/ui/ActiveLink/ActiveLink'
-import { Container } from '@/shared/ui/Container/Container'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName } from '@/shared/types'
+import { ActiveLink, Container, Typography } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
 

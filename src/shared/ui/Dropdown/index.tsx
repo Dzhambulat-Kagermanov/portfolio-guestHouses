@@ -1,11 +1,10 @@
 'use client'
 import { TriangleArrow } from '@/shared/icons'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
+import { Button, Typography } from '@/shared/ui'
 import { FC, ReactNode, useEffect, useState } from 'react'
-import { Button } from '../Button/Button'
-import { Typography } from '../Typography/Typography'
-import cls from './Dropdown.module.scss'
+import cls from './index.module.scss'
 
 export interface IDropDownProps extends IClassName {
 	items: string[]

@@ -1,6 +1,6 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName } from '@/shared/types'
+import { Typography } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
 

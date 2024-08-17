@@ -1,10 +1,8 @@
 'use client'
 import { type TModalState, useModal } from '@/shared/hooks'
-import { cn } from '@/shared/lib/cn/cn'
-import { IClassName } from '@/shared/types/shared'
-import { Container } from '@/shared/ui/Container/Container'
-import { Logo } from '@/shared/ui/Logo/Logo'
-import { MenuButton } from '@/shared/ui/MenuButton/MenuButton'
+import { cn } from '@/shared/lib'
+import { IClassName } from '@/shared/types'
+import { Container, Logo, MenuButton } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
 

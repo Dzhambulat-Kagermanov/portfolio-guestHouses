@@ -1,8 +1,8 @@
-import { cn } from '@/shared/lib/cn/cn'
-import { IClassName } from '@/shared/types/shared'
+import { cn } from '@/shared/lib/'
+import { IClassName } from '@/shared/types'
+import { Typography } from '@/shared/ui'
 import { FC } from 'react'
-import { Typography } from '../Typography/Typography'
-import cls from './Logo.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const Logo: FC<Props> = ({ className }) => {

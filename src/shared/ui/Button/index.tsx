@@ -1,7 +1,7 @@
-import { cn } from '@/shared/lib/cn/cn'
-import { IClassName } from '@/shared/types/shared'
+import { cn } from '@/shared/lib'
+import { IClassName } from '@/shared/types'
 import { ButtonHTMLAttributes, FC } from 'react'
-import cls from './Button.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName, ButtonHTMLAttributes<HTMLButtonElement> {
 	theme?: 'clear' | 'fill' | 'outlined'

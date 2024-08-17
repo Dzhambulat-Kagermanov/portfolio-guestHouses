@@ -1,11 +1,11 @@
 'use client'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
 import { FC, ReactNode } from 'react'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { SwiperOptions } from 'swiper/types'
-import cls from './Slider.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName, SwiperOptions {
 	items: ReactNode[]

@@ -1,6 +1,6 @@
 'use client'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
 import {
 	FC,
 	forwardRef,
@@ -9,7 +9,7 @@ import {
 	useEffect,
 	useState,
 } from 'react'
-import cls from './Checkbox.module.scss'
+import cls from './index.module.scss'
 
 export interface ICheckboxProps
 	extends IClassName,
@@ -45,4 +45,4 @@ const Checkbox: FC<ICheckboxProps> = forwardRef(
 
 Checkbox.displayName = 'Checkbox'
 
-export default Checkbox
+export { Checkbox }

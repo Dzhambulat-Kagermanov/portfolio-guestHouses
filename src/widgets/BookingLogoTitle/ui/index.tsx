@@ -1,6 +1,6 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Container } from '@/shared/ui/Container/Container'
+import { IClassName } from '@/shared/types'
+import { Container } from '@/shared/ui'
 import { PageLogoTitle } from '@/widgets/PageLogoTitle'
 import { FC } from 'react'
 import cls from './index.module.scss'

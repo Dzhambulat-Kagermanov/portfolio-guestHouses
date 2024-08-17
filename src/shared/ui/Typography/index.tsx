@@ -1,7 +1,7 @@
-import { cn } from '@/shared/lib/cn/cn'
-import { IChildren, IClassName, ITag } from '@/shared/types/shared'
+import { cn } from '@/shared/lib'
+import { IChildren, IClassName, ITag } from '@/shared/types'
 import { FC } from 'react'
-import cls from './Typography.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends IClassName, IChildren, ITag {
 	weight: 'R' | 'M' | 'SB' | 'B' | 'EB'

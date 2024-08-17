@@ -1,6 +1,6 @@
 'use client'
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
+import { IClassName } from '@/shared/types'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { AnchorHTMLAttributes, FC } from 'react'

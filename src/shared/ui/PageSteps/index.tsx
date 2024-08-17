@@ -1,11 +1,10 @@
 'use client'
 import { cn, pathValidating } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Container } from '@/shared/ui/Container/Container'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { IClassName } from '@/shared/types'
+import { Container, Typography } from '@/shared/ui'
 import { usePathname } from 'next/navigation'
 import { FC, ReactNode } from 'react'
-import cls from './PageSteps.module.scss'
+import cls from './index.module.scss'
 
 type TActivePathProps = string[] | string
 interface Props extends IClassName {

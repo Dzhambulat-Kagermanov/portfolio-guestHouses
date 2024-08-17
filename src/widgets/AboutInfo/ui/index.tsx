@@ -1,7 +1,6 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types/shared'
-import { Container } from '@/shared/ui/Container/Container'
-import { Paragraph } from '@/shared/ui/Paragraph/Paragraph'
+import { IClassName } from '@/shared/types'
+import { Container, Paragraph } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
 

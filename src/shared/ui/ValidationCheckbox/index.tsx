@@ -1,5 +1,5 @@
+import { Checkbox, ICheckboxProps } from '@/shared/ui'
 import { FC, forwardRef, ReactNode, useState } from 'react'
-import Checkbox, { ICheckboxProps } from '../Checkbox/Checkbox'
 
 interface Props extends ICheckboxProps {
 	setValidationValue: (name: string, param: any) => void
