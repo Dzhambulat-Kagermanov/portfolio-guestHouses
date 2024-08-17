@@ -26,7 +26,13 @@ const GalleryItem: FC<Props> = ({ photos, title, className }) => {
 			</Typography>
 			<Slider
 				items={photos.map((el, index) => (
-					<Image width={180} height={180} alt={`${title}-${index}`} src={el} />
+					<Image
+						width={180}
+						height={180}
+						alt={`${title}-${index}`}
+						src={el}
+						key={index}
+					/>
 				))}
 				loop
 				slidesPerView={'auto'}
