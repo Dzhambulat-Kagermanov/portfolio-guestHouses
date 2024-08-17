@@ -1,3 +1,4 @@
+'use client'
 import { Checkbox, ICheckboxProps } from '@/shared/ui'
 import { FC, forwardRef, ReactNode, useState } from 'react'
 

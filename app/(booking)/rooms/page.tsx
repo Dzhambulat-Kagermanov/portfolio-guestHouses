@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { FC } from 'react'
 
 export const metadata: Metadata = {
-	title: 'Guest House | Номера',
+	title: 'Номера',
 }
 
 const Rooms: FC = () => {

@@ -1,3 +1,4 @@
+'use client'
 import { Dropdown, IDropDownProps } from '@/shared/ui'
 import { FC, forwardRef, ReactNode, useState } from 'react'
 

@@ -3,7 +3,7 @@ import '@/app/styles/index.scss'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-	title: 'Guest House | Главная',
+	title: { default: 'Guest House', template: '%s | Guest House' },
 }
 
 export default function RootLayout({
