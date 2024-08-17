@@ -266,5 +266,37 @@
 			"title": "Новый год",
 			"description": "Новый год-это самый добрый и светлый праздник. Он нам дарит прекрасную сказку и наполняет душу надеждой и теплом. Практически для любого человека этот знаменательный день характеризуется определенными признаками: ⦁ идеально сервированный стол с наличием самых вкусных и разнообразных блюд; ⦁ сказочно-неземная атмосфера, наполняющая сердца восторгом; ⦁ яркая сверкающая ёлочка-символ Нового года; ⦁ красочные фейерверки; ⦁ зимние холода."
 		}
+	],
+	"aboutGalleries": [
+		{
+			"id": 1,
+			"title": "Детская площадка",
+			"images": [
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png"
+			]
+		},
+		{
+			"id": 2,
+			"title": "Бассейн",
+			"images": [
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png"
+			]
+		},
+		{
+			"id": 3,
+			"title": "Кафе",
+			"images": [
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png",
+				"/images/Home/Rooms/item-1.png"
+			]
+		}
 	]
 }
