@@ -24,7 +24,7 @@ const Header: FC<Props> = ({ className }) => {
 					setBurgerMenuState('modal-burgerMenu')
 				}}
 			/>
-			<Logo className={cn(cls.logo)} />
+			<Logo className={cn(cls.logo)} link={{ href: '/' }} />
 		</Container>
 	)
 }
