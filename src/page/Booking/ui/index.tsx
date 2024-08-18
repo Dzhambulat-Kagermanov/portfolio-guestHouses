@@ -7,6 +7,7 @@ import { BookingLogoTitle } from '@/widgets/BookingLogoTitle'
 import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
+// import adaptive from './adaptive.module.scss'
 
 interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {}
 const Booking: FC<Props> = async ({ className, slug }) => {

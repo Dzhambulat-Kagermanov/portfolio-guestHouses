@@ -7,6 +7,7 @@ import { Typography } from '@/shared/ui'
 import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
+// import adaptive from './adaptive.module.scss'
 
 interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 	selectedService: string

@@ -4,6 +4,7 @@ import { IArticlesCardData, IClassName } from '@/shared/types'
 import { ArticlesList } from '@/widgets/ArticlesList'
 import { FC } from 'react'
 import cls from './index.module.scss'
+// import adaptive from './adaptive.module.scss'
 
 interface Props extends IClassName {}
 const Articles: FC<Props> = async ({ className }) => {

@@ -4,6 +4,7 @@ import { AboutGallery } from '@/widgets/AboutGallery'
 import { AboutInfo } from '@/widgets/AboutInfo'
 import { FC } from 'react'
 import cls from './index.module.scss'
+// import adaptive from './adaptive.module.scss'
 
 interface Props extends IClassName {}
 const About: FC<Props> = ({ className }) => {

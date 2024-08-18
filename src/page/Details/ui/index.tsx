@@ -3,6 +3,7 @@ import { IClassName } from '@/shared/types'
 import { BookingFormDetails } from '@/widgets/BookingFormDetails'
 import { FC } from 'react'
 import cls from './index.module.scss'
+// import adaptive from './adaptive.module.scss'
 
 interface Props extends IClassName {}
 const Details: FC<Props> = ({ className }) => {
