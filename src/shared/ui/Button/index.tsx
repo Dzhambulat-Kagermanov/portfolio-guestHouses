@@ -11,12 +11,14 @@ const Button: FC<Props> = ({
 	className,
 	children,
 	theme,
+	type,
 	circle,
 	...other
 }) => {
 	return (
 		<button
 			{...other}
+			type={type || 'button'}
 			className={cn(cls.button, [cls[theme || 'fill'], className], {
 				[cls.circle]: circle,
 			})}

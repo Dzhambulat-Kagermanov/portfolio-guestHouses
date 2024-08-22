@@ -1,5 +1,5 @@
 'use client'
-import { useHomeFormData } from '@/shared/hooks'
+import { useHomeFormData, useModal } from '@/shared/hooks'
 import { Calendar, CalendarIn, CalendarOut, User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
@@ -9,7 +9,8 @@ import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const ChangeData: FC<Props> = ({ className }) => {
-	console.log(useHomeFormData(state => state))
+	const nightsQnt = useHomeFormData(state => state.getNightsQnt)()
+	const setRoomsDataChangeModalState = useModal(state => state.toggleModalState)
 
 	return (
 		<Container
@@ -20,7 +21,7 @@ const ChangeData: FC<Props> = ({ className }) => {
 				<li className={cn(cls.item)}>
 					<Calendar color='white' />
 					<Typography weight='SB' className={cn(cls.itemText)}>
-						{useHomeFormData(state => state.getNightsQnt)()}
+						{nightsQnt}
 					</Typography>
 				</li>
 				<li className={cn(cls.item)}>
@@ -42,7 +43,13 @@ const ChangeData: FC<Props> = ({ className }) => {
 					</Typography>
 				</li>
 			</ul>
-			<Button theme='outlined' className={cn(cls.button)}>
+			<Button
+				theme='outlined'
+				className={cn(cls.button)}
+				onClick={() => {
+					setRoomsDataChangeModalState('rooms-changeData')
+				}}
+			>
 				<Typography weight='SB'>Изменить даты и гостей</Typography>
 			</Button>
 		</Container>
