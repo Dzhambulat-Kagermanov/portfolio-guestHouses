@@ -28,7 +28,7 @@ const Content: FC<Props> = ({ conditions, description, className }) => {
 							tag='strong'
 							className={cn(cls.itemTitle)}
 						>
-							{title}
+							{title}:{'\u00A0'}
 						</Typography>
 						{description}
 					</>

@@ -19,7 +19,8 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 	const TABLE_DATA: TTableItemsGroup = [
 		{
 			title: <Typography weight='SB'>Сервис</Typography>,
-			items: card?.services.map(({ title }, index) => {
+			// @ts-ignore
+			items: card.services.map(({ title }, index) => {
 				return (
 					<Typography key={index} weight='SB'>
 						{title}
@@ -29,7 +30,8 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 		},
 		{
 			title: <Typography weight='SB'>Цены</Typography>,
-			items: card?.services.map(({ price }, index) => {
+			// @ts-ignore
+			items: card.services.map(({ price }, index) => {
 				return (
 					<Typography key={index} weight='SB'>
 						{price.withoutTaxes}
@@ -46,9 +48,13 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 				selectedService={selectedService}
 				tableData={TABLE_DATA}
 				className={cn(cls.cardInfo)}
+				// @ts-ignore
 				conditions={card.conditions}
+				// @ts-ignore
 				description={card.description}
+				// @ts-ignore
 				roomImages={card.roomImages}
+				// @ts-ignore
 				title={card.title}
 			/>
 		</div>
