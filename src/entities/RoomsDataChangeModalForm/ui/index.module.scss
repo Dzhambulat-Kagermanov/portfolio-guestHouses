@@ -1,0 +1,23 @@
+.form {
+	display: flex;
+	flex-flow: wrap column;
+	row-gap: 20px;
+}
+.inputWrapper {
+	& > h2 {
+		font-size: 18px;
+		color: white;
+	}
+}
+.inputContent {
+	background-color: transparent;
+	border-width: 2px;
+}
+.input {
+	color: white;
+}
+.submitBtn {
+	color: white;
+	margin: 10px auto 0 auto;
+	height: 40px;
+}

@@ -1,6 +1,6 @@
 'use client'
 import { useHomeFormData, useModal } from '@/shared/hooks'
-import { CalendarIn, CalendarOut, Close, User } from '@/shared/icons'
+import { CalendarIn, CalendarOut, User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Button, Input, Typography } from '@/shared/ui'
@@ -38,19 +38,8 @@ const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
 
 	return (
 		<form className={cn(cls.form)}>
-			<Button
-				theme='clear'
-				circle
-				onClick={() => {
-					setRoomsChangeDataModalState('rooms-changeData')
-				}}
-			>
-				<Close color='white' />
-			</Button>
-			<Typography tag='h2' weight='B' className={cn(cls.title)}>
-				Изменить дату и кол-во гостей
-			</Typography>
 			<Input
+				label='Дата въезда'
 				icon={<CalendarIn color='var(--grey-light-100)' />}
 				type='date'
 				{...register('rooms-dateIn', {
@@ -58,10 +47,13 @@ const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
 						trigger('rooms-dateOut')
 					},
 				})}
-				className={cn(cls.input)}
+				className={cn(cls.inputWrapper)}
+				contentClass={cn(cls.inputContent)}
+				inputClass={cn(cls.input)}
 				error={errors['rooms-dateIn']?.message}
 			/>
 			<Input
+				label='Дата выезда'
 				icon={<CalendarOut color='var(--grey-light-100)' />}
 				type='date'
 				{...register('rooms-dateOut', {
@@ -69,17 +61,23 @@ const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
 						trigger('rooms-dateIn')
 					},
 				})}
-				className={cn(cls.input)}
+				className={cn(cls.inputWrapper)}
+				contentClass={cn(cls.inputContent)}
+				inputClass={cn(cls.input)}
 				error={errors['rooms-dateOut']?.message}
 			/>
 			<Input
+				label='Кол-во гостей'
 				icon={<User color='var(--grey-light-100)' />}
 				{...register('rooms-guests')}
-				className={cn(cls.input)}
+				className={cn(cls.inputWrapper)}
+				contentClass={cn(cls.inputContent)}
+				inputClass={cn(cls.input)}
 				error={errors['rooms-guests']?.message}
 			/>
+			{/*  @ts-ignore  */}
 			<Button className={cn(cls.submitBtn)} onClick={handleSubmit(onSubmit)}>
-				<Typography weight='M'>Подтвердить</Typography>
+				<Typography weight='M'>Изменить</Typography>
 			</Button>
 		</form>
 	)
