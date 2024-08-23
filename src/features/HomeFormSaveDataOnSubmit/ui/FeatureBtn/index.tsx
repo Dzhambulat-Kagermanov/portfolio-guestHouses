@@ -22,7 +22,7 @@ const FeatureBtn: FC<Props> = ({ className }) => {
 	}
 	return (
 		<Button
-			type='button'
+			type='submit'
 			className={cn(cls.btn, [className])}
 			onClick={formContext && formContext.handleSubmit(onSubmit)}
 		>

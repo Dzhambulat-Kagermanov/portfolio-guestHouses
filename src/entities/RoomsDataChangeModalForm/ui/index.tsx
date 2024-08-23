@@ -40,7 +40,7 @@ const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
 		<form className={cn(cls.form)}>
 			<Input
 				label='Дата въезда'
-				icon={<CalendarIn color='var(--grey-light-100)' />}
+				icon={<CalendarIn color='white' />}
 				type='date'
 				{...register('rooms-dateIn', {
 					onChange: () => {
@@ -54,7 +54,7 @@ const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
 			/>
 			<Input
 				label='Дата выезда'
-				icon={<CalendarOut color='var(--grey-light-100)' />}
+				icon={<CalendarOut color='white' />}
 				type='date'
 				{...register('rooms-dateOut', {
 					onChange: () => {
@@ -68,15 +68,19 @@ const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
 			/>
 			<Input
 				label='Кол-во гостей'
-				icon={<User color='var(--grey-light-100)' />}
+				icon={<User color='white' />}
 				{...register('rooms-guests')}
 				className={cn(cls.inputWrapper)}
 				contentClass={cn(cls.inputContent)}
 				inputClass={cn(cls.input)}
 				error={errors['rooms-guests']?.message}
 			/>
-			{/*  @ts-ignore  */}
-			<Button className={cn(cls.submitBtn)} onClick={handleSubmit(onSubmit)}>
+			<Button
+				className={cn(cls.submitBtn)}
+				type='submit'
+				//@ts-ignore
+				onClick={handleSubmit(onSubmit)}
+			>
 				<Typography weight='M'>Изменить</Typography>
 			</Button>
 		</form>
