@@ -1,9 +1,5 @@
-.modal {
-	padding-top: 25px;
-	padding-bottom: 25px;
-}
 .container {
-	overflow: scroll;
+	overflow: auto;
 	position: fixed;
 	transform: translateX(100%);
 	top: 0;
@@ -15,6 +11,10 @@
 		transform: translateX(0%);
 		z-index: var(--z-roomsChangeDataModal);
 	}
+}
+.modal {
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 .closeBtn {
 	position: sticky;
