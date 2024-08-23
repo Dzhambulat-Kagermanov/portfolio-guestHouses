@@ -6,11 +6,13 @@ import { FC } from 'react'
 import cls from './index.module.scss'
 // import adaptive from './adaptive.module.scss'
 
-interface Props extends IClassName {}
-const Rooms: FC<Props> = ({ className }) => {
+interface Props extends IClassName {
+	isFilter?: boolean
+}
+const Rooms: FC<Props> = ({ className, isFilter }) => {
 	return (
 		<div className={cn(cls.rooms, [className])}>
-			<RoomsList />
+			<RoomsList isFilter={isFilter} />
 			<RoomsInfo />
 		</div>
 	)

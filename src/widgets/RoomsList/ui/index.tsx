@@ -1,49 +1,16 @@
 import { getCards } from '@/shared/api'
-import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
-import { Container } from '@/shared/ui'
-import { RoomsCard } from '@/widgets/RoomsCard'
 import { FC } from 'react'
-import cls from './index.module.scss'
+import Content from './Content'
 
-interface Props {}
-const RoomsList: FC<Props & IClassName> = async ({ className }) => {
-	const roomsCard = await getCards()
+interface Props {
+	isFilter?: boolean
+}
+const RoomsList: FC<Props & IClassName> = async ({ className, isFilter }) => {
+	const roomsData = (await getCards()).data
+
 	return (
-		<Container
-			containerClass={cn(cls.container)}
-			innerClass={cn(cls.list, [className])}
-		>
-			<ul className={cls.roomsData}>
-				{roomsCard.data.map(
-					(
-						{
-							availableRooms,
-							previewDescription,
-							maxGuests,
-							previewImg,
-							services,
-							title,
-							slug,
-						},
-						index
-					) => (
-						<RoomsCard
-							tag='li'
-							previewDescription={previewDescription}
-							availableRooms={availableRooms}
-							maxGuests={maxGuests}
-							previewImg={previewImg}
-							services={services}
-							slug={slug}
-							title={title}
-							className={cn(cls.item)}
-							key={index}
-						/>
-					)
-				)}
-			</ul>
-		</Container>
+		<Content roomsData={roomsData} className={className} isFilter={isFilter} />
 	)
 }
 

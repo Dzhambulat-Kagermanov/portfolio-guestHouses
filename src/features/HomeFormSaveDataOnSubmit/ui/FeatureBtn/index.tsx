@@ -15,8 +15,6 @@ const FeatureBtn: FC<Props> = ({ className }) => {
 	const router = useRouter()
 
 	const onSubmit = (data: typeof validateSchema.fields) => {
-		console.log(data)
-
 		setValue('dateIn', data['home-dateIn'])
 		setValue('dateOut', data['home-dateOut'])
 		setValue('guests', data['home-guests'])

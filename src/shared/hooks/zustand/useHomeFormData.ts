@@ -44,6 +44,7 @@ export const useHomeFormData = create<Props & IHomeFormInputs>()(
 						([key]) => !['formContext'].includes(key)
 					)
 				),
+			skipHydration: true,
 		}
 	)
 )

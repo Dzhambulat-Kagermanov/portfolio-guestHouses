@@ -12,3 +12,12 @@
 .head {
 	position: relative;
 }
+.notFoundTitle {
+	text-align: center;
+	color: var(--grey);
+	font-size: 20px;
+	min-height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

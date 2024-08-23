@@ -4,13 +4,17 @@ import { Calendar, CalendarIn, CalendarOut, User } from '@/shared/icons'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Button, Container, Typography } from '@/shared/ui'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const ChangeData: FC<Props> = ({ className }) => {
 	const nightsQnt = useHomeFormData(state => state.getNightsQnt)()
 	const setRoomsDataChangeModalState = useModal(state => state.toggleModalState)
+
+	useEffect(() => {
+		useHomeFormData.persist.rehydrate()
+	}, [])
 
 	return (
 		<Container

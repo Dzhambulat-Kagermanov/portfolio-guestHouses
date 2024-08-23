@@ -8,12 +8,13 @@ export const metadata: Metadata = {
 	title: 'Номера',
 }
 
-const Rooms: FC = () => {
+const Rooms: FC = props => {
 	return (
 		<>
 			<ChangeData />
 			<RoomsDataChangeModal />
-			<RoomsPage />
+			{/* @ts-ignore */}
+			<RoomsPage isFilter={JSON.parse(props.searchParams.filter || 'false')} />
 		</>
 	)
 }
