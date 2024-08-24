@@ -18,7 +18,7 @@ const FeatureBtn: FC<Props> = ({ className }) => {
 		setValue('dateIn', data['home-dateIn'])
 		setValue('dateOut', data['home-dateOut'])
 		setValue('guests', data['home-guests'])
-		router.push('/rooms')
+		router.push('/rooms?filter=true')
 	}
 	return (
 		<Button

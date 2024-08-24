@@ -5,6 +5,7 @@ import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Button, Input, Typography } from '@/shared/ui'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useRouter } from 'next/navigation'
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { validateSchema } from '../model/validateSchema'
@@ -12,6 +13,7 @@ import cls from './index.module.scss'
 
 interface Props extends IClassName {}
 const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
+	const router = useRouter()
 	const {
 		register,
 		formState: { errors },
@@ -34,10 +36,11 @@ const RoomsDataChangeModalForm: FC<Props> = ({ className }) => {
 		setHomeFormValue('dateOut', data['rooms-dateOut'])
 		setHomeFormValue('guests', data['rooms-guests'])
 		setRoomsChangeDataModalState('rooms-changeData')
+		router.push('/rooms?filter=true')
 	}
 
 	return (
-		<form className={cn(cls.form)}>
+		<form className={cn(cls.form, [className])}>
 			<Input
 				label='Дата въезда'
 				icon={<CalendarIn color='white' />}
