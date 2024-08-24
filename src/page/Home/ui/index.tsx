@@ -6,7 +6,7 @@ import { HomeReview } from '@/widgets/HomeReview'
 import { HomeRooms } from '@/widgets/HomeRooms'
 import { FC } from 'react'
 import cls from './index.module.scss'
-// import adaptive from './adaptive.module.scss'
+// import adt from './adaptive.module.scss'
 
 interface Props extends IClassName {}
 const Home: FC<Props> = ({ className }) => {

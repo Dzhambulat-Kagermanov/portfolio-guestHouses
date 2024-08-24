@@ -31,10 +31,10 @@ const ReviewCard: FC<Props> = ({
 				'--border-height': `${arrowHeight}px`,
 			}}
 		>
-			<Typography weight='M' className={cn(cls.review)}>
+			<Typography weight='M' tag='h2' className={cn(cls.review)}>
 				{review}
 			</Typography>
-			<Typography weight='SB' className={cn(cls.author)}>
+			<Typography weight='SB' tag='h3' className={cn(cls.author)}>
 				{author}
 			</Typography>
 		</div>

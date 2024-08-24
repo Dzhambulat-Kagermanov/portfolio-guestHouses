@@ -9,6 +9,7 @@ import { FC, ReactNode, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { validateSchema } from '../model/validateSchema'
 import cls from './index.module.scss'
+import adt from 'page/Home/ui/adaptive.module.scss'
 
 interface Props extends IClassName {
 	featureBtn: ReactNode
@@ -40,8 +41,8 @@ const HomeFormElement: FC<Props> = ({ className, featureBtn }) => {
 				type='date'
 				label='Дата въезда'
 				error={formMethods.formState.errors['home-dateIn']?.message}
-				className={cn(cls.inputWrapper)}
-				inputClass={cn(cls.input)}
+				className={cn(cls.inputWrapper, [adt.inputWrapper])}
+				inputClass={cn(cls.input, [adt.input])}
 				icon={<Calendar color='var(--grey-light-100)' />}
 				iconPos='right'
 			/>
@@ -54,8 +55,8 @@ const HomeFormElement: FC<Props> = ({ className, featureBtn }) => {
 				type='date'
 				label='Дата выезда'
 				error={formMethods.formState.errors['home-dateOut']?.message}
-				className={cn(cls.inputWrapper)}
-				inputClass={cn(cls.input)}
+				className={cn(cls.inputWrapper, [adt.inputWrapper])}
+				inputClass={cn(cls.input, [adt.input])}
 				icon={<Calendar color='var(--grey-light-100)' />}
 				iconPos='right'
 			/>
@@ -63,8 +64,8 @@ const HomeFormElement: FC<Props> = ({ className, featureBtn }) => {
 				{...formMethods.register('home-guests')}
 				label='Гости'
 				error={formMethods.formState.errors['home-guests']?.message}
-				className={cn(cls.inputWrapper)}
-				inputClass={cn(cls.input)}
+				className={cn(cls.inputWrapper, [adt.inputWrapper])}
+				inputClass={cn(cls.input, [adt.input])}
 				icon={<User color='var(--grey-light-100)' />}
 				iconPos='right'
 			/>

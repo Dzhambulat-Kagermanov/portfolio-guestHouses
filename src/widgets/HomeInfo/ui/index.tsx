@@ -3,28 +3,29 @@ import { IClassName } from '@/shared/types'
 import { Container, Paragraph, Typography } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
+import adt from 'page/Home/ui/adaptive.module.scss'
 
 interface Props extends IClassName {}
 const HomeInfo: FC<Props> = ({ className }) => {
 	return (
 		<Container
-			containerClass={cn(cls.container)}
-			innerClass={cn(cls.info, [className])}
+			containerClass={cn(cls.container, [adt.homeInfoContainer])}
+			innerClass={cn(cls.info, [className, adt.homeInfo])}
 		>
-			<Typography weight='SB' className={cn(cls.title)}>
+			<Typography weight='SB' className={cn(cls.title, [adt.title])}>
 				ГОСТЕВОЙ ДОМ
 				<br />
 				«Valentina Guest House» , Абхазия{' '}
 			</Typography>
 			<img
-				className={cn(cls.image)}
+				className={cn(cls.image, [adt.image])}
 				src='/images/Home/Info/director.png'
 				alt='Директор'
 			/>
 			<Paragraph
 				title='Валентина Васильевна - Директор'
-				className={cls.paragraphs}
-				paragraphsClass={cn(cls.paragraphItems)}
+				className={cn(cls.paragraphs, [adt.paragraphs])}
+				paragraphsClass={cn(cls.paragraphItems, [adt.paragraphItem])}
 				paragraphs={[
 					'Дорогие гости, Безопасность и комфорт гостей и персонала – это приоритет нашей работы.',
 					'Мы круглосуточно следим за тем, что Министерство здравоохранения Российской Федерации, Федеральная служба по надзору в сфере защиты прав потребителей и Всемирная организация здравоохранения сообщают о распространении нового типа коронавируса (COVID-19) и беспрекословно выполняем рекомендации этих организаций и местных органов здравоохранения.',

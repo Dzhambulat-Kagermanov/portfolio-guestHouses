@@ -12,6 +12,8 @@ export interface IRoomsElementProps
 			'services' | 'slug' | 'conditions' | 'roomImages' | 'description'
 		> {
 	services: ReactNode[]
+	roomsElementHeadClass?: string
+	roomsElementContentClass?: string
 }
 const RoomsElement: FC<IRoomsElementProps> = ({
 	className,
@@ -21,6 +23,8 @@ const RoomsElement: FC<IRoomsElementProps> = ({
 	services,
 	previewDescription,
 	title,
+	roomsElementHeadClass,
+	roomsElementContentClass,
 }) => {
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
@@ -28,12 +32,12 @@ const RoomsElement: FC<IRoomsElementProps> = ({
 				availableRooms={availableRooms}
 				maxGuests={maxGuests}
 				previewImg={previewImg}
-				className={cn(cls.head)}
+				className={cn(cls.head, [roomsElementHeadClass])}
 			/>
 			<Content
 				previewDescription={previewDescription}
 				services={services}
-				className={cn(cls.content)}
+				className={cn(cls.content, [roomsElementContentClass])}
 				title={title}
 			/>
 		</div>
