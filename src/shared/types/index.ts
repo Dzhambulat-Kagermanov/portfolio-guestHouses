@@ -7,3 +7,4 @@ export {
 	type TService,
 } from './roomsCard'
 export * from './shared'
+export { type IReviewsData } from './reviews'

@@ -6,39 +6,11 @@ import { ReviewCard } from '@/widgets/ReviewCard'
 import { FC } from 'react'
 import cls from './index.module.scss'
 import adt from 'page/Home/ui/adaptive.module.scss'
+import { getReviews } from '@/shared/api'
 
 interface Props extends IClassName {}
-const HomeReview: FC<Props> = ({ className }) => {
-	const items = [
-		<ReviewCard
-			key={1}
-			author='Json'
-			review='jwidjiwdjwdjiwjcom,w kdoqwkqd kqw'
-			arrowDirection='bottom'
-			className={cn(cls.reviewCard, [adt.card])}
-		/>,
-		<ReviewCard
-			key={2}
-			author='Json'
-			review='jwidjiwdjwdjiwjcom,w kdoqwkqd kqw'
-			arrowDirection='bottom'
-			className={cn(cls.reviewCard, [adt.card])}
-		/>,
-		<ReviewCard
-			key={3}
-			author='Json'
-			review='jwidjiwdjwdjiwjcom,w kdoqwkqd kqw'
-			arrowDirection='bottom'
-			className={cn(cls.reviewCard, [adt.card])}
-		/>,
-		<ReviewCard
-			key={4}
-			author='Json'
-			review='jwidjiwdjwdjiwjcom,w kdoqwkqd kqw'
-			arrowDirection='bottom'
-			className={cn(cls.reviewCard, [adt.card])}
-		/>,
-	]
+const HomeReview: FC<Props> = async ({ className }) => {
+	const reviews = (await getReviews()).data
 
 	return (
 		<Container
@@ -53,7 +25,15 @@ const HomeReview: FC<Props> = ({ className }) => {
 				slidesPerView={'auto'}
 				loop
 				spaceBetween={20}
-				items={items}
+				items={reviews.map(({ author, id, text }) => (
+					<ReviewCard
+						key={id}
+						author={author}
+						text={text}
+						arrowDirection='bottom'
+						className={cn(cls.reviewCard, [adt.card])}
+					/>
+				))}
 				className={cn(cls.slider, [adt.slider])}
 				slideClass={cn(cls.slide, [adt.slide])}
 				wrapperClass={cn(cls.sliderWrapper, [adt.sliderWrapper])}

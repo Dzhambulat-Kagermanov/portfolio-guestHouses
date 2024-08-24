@@ -1,12 +1,10 @@
 import { cn } from '@/shared/lib'
-import { IClassName } from '@/shared/types'
+import { IClassName, IReviewsData } from '@/shared/types'
 import { Typography } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
 
-interface Props extends IClassName {
-	review: string
-	author: string
+interface Props extends IClassName, Omit<IReviewsData, 'id'> {
 	arrowDirection?: 'top' | 'right' | 'bottom' | 'left'
 	color?: string
 	arrowWidth?: number
@@ -15,7 +13,7 @@ interface Props extends IClassName {
 const ReviewCard: FC<Props> = ({
 	author,
 	arrowDirection = 'bottom',
-	review,
+	text,
 	className,
 	arrowHeight = 10,
 	arrowWidth = 25,
@@ -32,7 +30,7 @@ const ReviewCard: FC<Props> = ({
 			}}
 		>
 			<Typography weight='M' tag='h2' className={cn(cls.review)}>
-				{review}
+				{text}
 			</Typography>
 			<Typography weight='SB' tag='h3' className={cn(cls.author)}>
 				{author}

@@ -73,8 +73,20 @@
 	text-align: center;
 	color: inherit;
 	font-size: 14px;
+	min-height: 123px;
+	max-height: 123px;
+	overflow: auto;
+	padding: 0 6px 0 0;
+	&::-webkit-scrollbar {
+		background-color: transparent;
+		width: 4px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--white);
+	}
 }
 .author {
+	margin: 10px 0 0 0;
 	text-align: center;
 	color: inherit;
 	font-size: 20px;
