@@ -6,6 +6,7 @@ import cls from './index.module.scss'
 interface Props extends IClassName, ButtonHTMLAttributes<HTMLButtonElement> {
 	theme?: 'clear' | 'fill' | 'outlined'
 	circle?: boolean
+	hover?: boolean
 }
 const Button: FC<Props> = ({
 	className,
@@ -13,6 +14,7 @@ const Button: FC<Props> = ({
 	theme,
 	type,
 	circle,
+	hover = true,
 	...other
 }) => {
 	return (
@@ -21,6 +23,7 @@ const Button: FC<Props> = ({
 			type={type || 'button'}
 			className={cn(cls.button, [cls[theme || 'fill'], className], {
 				[cls.circle]: circle,
+				[cls.hover]: hover,
 			})}
 		>
 			{children}
