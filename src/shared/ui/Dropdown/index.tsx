@@ -77,6 +77,7 @@ const Dropdown: FC<IDropDownProps> = ({
 				style={{ '--borderColor': borderColor || 'black' }}
 			>
 				<Button
+					hover={false}
 					type='button'
 					theme='outlined'
 					className={cn(cls.activeItem, [], { [cls.expand]: isExpand })}

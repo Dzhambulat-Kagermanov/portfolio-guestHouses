@@ -52,6 +52,18 @@ const FeatureBtn: FC<Props> = ({
 					validatePhoneValidation.validateSync(phone)
 					validateServicesValidation.validateSync(selectedService)
 					validatePatronymicValidation.validateSync(patronymic)
+					console.log({
+						email,
+						firstName,
+						secondName,
+						aboutMeInfo,
+						guests,
+						isPayLater,
+						phone,
+						selectedService,
+						patronymic,
+					})
+
 					reset()
 					setTimeout(() => {
 						router.replace('/rooms')

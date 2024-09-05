@@ -6,13 +6,28 @@ import { FC } from 'react'
 import cls from './index.module.scss'
 import Info from './Info'
 
-interface Props extends IClassName {}
-const Footer: FC<Props> = ({ className }) => {
+interface Props extends IClassName {
+	wrapperClassName?: string
+	containerClassName?: string
+	infoClassName?: string
+	infoGroupClassName?: string
+}
+const Footer: FC<Props> = ({
+	wrapperClassName,
+	className,
+	containerClassName,
+	infoClassName,
+	infoGroupClassName,
+}) => {
 	return (
-		<footer className={cn(className || '')}>
-			<Container containerClass={cn(cls.footerTop)} innerClass={cn(cls.inner)}>
+		<footer className={cn(wrapperClassName || '')}>
+			<Container
+				containerClass={cn(cls.footerTop, [containerClassName])}
+				innerClass={cn(cls.inner, [className])}
+			>
 				<Info
-					className={cn(cls.info)}
+					groupClassName={infoGroupClassName}
+					className={cn(cls.info, [infoClassName])}
 					title='Контакты'
 					items={[
 						'8 (862) 279-56-89',
@@ -22,7 +37,8 @@ const Footer: FC<Props> = ({ className }) => {
 					]}
 				/>
 				<Info
-					className={cn(cls.info)}
+					groupClassName={infoGroupClassName}
+					className={cn(cls.info, [infoClassName])}
 					title='Информация'
 					items={[
 						'Заезд: с 16:00',

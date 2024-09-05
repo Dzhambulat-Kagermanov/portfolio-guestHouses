@@ -11,6 +11,15 @@ import { getReviews } from '@/shared/api'
 interface Props extends IClassName {}
 const HomeReview: FC<Props> = async ({ className }) => {
 	const reviews = (await getReviews()).data
+	const reviewsItems = reviews.map(({ author, id, text }) => (
+		<ReviewCard
+			key={id}
+			author={author}
+			text={text}
+			arrowDirection='bottom'
+			className={cn(cls.reviewCard, [adt.card])}
+		/>
+	))
 
 	return (
 		<Container
@@ -24,16 +33,17 @@ const HomeReview: FC<Props> = async ({ className }) => {
 				loopAdditionalSlides={1}
 				slidesPerView={'auto'}
 				loop
+				centeredSlides
 				spaceBetween={20}
-				items={reviews.map(({ author, id, text }) => (
-					<ReviewCard
-						key={id}
-						author={author}
-						text={text}
-						arrowDirection='bottom'
-						className={cn(cls.reviewCard, [adt.card])}
-					/>
-				))}
+				items={[...reviewsItems, ...reviewsItems]}
+				breakpoints={{
+					901: {
+						slidesPerView: 2,
+					},
+					0: {
+						slidesPerView: 'auto',
+					},
+				}}
 				className={cn(cls.slider, [adt.slider])}
 				slideClass={cn(cls.slide, [adt.slide])}
 				wrapperClass={cn(cls.sliderWrapper, [adt.sliderWrapper])}

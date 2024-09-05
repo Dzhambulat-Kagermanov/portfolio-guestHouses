@@ -22,6 +22,7 @@ const Head: FC<Props> = ({ className }) => {
 						trigger('booking-dateOut')
 					},
 				})}
+				label='Дата въезда'
 				error={errors['booking-dateIn']?.message}
 				type='date'
 				contentClass={cn(cls.inputWrapper)}
@@ -36,6 +37,7 @@ const Head: FC<Props> = ({ className }) => {
 						trigger('booking-dateIn')
 					},
 				})}
+				label='Дата выезда'
 				error={errors['booking-dateOut']?.message}
 				type='date'
 				contentClass={cn(cls.inputWrapper)}

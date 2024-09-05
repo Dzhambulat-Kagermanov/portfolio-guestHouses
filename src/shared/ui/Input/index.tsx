@@ -28,7 +28,6 @@ const Input: FC<Props> = forwardRef(
 			currentValue,
 			onFocus,
 			onBlur,
-			type,
 			...other
 		},
 		ref
@@ -44,15 +43,6 @@ const Input: FC<Props> = forwardRef(
 					<input
 						// @ts-ignore
 						ref={ref}
-						onFocus={event => {
-							if (type === 'date') event.target.type = 'date'
-							onFocus && onFocus(event)
-						}}
-						onBlur={event => {
-							if (type === 'date') event.target.type = 'text'
-							onBlur && onBlur(event)
-						}}
-						type={type === 'date' ? 'text' : type}
 						{...other}
 						className={cn(cls.input, [inputClass])}
 						onChange={event => {

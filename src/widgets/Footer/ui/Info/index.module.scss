@@ -12,6 +12,9 @@
 		font-size: 14px;
 		a {
 			font-size: inherit;
+			text-decoration: underline;
+			text-underline-offset: 3px;
+			text-decoration-color: var(--white);
 		}
 	}
 }

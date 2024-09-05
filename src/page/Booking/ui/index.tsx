@@ -18,7 +18,10 @@ const Booking: FC<Props> = async ({ className, slug }) => {
 		<div className={cn(cls.booking, [className])}>
 			<BookingLogoTitle />
 			<Typography weight='SB' className={cn(cls.title)}>
-				{data.title}
+				{
+					// @ts-ignore
+					data.title
+				}
 			</Typography>
 			<BookingForm className={cn(cls.form)} slug={slug} />
 		</div>

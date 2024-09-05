@@ -12,12 +12,25 @@
 	font-size: 18px;
 	color: var(--grey);
 }
-.image {
-	object-fit: cover;
-	margin: 20px auto;
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
+.content {
+	margin: 20px;
+}
+.avatar {
+	display: flex;
+	align-items: center;
+	flex-flow: wrap column;
+	.image {
+		object-fit: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+	}
+	h2 {
+		margin: 10px 0;
+		font-size: 18px;
+		text-align: center;
+		color: var(--grey);
+	}
 }
 .paragraphs {
 }

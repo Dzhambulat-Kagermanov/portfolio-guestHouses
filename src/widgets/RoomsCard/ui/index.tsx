@@ -16,7 +16,7 @@ interface Props
 }
 const RoomsCard: FC<Props> = ({
 	availableRooms,
-	tag = React.Fragment,
+	tag,
 	maxGuests,
 	previewImg,
 	services,
@@ -30,14 +30,14 @@ const RoomsCard: FC<Props> = ({
 	roomsElementServicesBtnClass,
 	roomsElementServicesClass,
 }) => {
-	const Tag = tag
+	const Tag = tag || 'div'
 	return (
 		<Tag className={cn(cls.roomsCard, [roomsElemWrapperClass])}>
 			<RoomsElementAddService
 				services={services}
 				slug={slug}
 				previewDescription={previewDescription}
-				className={(tag !== React.Fragment && cn('', [roomsElemClass])) || ''}
+				className={cn('', [roomsElemClass])}
 				title={title}
 				availableRooms={availableRooms}
 				maxGuests={maxGuests}

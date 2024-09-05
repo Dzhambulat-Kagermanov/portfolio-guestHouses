@@ -52,7 +52,7 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 								services={services}
 								slug={slug}
 								title={title}
-								className={cn(cls.item)}
+								roomsElemClass={cn(cls.item)}
 								key={index}
 							/>
 						)

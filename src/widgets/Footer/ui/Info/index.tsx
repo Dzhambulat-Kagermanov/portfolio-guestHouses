@@ -7,14 +7,15 @@ import cls from './index.module.scss'
 interface Props extends IClassName {
 	items: ReactNode[]
 	title: string
+	groupClassName?: string
 }
-const Info: FC<Props> = ({ className, title, items }) => {
+const Info: FC<Props> = ({ className, title, items, groupClassName }) => {
 	return (
 		<div className={cn(cls.info, [className])}>
 			<Typography weight='SB' tag='h2' className={cn(cls.title)}>
 				{title}
 			</Typography>
-			<ul className={cn(cls.group)}>
+			<ul className={cn(cls.group, [groupClassName])}>
 				{items.map((el, index) => (
 					<li key={index} className={cn(cls.item)}>
 						<Typography weight='R'>{el}</Typography>

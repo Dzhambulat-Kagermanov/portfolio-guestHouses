@@ -14,8 +14,10 @@ const BookingFormSaveDataOnSubmit: FC<Props> = async ({ className, slug }) => {
 
 	return (
 		<BookingFormElement
+			// @ts-ignore
 			title={data.title}
 			className={cn(cls.form, [className])}
+			// @ts-ignore
 			dropDownServices={data.services}
 			submitBtn={<FeatureButton className={cn(cls.button)} />}
 		/>

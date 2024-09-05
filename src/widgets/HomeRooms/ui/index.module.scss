@@ -7,28 +7,7 @@
 	text-align: center;
 	color: var(--grey);
 }
-.sliderWrapper {
-	margin: 20px 0 0 0;
-}
-.slider {
-	margin: 0;
-	overflow: visible !important;
-}
-.slide {
-	width: calc(100% - 30px);
-}
-.slider .slide {
-	display: flex;
-	height: auto;
-}
-.cardContent {
-	display: flex;
-	flex-flow: wrap column;
-	align-items: center;
-	row-gap: 10px;
-}
-.cardContentItem {
-}
+
 .button {
 	color: white;
 	width: 100px;
