@@ -2,6 +2,7 @@
 	padding: 10px 20px 25px 20px;
 	display: flex;
 	flex-flow: wrap column;
+	width: 100%;
 }
 .contentInfo {
 	flex-grow: 1;
@@ -20,6 +21,7 @@
 }
 .sliderWrapper {
 	overflow: hidden;
+	width: 100%;
 	margin: 0 0 10px 0;
 }
 .slider {
@@ -27,7 +29,7 @@
 	overflow: visible;
 }
 .slide {
-	width: 45%;
+	width: 70%;
 	button {
 		height: 35px;
 		border-radius: 10px;
