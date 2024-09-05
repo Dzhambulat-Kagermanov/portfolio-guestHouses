@@ -10,12 +10,12 @@ const BookingLayout: FC<IChildren> = ({ children }) => {
 				visibleOnlyActive
 				className={cls.pageSteps}
 				steps={[
-					{ label: 'Номер и Цена', activePath: ['/rooms', '/rooms/?'] },
+					{ label: 'Номер и Цена', activePaths: ['/rooms', '/rooms/?'] },
 					{
 						label: 'Бронь и Оплата',
-						activePath: '/booking',
+						activePaths: '/booking',
 					},
-					{ label: 'Подтверждение', activePath: '/booking/details' },
+					{ label: 'Подтверждение', activePaths: '/booking/details' },
 				]}
 			/>
 			{children}

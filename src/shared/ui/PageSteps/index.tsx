@@ -6,9 +6,9 @@ import { usePathname } from 'next/navigation'
 import { FC, ReactNode } from 'react'
 import cls from './index.module.scss'
 
-type TActivePathProps = string[] | string
+type TActivePathsProps = string[] | string
 interface Props extends IClassName {
-	steps: { label: string; activePath: TActivePathProps }[]
+	steps: { label: string; activePaths: TActivePathsProps }[]
 	visibleOnlyActive?: boolean
 	customMarker?: { default: ReactNode; active: ReactNode }
 	labelClass?: string
@@ -22,29 +22,29 @@ const PageSteps: FC<Props> = ({
 }) => {
 	const PATH = usePathname()
 
-	function checkPathIsActive(activePath: TActivePathProps) {
-		if (Array.isArray(activePath)) {
-			return activePath.find((el, index) => {
+	function checkPathIsActive(activePaths: TActivePathsProps) {
+		if (Array.isArray(activePaths)) {
+			return activePaths.find((el, index) => {
 				return pathValidating(PATH, el)
 			})
 		}
 
-		return pathValidating(PATH, activePath)
+		return pathValidating(PATH, activePaths)
 	}
 
 	let activeItemIndex: number = -1
-	const activeItem = steps.find(({ activePath }, index) => {
-		if (checkPathIsActive(activePath)) activeItemIndex = index
-		return checkPathIsActive(activePath)
+	const activeItem = steps.find(({ activePaths }, index) => {
+		if (checkPathIsActive(activePaths)) activeItemIndex = index
+		return checkPathIsActive(activePaths)
 	})
 
 	return (
 		<Container innerClass={cn(cls.steps, [className])}>
 			<ul className={cn(cls.group)}>
 				{(visibleOnlyActive
-					? [activeItem || { label: '', activePath: '' }]
+					? [activeItem || { label: '', activePaths: '' }]
 					: steps
-				).map(({ label, activePath }, index) => {
+				).map(({ label, activePaths }, index) => {
 					return (
 						<li
 							className={cn(cls.item, [], {
@@ -55,7 +55,7 @@ const PageSteps: FC<Props> = ({
 							key={index}
 						>
 							{customMarker ? (
-								checkPathIsActive(activePath) ? (
+								checkPathIsActive(activePaths) ? (
 									customMarker.active
 								) : (
 									customMarker.default

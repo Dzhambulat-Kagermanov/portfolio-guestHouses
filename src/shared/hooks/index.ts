@@ -1,2 +1,2 @@
-export { UseBodyClassName } from './useBodyClass'
+export { UseBodyClassName } from './useBodyClassName'
 export * from './zustand/store'
