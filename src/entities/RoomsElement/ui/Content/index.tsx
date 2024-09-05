@@ -22,12 +22,14 @@ const Content: FC<Props> = ({
 	const [servicesIsExpand, setServicesIsExpand] = useState<boolean>(false)
 	return (
 		<div className={cn(cls.content, [className])}>
-			<Typography weight='SB' tag='h2' className={cn(cls.title)}>
-				{title}
-			</Typography>
-			<Typography weight='R' tag='h3' className={cn(cls.description)}>
-				{previewDescription}
-			</Typography>
+			<div className={cn(cls.contentInfo)}>
+				<Typography weight='SB' tag='h2' className={cn(cls.title)}>
+					{title}
+				</Typography>
+				<Typography weight='R' tag='h3' className={cn(cls.description)}>
+					{previewDescription}
+				</Typography>
+			</div>
 			{servicesIsExpand && (
 				<Slider
 					resistanceRatio={0}

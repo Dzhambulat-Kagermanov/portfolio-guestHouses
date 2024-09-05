@@ -23,6 +23,9 @@ const HomeRooms: FC<Props> = async ({ className }) => {
 				slidesPerView={'auto'}
 				loop
 				spaceBetween={20}
+				wrapperClass={cn(cls.sliderWrapper, [adt.sliderWrapper])}
+				className={cn(cls.slider, [adt.slider])}
+				slideClass={cn(cls.slide, [adt.slide])}
 				items={roomsData.data.map(
 					(
 						{
@@ -54,9 +57,6 @@ const HomeRooms: FC<Props> = async ({ className }) => {
 						/>
 					)
 				)}
-				wrapperClass={cn(cls.sliderWrapper, [adt.sliderWrapper])}
-				className={cn(cls.slider, [adt.slider])}
-				slideClass={cn(cls.slide, [adt.slide])}
 			/>
 		</Container>
 	)

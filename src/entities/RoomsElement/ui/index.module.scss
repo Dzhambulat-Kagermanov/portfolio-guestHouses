@@ -2,8 +2,11 @@
 	border-radius: 6px;
 	box-shadow: 0 0 14px 0 var(--black-opacity);
 	overflow: hidden;
+	display: flex;
+	flex-flow: wrap column;
 }
 .head {
 }
 .content {
+	flex-grow: 1;
 }

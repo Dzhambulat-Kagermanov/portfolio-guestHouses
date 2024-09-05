@@ -17,6 +17,10 @@
 .slide {
 	width: calc(100% - 30px);
 }
+.slider .slide {
+	display: flex;
+	height: auto;
+}
 .cardContent {
 	display: flex;
 	flex-flow: wrap column;
