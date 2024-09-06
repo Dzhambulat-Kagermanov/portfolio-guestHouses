@@ -12,7 +12,7 @@
 - #### SCSS;
 - #### StoryBook;
 - #### Jest, react-testing-Library;
-- #### Swiper, Yup, react-hook-form, Moment.Js, Axios;
+- #### Swiper, Yup, react-hook-form, Moment.Js, Axios, YMap;
 - #### FSD (Feature Sliced Design)
 
 ---
@@ -46,5 +46,6 @@
 - #### Впервые стал использовать архитектуру FSD и научился создавать структурированные и поддерживаемые проекта на ней.
 - #### Научился пользоваться библиотекой react-testing-library и создал свои первые тесты компонентов.
 - #### Впервые стал использовать инструмент StroyBook и научился описывать свои компоненты в нём
-- #### Освоил state manager Zustand и научился писать глобаные состояния в multi-stores
+- #### Освоил state manager Zustand и научился писать глобальные состояния в multi-stores
 - #### Освоил библиотеку react-hook-form и написал валидацию на ней структурированную валидацию
+- #### Научился работать с Яндекс картами

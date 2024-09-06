@@ -1,10 +1,13 @@
+'use client'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Container, Typography } from '@/shared/ui'
 import Link from 'next/link'
-import { FC } from 'react'
-import cls from './index.module.scss'
 import Info from './Info'
+import { FC } from 'react'
+import { useWindow } from '@/shared/hooks'
+import Map from './Map'
+import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	wrapperClassName?: string
@@ -19,12 +22,16 @@ const Footer: FC<Props> = ({
 	infoClassName,
 	infoGroupClassName,
 }) => {
+	const { isMdSmall } = useWindow()
+
 	return (
 		<footer className={cn(wrapperClassName || '')}>
 			<Container
 				containerClass={cn(cls.footerTop, [containerClassName])}
 				innerClass={cn(cls.inner, [className])}
 			>
+				{!isMdSmall && <Map />}
+
 				<Info
 					groupClassName={infoGroupClassName}
 					className={cn(cls.info, [infoClassName])}

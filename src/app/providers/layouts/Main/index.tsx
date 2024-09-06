@@ -17,7 +17,7 @@ const MainLayout: FC<IChildren> = ({ children }) => {
 				className={cn(adt.footer)}
 				wrapperClassName={cn(adt.footerWrapper)}
 				infoClassName={cn(adt.info)}
-				containerClassName={cn(adt.footerContainer)}
+				containerClassName={cn(adt.footerTopContainer)}
 			/>
 		</>
 	)
