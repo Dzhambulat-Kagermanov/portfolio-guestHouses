@@ -4,7 +4,6 @@ import { RoomsInfo } from '@/widgets/RoomsInfo'
 import { RoomsList } from '@/widgets/RoomsList'
 import { FC } from 'react'
 import cls from './index.module.scss'
-// import adaptive from './adaptive.module.scss'
 
 interface Props extends IClassName {
 	isFilter?: boolean

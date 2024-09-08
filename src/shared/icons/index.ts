@@ -1,10 +1,13 @@
-export { Arrow } from './Arrow/Arrow'
-export { Calendar } from './Calendar/Calendar'
-export { CalendarIn } from './CalendarIn/CalendarIn'
-export { CalendarOut } from './CalendarOut/CalendarOut'
-export { Close } from './Close/Close'
-export { TriangleArrow } from './TriangleArrow/TriangleArrow'
-export { User } from './User/User'
+export { Arrow } from './Arrow'
+export { Calendar } from './Calendar'
+export { CalendarIn } from './CalendarIn'
+export { CalendarOut } from './CalendarOut'
+export { Close } from './Close'
+export { TriangleArrow } from './TriangleArrow'
+export { User } from './User'
+export { Home } from './Home'
+export { Phone } from './Phone'
+export { Mail } from './Mail'
 
 export interface IIconsProps {
 	color?: string

@@ -3,70 +3,107 @@ import { IClassName } from '@/shared/types'
 import { Container, Paragraph, Typography } from '@/shared/ui'
 import { FC } from 'react'
 import cls from './index.module.scss'
+import adt from '@/page/Rooms/ui/adaptive.module.scss'
 
 interface Props extends IClassName {}
 const RoomsInfo: FC<Props> = ({ className }) => {
 	return (
 		<section>
 			<Container
-				containerClass={cn(cls.containerServices)}
-				innerClass={cn(cls.services, [className])}
+				containerClass={cn(cls.containerServices, [adt.infoContainer])}
+				innerClass={cn(cls.services, [className, adt.info])}
 			>
-				<Typography weight='SB' className={cn(cls.title)} tag='h2'>
+				<Typography weight='SB' className={cn(cls.title, [adt.title])} tag='h2'>
 					Услуги и оснащение
 				</Typography>
-				<ul className={cn(cls.group)}>
-					<li className={cn(cls.item)}>
-						<Typography tag='h3' weight='M' className={cn(cls.title)}>
+				<ul className={cn(cls.group, [adt.group])}>
+					<li className={cn(cls.item, [adt.item])}>
+						<Typography
+							tag='h3'
+							weight='M'
+							className={cn(cls.title, [adt.title])}
+						>
 							Общие:
 						</Typography>
-						<Typography weight='R' className={cn(cls.description)}>
+						<Typography
+							weight='R'
+							className={cn(cls.description, [adt.description])}
+						>
 							Кондиционер, Отопление, Семейные номера, Номера для некурящих.
 						</Typography>
 					</li>
-					<li className={cn(cls.item)}>
-						<Typography tag='h3' weight='M' className={cn(cls.title)}>
+					<li className={cn(cls.item, [adt.item])}>
+						<Typography
+							tag='h3'
+							weight='M'
+							className={cn(cls.title, [adt.title])}
+						>
 							Активный отдых:
 						</Typography>
-						<Typography weight='R' className={cn(cls.description)}>
+						<Typography
+							weight='R'
+							className={cn(cls.description, [adt.description])}
+						>
 							Детская игровая площадка
 						</Typography>
 					</li>
-					<li className={cn(cls.item)}>
-						<Typography tag='h3' weight='M' className={cn(cls.title)}>
+					<li className={cn(cls.item, [adt.item])}>
+						<Typography
+							tag='h3'
+							weight='M'
+							className={cn(cls.title, [adt.title])}
+						>
 							Услуги:
 						</Typography>
-						<Typography weight='R' className={cn(cls.description)}>
+						<Typography
+							weight='R'
+							className={cn(cls.description, [adt.description])}
+						>
 							Общий лаундж/гостиная с телевизором, Услуги по глажению одежды
 							(оплачивается отдельно), Прачечная (оплачивается отдельно).
 						</Typography>
 					</li>
-					<li className={cn(cls.item)}>
-						<Typography tag='h3' weight='M' className={cn(cls.title)}>
+					<li className={cn(cls.item, [adt.item])}>
+						<Typography
+							tag='h3'
+							weight='M'
+							className={cn(cls.title, [adt.title])}
+						>
 							Интернет:
 						</Typography>
-						<Typography weight='R' className={cn(cls.description)}>
+						<Typography
+							weight='R'
+							className={cn(cls.description, [adt.description])}
+						>
 							Wi-Fi предоставляется в номерах отеля бесплатно.
 						</Typography>
 					</li>
-					<li className={cn(cls.item)}>
-						<Typography tag='h3' weight='M' className={cn(cls.title)}>
+					<li className={cn(cls.item, [adt.item])}>
+						<Typography
+							tag='h3'
+							weight='M'
+							className={cn(cls.title, [adt.title])}
+						>
 							Парковка:
 						</Typography>
-						<Typography weight='R' className={cn(cls.description)}>
+						<Typography
+							weight='R'
+							className={cn(cls.description, [adt.description])}
+						>
 							Бесплатная частная парковка на месте .
 						</Typography>
 					</li>
 				</ul>
 			</Container>
 			<Container
-				containerClass={cn(cls.containerRules)}
-				innerClass={cn(cls.rules)}
+				containerClass={cn(cls.containerRules, [adt.rulesContainer])}
+				innerClass={cn(cls.rules, [adt.rules])}
 			>
 				<Paragraph
+					className={cn(adt.paragraphs)}
 					title='Правила'
-					titleClass={cn(cls.title)}
-					paragraphsClass={cn(cls.rulesText)}
+					titleClass={cn(cls.title, [adt.title])}
+					paragraphsClass={cn(cls.rulesText, [adt.paragraph])}
 					rowGap={2}
 					paragraphs={[
 						<>

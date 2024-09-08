@@ -9,7 +9,19 @@ import { cn } from '@/shared/lib'
 const MainLayout: FC<IChildren> = ({ children }) => {
 	return (
 		<>
-			<Header />
+			<Header
+				containerClass={adt.headerContainer}
+				className={adt.header}
+				contentClass={adt.content}
+				infoClass={adt.info}
+				infoContentClass={adt.content}
+				infoItemClass={adt.item}
+				logoClass={adt.logo}
+				menuBtnClass={adt.menu}
+				navClass={adt.nav}
+				navLinkClass={adt.link}
+				navActiveLinkClass={adt.active}
+			/>
 			<BurgerMenu />
 			{children}
 			<Footer

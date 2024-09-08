@@ -6,6 +6,7 @@ import { Container, Typography } from '@/shared/ui'
 import { RoomsCard } from '@/widgets/RoomsCard'
 import { FC } from 'react'
 import cls from './index.module.scss'
+import adt from '@/page/Rooms/ui/adaptive.module.scss'
 
 interface Props extends IClassName {
 	roomsData: IRoomsCardAllData[]
@@ -25,11 +26,11 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 
 	return (
 		<Container
-			containerClass={cn(cls.container)}
-			innerClass={cn(cls.list, [className])}
+			containerClass={cn(cls.container, [adt.listContainer])}
+			innerClass={cn(cls.list, [className, adt.list])}
 		>
 			{cardsByProp.length !== 0 ? (
-				<ul className={cls.roomsData}>
+				<ul className={cn(cls.roomsData, [adt.group])}>
 					{cardsByProp.map(
 						(
 							{
@@ -52,8 +53,13 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 								services={services}
 								slug={slug}
 								title={title}
-								roomsElemClass={cn(cls.item)}
+								roomsElemClass={cn(cls.item, [adt.item])}
 								key={index}
+								roomsElemWrapperClass={cn(adt.itemWrapper)}
+								roomsElementHeadClass={cn(adt.head)}
+								roomsElementContentClass={cn(adt.content)}
+								roomsElementServicesClass={cn(adt.services)}
+								roomsElementServicesBtnClass={cn(adt.btn)}
 							/>
 						)
 					)}

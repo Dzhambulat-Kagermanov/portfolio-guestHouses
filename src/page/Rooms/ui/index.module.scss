@@ -1,2 +1,45 @@
 .rooms {
 }
+.listContainer {
+}
+.list {
+	.group {
+		.itemWrapper {
+		}
+		.item {
+			.head {
+			}
+		}
+		.content {
+			.services {
+				.btn {
+				}
+			}
+		}
+	}
+}
+
+.infoContainer {
+}
+.info {
+	& > .title {
+	}
+	.group {
+		.item {
+			.title {
+			}
+			.description {
+			}
+		}
+	}
+}
+.rulesContainer {
+}
+.rules {
+	.paragraphs {
+		.title {
+		}
+		.paragraph {
+		}
+	}
+}

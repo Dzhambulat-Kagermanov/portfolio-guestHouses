@@ -74,6 +74,7 @@ html {
 }
 @media screen and (min-width: 1025px) {
 	.body {
+		--header-height: 120px;
 		--adaptive-container-width: 900px;
 	}
 }
