@@ -1,26 +1,35 @@
-import { BookingFormElement } from '@/entities/BookingFormElement'
-import { getCardsBySlug } from '@/shared/api'
+'use client'
+import { validateSchema } from '@/entities/BookingFormElement'
+import { useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { IClassName, IRoomsCardAllData } from '@/shared/types'
-import { notFound } from 'next/navigation'
+import { IClassName } from '@/shared/types'
+import { Button, Typography } from '@/shared/ui'
+import { useRouter } from 'next/navigation'
 import { FC } from 'react'
-import { FeatureButton } from './FeatureButton'
 import cls from './index.module.scss'
 
-interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {}
-const BookingFormSaveDataOnSubmit: FC<Props> = async ({ className, slug }) => {
-	const data = await getCardsBySlug(slug)
-	if (!data) return notFound()
+interface Props extends IClassName {}
+const BookingFormSaveDataOnSubmit: FC<Props> = ({ className }) => {
+	const router = useRouter()
+	const formContext = useBookingFormData(state => state.formContext)
+	const setValue = useBookingFormData(state => state.setValue)
+
+	const onSubmit = (data: typeof validateSchema.fields) => {
+		for (const key in data) {
+			//@ts-ignore
+			setValue(key.replace('booking-', ''), data[key])
+		}
+		router.push('/booking/details')
+	}
 
 	return (
-		<BookingFormElement
-			// @ts-ignore
-			title={data.title}
-			className={cn(cls.form, [className])}
-			// @ts-ignore
-			dropDownServices={data.services}
-			submitBtn={<FeatureButton className={cn(cls.button)} />}
-		/>
+		<Button
+			className={cn(cls.btn, [className])}
+			type='submit'
+			onClick={formContext && formContext.handleSubmit(onSubmit)}
+		>
+			<Typography weight='M'>Продолжить</Typography>
+		</Button>
 	)
 }
 
