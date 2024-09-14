@@ -3,6 +3,7 @@ import { cn } from '@/shared/lib'
 import { IRoomsCardAllData, ITag } from '@/shared/types'
 import React, { FC } from 'react'
 import cls from './index.module.scss'
+import { RoomsElement } from '@/entities/RoomsElement'
 
 interface Props
 	extends Omit<IRoomsCardAllData, 'conditions' | 'roomImages' | 'description'>,
@@ -33,19 +34,24 @@ const RoomsCard: FC<Props> = ({
 	const Tag = tag || 'div'
 	return (
 		<Tag className={cn(cls.roomsCard, [roomsElemWrapperClass])}>
-			<RoomsElementAddService
-				services={services}
-				slug={slug}
+			<RoomsElement
 				previewDescription={previewDescription}
-				className={cn(roomsElemClass || '')}
+				className={cn(cls.roomsCard, [roomsElemClass])}
 				title={title}
 				availableRooms={availableRooms}
 				maxGuests={maxGuests}
 				previewImg={previewImg}
-				roomsElementContentClass={roomsElementContentClass}
 				roomsElementHeadClass={roomsElementHeadClass}
-				roomsElementServicesBtnClass={roomsElementServicesBtnClass}
-				roomsElementServicesClass={roomsElementServicesClass}
+				roomsElementContentClass={roomsElementContentClass}
+				services={services.map((service, index) => (
+					<RoomsElementAddService
+						key={index}
+						service={service}
+						slug={slug}
+						roomsElementServicesBtnClass={roomsElementServicesBtnClass}
+						roomsElementServicesClass={roomsElementServicesClass}
+					/>
+				))}
 			/>
 		</Tag>
 	)
