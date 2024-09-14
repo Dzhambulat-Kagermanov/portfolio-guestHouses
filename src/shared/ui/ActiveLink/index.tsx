@@ -17,7 +17,6 @@ const ActiveLink: FC<Props> = ({
 	...other
 }) => {
 	const router = usePathname()
-	console.log(router === href, href)
 
 	return (
 		<Link

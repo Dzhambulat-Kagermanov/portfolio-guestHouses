@@ -39,6 +39,7 @@ const Content: FC<Props> = ({
 					wrapperClass={cn(cls.sliderWrapper)}
 					slideClass={cn(cls.slide)}
 					items={services}
+					nested
 				/>
 			)}
 			<Button

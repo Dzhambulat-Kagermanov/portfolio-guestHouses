@@ -28,7 +28,11 @@ interface Return {
 }
 
 export const useWindow = (): Return => {
-	const [width, setWidth] = useState(window.innerWidth)
+	const [width, setWidth] = useState(0)
+
+	useEffect(() => {
+		setWidth(window.innerWidth)
+	}, [])
 
 	useEffect(() => {
 		const handleResize = (event: any) => {
