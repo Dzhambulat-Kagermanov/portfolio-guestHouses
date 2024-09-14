@@ -1,4 +1,7 @@
-import { TTableItemsGroup } from '@/entities/RoomsCardInfoElement'
+import {
+	RoomsCardInfoElement,
+	TTableItemsGroup,
+} from '@/entities/RoomsCardInfoElement'
 import { RoomsCardInfoBooking } from '@/features/RoomsCardInfoBooking'
 import { getCardsBySlug } from '@/shared/api'
 import { cn } from '@/shared/lib'
@@ -43,8 +46,7 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
-			<RoomsCardInfoBooking
-				slug={slug}
+			<RoomsCardInfoElement
 				selectedService={selectedService}
 				tableData={TABLE_DATA}
 				className={cn(cls.cardInfo)}
@@ -56,6 +58,13 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 				roomImages={card.roomImages}
 				// @ts-ignore
 				title={card.title}
+				featureBtn={
+					<RoomsCardInfoBooking
+						slug={slug}
+						className={cn(cls.btn)}
+						selectedService={selectedService}
+					/>
+				}
 			/>
 		</div>
 	)

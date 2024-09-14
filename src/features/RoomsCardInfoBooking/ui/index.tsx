@@ -1,47 +1,34 @@
-import {
-	IRoomsCardInfoProps,
-	RoomsCardInfoElement,
-	TTableItemsGroup,
-} from '@/entities/RoomsCardInfoElement'
+'use client'
+import { IRoomsCardInfoProps } from '@/entities/RoomsCardInfoElement'
+import { useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
 import { IClassName, IRoomsCardAllData } from '@/shared/types'
+import { Button, Typography } from '@/shared/ui'
+import { useRouter } from 'next/navigation'
 import { FC } from 'react'
-import FeatureBtn from './FeatureBtn'
 import cls from './index.module.scss'
 
 interface Props
 	extends IClassName,
-		IRoomsCardInfoProps,
-		Pick<IRoomsCardAllData, 'slug'> {
-	tableData: TTableItemsGroup
-}
+		Pick<IRoomsCardAllData, 'slug'>,
+		Pick<IRoomsCardInfoProps, 'selectedService'> {}
 const RoomsCardInfoBooking: FC<Props> = ({
-	tableData,
-	slug,
-	conditions,
-	description,
-	roomImages,
-	selectedService,
-	title,
 	className,
+	slug,
+	selectedService,
 }) => {
+	const setBookingData = useBookingFormData(state => state.setValue)
+	const router = useRouter()
 	return (
-		<RoomsCardInfoElement
-			conditions={conditions}
-			description={description}
-			roomImages={roomImages}
-			selectedService={selectedService}
-			tableData={tableData}
-			title={title}
-			className={cn(cls.cardInfo, [className])}
-			featureBtn={
-				<FeatureBtn
-					slug={slug}
-					className={cn(cls.btn)}
-					selectedService={selectedService}
-				/>
-			}
-		/>
+		<Button
+			className={cn(cls.button, [className])}
+			onClick={() => {
+				setBookingData('selectedService', selectedService)
+				router.push(`/booking?slug=${slug}`)
+			}}
+		>
+			<Typography weight='M'>Забронировать</Typography>
+		</Button>
 	)
 }
 
