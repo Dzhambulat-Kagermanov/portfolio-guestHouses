@@ -4,6 +4,7 @@ import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Container } from '@/shared/ui'
 import { FC } from 'react'
+import { HomeFormElement } from '@/entities/HomeFormElement'
 import cls from './index.module.scss'
 import adt from 'page/Home/ui/adaptive.module.scss'
 
@@ -16,7 +17,14 @@ const HomeForm: FC<Props> = ({ className }) => {
 			containerClass={cn(cls.container, [adt.homeFormContainer])}
 			innerClass={cn(cls.homeForm, [className, adt.homeForm])}
 		>
-			<HomeFormSaveDataOnSubmit className={cn(cls.form)} />
+			<HomeFormElement
+				className={cn(cls.form, [className, adt.form])}
+				featureBtn={
+					<HomeFormSaveDataOnSubmit
+						className={cn(cls.submitBtn, [adt.submitBtn])}
+					/>
+				}
+			/>
 		</Container>
 	)
 }

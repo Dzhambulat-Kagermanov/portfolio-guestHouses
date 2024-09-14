@@ -1,4 +1,15 @@
-.form {
-}
-.submitBtn {
+.btn {
+	transition: 0.2s ease;
+	color: white;
+	width: 140px;
+	height: 36px;
+	transform-origin: center bottom;
+	&:hover {
+		background-color: var(--blue-hover);
+		scale: 1.1;
+	}
+	&:active {
+		background-color: var(--blue);
+		scale: 1.05;
+	}
 }
