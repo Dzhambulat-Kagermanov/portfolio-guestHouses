@@ -1,58 +1,81 @@
 'use client'
-import { BookingDetailsElement } from '@/entities/BookingDetailsElement'
-import { useBookingFormData } from '@/shared/hooks'
+import { TBookingForm, useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
+import { Button, Typography } from '@/shared/ui'
+import {
+	validateAboutMeInfo,
+	validateEmailValidation,
+	validateFirstNameValidation,
+	validateGuestsValidation,
+	validateIsPayLaterValidation,
+	validatePatronymicValidation,
+	validatePhoneValidation,
+	validateSecondNameValidation,
+	validateServicesValidation,
+} from '@/shared/utils'
+import { useRouter } from 'next/navigation'
 import { FC } from 'react'
-import FeatureBtn from './FeatureBtn'
 import cls from './index.module.scss'
 
-interface Props extends IClassName {}
-const BookingFormCompletion: FC<Props> = ({ className }) => {
-	const dateIn = useBookingFormData(state => state.dateIn)
-	const dateOut = useBookingFormData(state => state.dateOut)
-	const email = useBookingFormData(state => state.email)
-	const phone = useBookingFormData(state => state.phone)
-	const firstName = useBookingFormData(state => state.firstName)
-	const secondName = useBookingFormData(state => state.secondName)
-	const patronymic = useBookingFormData(state => state.patronymic)
-	const guests = useBookingFormData(state => state.guests)
-	const selectedService = useBookingFormData(state => state.selectedService)
-	const isPayLater = useBookingFormData(state => state.isPayLater)
-	const aboutMeInfo = useBookingFormData(state => state.aboutMeInfo)
-	const nightsQnt = useBookingFormData(state => state.getNightsQnt)()
-	const title = useBookingFormData(state => state.title)
-	const currentService = useBookingFormData(state => state.currentService)
-
+interface Props
+	extends IClassName,
+		Omit<
+			TBookingForm,
+			'nightsQnt' | 'currentService' | 'title' | 'dateOut' | 'dateIn'
+		> {}
+const BookingFormCompletion: FC<Props> = ({
+	className,
+	aboutMeInfo,
+	email,
+	firstName,
+	guests,
+	isPayLater,
+	patronymic,
+	phone,
+	secondName,
+	selectedService,
+}) => {
+	const router = useRouter()
+	const reset = useBookingFormData(state => state.resetValues)
 	return (
-		<BookingDetailsElement
-			className={cn(cls.details, [className])}
-			dateIn={dateIn}
-			dateOut={dateOut}
-			email={email}
-			firstName={firstName}
-			isPayLater={isPayLater}
-			nightsQnt={nightsQnt}
-			patronymic={patronymic}
-			phone={phone}
-			secondName={secondName}
-			service={currentService}
-			title={title}
-			featureBtn={
-				<FeatureBtn
-					className={cn(cls.btn)}
-					email={email}
-					firstName={firstName}
-					isPayLater={isPayLater}
-					patronymic={patronymic}
-					phone={phone}
-					secondName={secondName}
-					selectedService={selectedService}
-					aboutMeInfo={aboutMeInfo}
-					guests={guests}
-				/>
-			}
-		/>
+		<Button
+			className={cn(cls.button, [className])}
+			onClick={() => {
+				try {
+					validateFirstNameValidation.validateSync(firstName)
+					validateSecondNameValidation.validateSync(secondName)
+					validateAboutMeInfo.validateSync(aboutMeInfo)
+					validateEmailValidation.validateSync(email)
+					validateGuestsValidation.validateSync(guests)
+					validateIsPayLaterValidation.validateSync(isPayLater)
+					validatePhoneValidation.validateSync(phone)
+					validateServicesValidation.validateSync(selectedService)
+					validatePatronymicValidation.validateSync(patronymic)
+					alert('Данные выведены в консоль')
+					console.log({
+						email,
+						firstName,
+						secondName,
+						aboutMeInfo,
+						guests,
+						isPayLater,
+						phone,
+						selectedService,
+						patronymic,
+					})
+
+					reset()
+					setTimeout(() => {
+						router.replace('/rooms')
+					}, 10)
+				} catch (err) {
+					alert(`Ошибка на стадии отправки. ${err}`)
+				}
+			}}
+		>
+			<Typography weight='M'>Завершить</Typography>
+		</Button>
 	)
 }
 
