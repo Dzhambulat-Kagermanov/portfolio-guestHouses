@@ -30,7 +30,7 @@ const Footer: FC<Props> = ({
 				containerClass={cn(cls.footerTop, [containerClassName])}
 				innerClass={cn(cls.inner, [className])}
 			>
-				{!isMdSmall && <Map />}
+				{isMdSmall && <Map />}
 
 				<Info
 					groupClassName={infoGroupClassName}

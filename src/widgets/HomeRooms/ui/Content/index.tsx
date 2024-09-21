@@ -51,11 +51,31 @@ const Content: FC<Props> = ({
 			/>
 		)
 	)
-	const screenMedia = useWindow()
+	const { isMdMedium } = useWindow()
 
 	return (
 		<>
-			{screenMedia.isMdMedium ? (
+			{isMdMedium ? (
+				<ul className={cn(cls.group, [groupClassName])}>
+					{roomsData.map(({ previewImg, conditions, title }) => (
+						<li className={cn(cls.item, [groupItemClassName])} key={title}>
+							<img src={previewImg} alt='комната' />
+							<div className={cn(cls.banner)}>
+								<Typography weight='SB' tag='h2'>
+									{title}
+								</Typography>
+								<ul className={cn(cls.conditions)}>
+									{conditions.map(({ description, title }) => (
+										<li className={cn(cls.item)} key={title}>
+											<Typography weight='SB'>- {description}</Typography>
+										</li>
+									))}
+								</ul>
+							</div>
+						</li>
+					))}
+				</ul>
+			) : (
 				<Slider
 					loopAdditionalSlides={1}
 					loop
@@ -77,26 +97,6 @@ const Content: FC<Props> = ({
 					}}
 					items={[...contentItems, ...contentItems]}
 				/>
-			) : (
-				<ul className={cn(cls.group, [groupClassName])}>
-					{roomsData.map(({ previewImg, conditions, title }) => (
-						<li className={cn(cls.item, [groupItemClassName])} key={title}>
-							<img src={previewImg} alt='комната' />
-							<div className={cn(cls.banner)}>
-								<Typography weight='SB' tag='h2'>
-									{title}
-								</Typography>
-								<ul className={cn(cls.conditions)}>
-									{conditions.map(({ description, title }) => (
-										<li className={cn(cls.item)} key={title}>
-											<Typography weight='SB'>- {description}</Typography>
-										</li>
-									))}
-								</ul>
-							</div>
-						</li>
-					))}
-				</ul>
 			)}
 		</>
 	)

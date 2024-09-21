@@ -51,16 +51,6 @@ const Header: FC<Props> = ({
 		>
 			{isMdMedium ? (
 				<>
-					<MenuButton
-						className={cn(cls.button, [menuBtnClass])}
-						onClick={() => {
-							setBurgerMenuState('modal-burgerMenu')
-						}}
-					/>
-					<Logo className={cn(cls.logo, [logoClass])} link={{ href: '/' }} />
-				</>
-			) : (
-				<>
 					<Info
 						className={cn(cls.info, [infoClass])}
 						infoContentClass={cn(cls.infoContent, [infoContentClass])}
@@ -99,6 +89,16 @@ const Header: FC<Props> = ({
 							</ActiveLink>
 						</nav>
 					</div>
+				</>
+			) : (
+				<>
+					<MenuButton
+						className={cn(cls.button, [menuBtnClass])}
+						onClick={() => {
+							setBurgerMenuState('modal-burgerMenu')
+						}}
+					/>
+					<Logo className={cn(cls.logo, [logoClass])} link={{ href: '/' }} />
 				</>
 			)}
 		</Container>

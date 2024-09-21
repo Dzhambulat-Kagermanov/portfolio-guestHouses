@@ -5,7 +5,6 @@ export class UseBodyClassName {
 		this.className = className || ''
 	}
 	addClass = () => {
-		console.log(this.className)
 		document.body.classList.add(this.className)
 	}
 	removeClass = () => {

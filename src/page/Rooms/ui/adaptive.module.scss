@@ -1,5 +1,16 @@
 .rooms {
 }
+.changeDataContainer {
+}
+.changeData {
+	.changeButton {
+	}
+	.item {
+		p {
+		}
+	}
+}
+
 .listContainer {
 }
 .list {
@@ -52,12 +63,107 @@
 @media screen and (min-width: 481px) {
 }
 @media screen and (min-width: 601px) {
+	.list {
+		.group {
+			flex-flow: wrap row;
+			justify-content: space-between;
+			gap: 25px;
+			.itemWrapper {
+				width: calc(100% / 2 - 25px / 2);
+			}
+			.item {
+				height: 100%;
+			}
+
+			.content {
+				& > div:first-child h3 {
+					max-height: 87px;
+					overflow: auto;
+					padding: 0 5px 0 0;
+					&::-webkit-scrollbar {
+						width: 3px;
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+	.info {
+		& > .title {
+			font-size: 24px;
+		}
+		.group {
+			margin: 25px 0 0 0;
+			.item {
+				.title {
+					font-size: 17px;
+				}
+				.description {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.rules {
+		.paragraphs {
+			.title {
+				font-size: 24px;
+				margin: 0 0 25px 0;
+			}
+			.paragraph {
+				font-size: 14px;
+			}
+		}
+	}
+	.changeData {
+		.changeButton {
+			margin-right: auto;
+			margin-left: auto;
+		}
+		.item {
+			column-gap: 15px;
+			p {
+				font-size: 16px;
+			}
+		}
+	}
 }
 @media screen and (min-width: 769px) {
 }
 @media screen and (min-width: 901px) {
+	.changeData {
+		.group {
+			grid-template-columns: repeat(4, 1fr);
+			.item {
+				border-right: 2px solid white;
+				padding: 30px 0;
+				&:last-child {
+					border: none;
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: 1025px) {
+	.listContainer {
+	}
+	.list {
+		.group {
+			.itemWrapper {
+				width: 100%;
+			}
+			.item {
+				.head {
+				}
+			}
+			.content {
+				.services {
+					.btn {
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: 1281px) {
 }

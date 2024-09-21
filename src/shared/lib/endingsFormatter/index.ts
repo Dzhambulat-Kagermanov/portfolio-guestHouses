@@ -23,6 +23,7 @@ export const endingsFormatter: TFuncObjParamResult<TEndingVariants, string> = ({
 	const lastNumber =
 		+itemQuantity.toString()[itemQuantity.toString().length - 1]
 
+	if (itemQuantity >= 5 || itemQuantity === 0) return pluralEnding
 	if (itemQuantity <= 1 || lastNumber === 1) {
 		return singularEnding
 	}
@@ -34,6 +35,5 @@ export const endingsFormatter: TFuncObjParamResult<TEndingVariants, string> = ({
 		lastNumber <= 4
 	)
 		return singPluralEnding
-	if (itemQuantity >= 5 || itemQuantity === 0) return pluralEnding
 	return singularEnding
 }
