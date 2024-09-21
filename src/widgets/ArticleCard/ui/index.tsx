@@ -11,7 +11,7 @@ interface Props extends IClassName {
 const ArticleCard: FC<Props> = ({ className, description, title }) => {
 	return (
 		<Paragraph
-			paragraphs={[description]}
+			paragraphs={[`\t${description}`]}
 			title={title}
 			className={cn(cls.card, [className])}
 			titleClass={cn(cls.title)}

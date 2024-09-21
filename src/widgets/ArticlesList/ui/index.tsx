@@ -7,27 +7,40 @@ import cls from './index.module.scss'
 
 interface Props extends IClassName {
 	data: IArticlesCardData[][]
+	containerClass?: string
+	articleCardClass?: string
+	contentClass?: string
+	groupClass?: string
+	titleClass?: string
 }
-const ArticlesList: FC<Props> = ({ data, className }) => {
+const ArticlesList: FC<Props> = ({
+	data,
+	className,
+	articleCardClass,
+	contentClass,
+	containerClass,
+	groupClass,
+	titleClass,
+}) => {
 	return (
 		<Container
 			innerClass={cn(cls.articles, [className])}
-			containerClass={cn(cls.container)}
+			containerClass={cn(cls.container, [containerClass])}
 		>
-			<Typography weight='SB' className={cn(cls.title)}>
+			<Typography weight='SB' className={cn(cls.title, [titleClass])}>
 				Статьи
 			</Typography>
-			<div className={cn(cls.content)}>
+			<div className={cn(cls.content, [contentClass])}>
 				{data.map(array => {
 					return (
-						<div className={cn(cls.group)}>
+						<div className={cn(cls.group, [groupClass])}>
 							{array.map(({ description, id, title }) => {
 								return (
 									<ArticleCard
 										key={id}
 										description={description}
 										title={title}
-										className={cn(cls.item)}
+										className={cn(cls.item, [articleCardClass])}
 									/>
 								)
 							})}

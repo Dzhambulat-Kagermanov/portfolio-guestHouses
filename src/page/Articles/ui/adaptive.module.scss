@@ -1,0 +1,15 @@
+@media screen and (min-width: 1025px) {
+	.articles {
+		.title {
+			font-size: 40px;
+		}
+		.group {
+			flex-wrap: nowrap;
+			.article {
+				& > h2 {
+					margin: 0 0 15px 0;
+				}
+			}
+		}
+	}
+}
