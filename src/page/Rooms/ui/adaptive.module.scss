@@ -166,6 +166,56 @@
 	}
 }
 @media screen and (min-width: 1281px) {
+	.roomsInfo {
+		width: var(--adaptive-container-width);
+		margin: 0 auto;
+		margin-bottom: var(--modules-margin-bottom);
+		.infoContainer {
+			width: 590px;
+			width: 45%;
+			padding: 40px;
+		}
+		.rulesContainer {
+			padding: 40px;
+			width: 58%;
+			background-color: white;
+			box-shadow: 0 0 20px 0 var(--black-opacity);
+			margin: 0 0 0 auto;
+			margin-top: -20%;
+		}
+	}
+	.info {
+		padding: 0;
+		& > .title {
+			font-size: 30px;
+		}
+		.group {
+			margin: 25px 0 0 0;
+			.item {
+				.title {
+					font-size: 16px;
+				}
+				.description {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	.rules {
+		padding: 0;
+		.paragraphs {
+			.title {
+				font-size: 30px;
+				margin: 0 0 25px 0;
+			}
+			.paragraph {
+				font-size: 12px;
+				strong {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: 1441px) {
 }

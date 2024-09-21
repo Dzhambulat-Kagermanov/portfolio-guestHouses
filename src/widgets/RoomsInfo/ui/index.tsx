@@ -8,7 +8,7 @@ import adt from '@/page/Rooms/ui/adaptive.module.scss'
 interface Props extends IClassName {}
 const RoomsInfo: FC<Props> = ({ className }) => {
 	return (
-		<section>
+		<section className={cn(adt.roomsInfo)}>
 			<Container
 				containerClass={cn(cls.containerServices, [adt.infoContainer])}
 				innerClass={cn(cls.services, [className, adt.info])}
