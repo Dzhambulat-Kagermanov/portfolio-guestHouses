@@ -8,35 +8,45 @@ interface Props extends IClassName {
 	infoDescription: string[]
 	infoTitle: string
 	infoServices: { description: string[]; title: string }[]
+	infoClass?: { wrapper?: string; title?: string; text?: string }
+	conditionsClass?: { wrapper?: string; title?: string; text?: string }
+	containerClass?: string
+	servicesClass?: string
 }
 const AboutInfo: FC<Props> = ({
 	className,
 	infoDescription,
 	infoTitle,
 	infoServices,
+	infoClass,
+	conditionsClass,
+	containerClass,
+	servicesClass,
 }) => {
 	return (
 		<Container
 			innerClass={cn(cls.info, [className])}
-			containerClass={cn(cls.container)}
+			containerClass={cn(cls.container, [containerClass])}
 		>
 			<Paragraph
-				className={cn(cls.infoContent)}
-				paragraphs={infoDescription.map(el => `   ${el}`)}
+				className={cn(cls.infoContent, [infoClass?.wrapper])}
+				paragraphs={infoDescription.map(el => `\t${el}`)}
 				title={infoTitle}
-				titleClass={cn(cls.infoTitle)}
-				paragraphsClass={cn(cls.infoDescription)}
+				titleClass={cn(cls.infoTitle, [infoClass?.title])}
+				paragraphsClass={cn(cls.infoDescription, [infoClass?.text])}
 				rowGap={0}
 			/>
-			<div className={cn(cls.infoServices)}>
+			<div className={cn(cls.infoServices, [servicesClass])}>
 				{infoServices.map(({ description, title }, index) => (
 					<Paragraph
 						key={index}
 						title={title}
 						paragraphs={description.map(el => `-${el}`)}
-						className={cn(cls.infoServicesItem)}
-						paragraphsClass={cn(cls.infoServicesDescription)}
-						titleClass={cn(cls.infoServicesTitle)}
+						className={cn(cls.infoServicesItem, [conditionsClass?.wrapper])}
+						paragraphsClass={cn(cls.infoServicesDescription, [
+							conditionsClass?.text,
+						])}
+						titleClass={cn(cls.infoServicesTitle, [conditionsClass?.title])}
 						rowGap={0}
 					/>
 				))}

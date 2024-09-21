@@ -4,7 +4,7 @@ import { AboutGallery } from '@/widgets/AboutGallery'
 import { AboutInfo } from '@/widgets/AboutInfo'
 import { FC } from 'react'
 import cls from './index.module.scss'
-// import adaptive from './adaptive.module.scss'
+import adt from './adaptive.module.scss'
 
 interface Props extends IClassName {}
 const About: FC<Props> = ({ className }) => {
@@ -17,7 +17,7 @@ const About: FC<Props> = ({ className }) => {
 					'У нас Вы можете выбрать размещение в номерах по Вашему желанию и потребностям: одноместное; двухместное; семейное трехместное; семейное четырехместное; в некоторых номерах могут быть предоставлены дополнительные места.',
 					'По просьбе гостей предоставляются туалетные и гладильные принадлежности, фен, утюг, гладильная доска. И конечно бесплатный Wi-Fi на всей территории мини-отеля.',
 				]}
-				className={cn(cls.info)}
+				className={cn(cls.info, [adt.about])}
 				infoServices={[
 					{
 						title: 'Удобства',
@@ -47,8 +47,28 @@ const About: FC<Props> = ({ className }) => {
 						],
 					},
 				]}
+				servicesClass={adt.services}
+				conditionsClass={{
+					wrapper: adt.paragraphs,
+					text: adt.item,
+					title: adt.title,
+				}}
+				infoClass={{
+					wrapper: adt.paragraphs,
+					text: adt.item,
+					title: adt.title,
+				}}
 			/>
-			<AboutGallery className={cn(cls.gallery)} />
+			<AboutGallery
+				className={cn(cls.gallery, [adt.gallery])}
+				galleryItemClasses={{
+					slide: adt.slide,
+					slider: adt.slider,
+					sliderWrapper: adt.wrapper,
+					title: adt.title,
+					wrapper: adt.galleryItem,
+				}}
+			/>
 		</div>
 	)
 }

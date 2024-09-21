@@ -11,14 +11,26 @@ import cls from './index.module.scss'
 interface Props extends IClassName {
 	title: string
 	photos: string[]
+	sliderClasses?: {
+		slider?: string
+		slide?: string
+		wrapper?: string
+	}
+	titleClass?: string
 }
-const GalleryItem: FC<Props> = ({ photos, title, className }) => {
+const GalleryItem: FC<Props> = ({
+	photos,
+	title,
+	className,
+	titleClass,
+	sliderClasses,
+}) => {
 	return (
 		<Container
 			innerClass={cn(cls.gallery, [className])}
 			containerClass={cn(cls.container)}
 		>
-			<Typography tag='h2' className={cn(cls.title)} weight='SB'>
+			<Typography tag='h2' className={cn(cls.title, [titleClass])} weight='SB'>
 				{title}
 			</Typography>
 			<Slider
@@ -38,9 +50,9 @@ const GalleryItem: FC<Props> = ({ photos, title, className }) => {
 					prevEl: `.${cls.leftBtn}-${title}`,
 				}}
 				modules={[Navigation]}
-				wrapperClass={cn(cls.sliderWrapper)}
-				slideClass={cn(cls.slide)}
-				className={cn(cls.slider)}
+				wrapperClass={cn(cls.sliderWrapper, [sliderClasses?.wrapper])}
+				slideClass={cn(cls.slide, [sliderClasses?.slide])}
+				className={cn(cls.slider, [sliderClasses?.slider])}
 				wrapperChildren={
 					<>
 						<Button
