@@ -2,14 +2,11 @@
 import { useHomeFormData, useWindow } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
 import { IClassName, IRoomsCardAllData } from '@/shared/types'
-import { Button, Container, Typography } from '@/shared/ui'
-import { RoomsCard } from '@/widgets/RoomsCard'
+import { Container, Typography } from '@/shared/ui'
+import { AdaptiveRoomsCard, RoomsCard } from '@/widgets/RoomsCard'
 import { FC } from 'react'
 import cls from './index.module.scss'
 import adt from '@/page/Rooms/ui/adaptive.module.scss'
-import { User } from '@/shared/icons'
-import { title } from 'process'
-import { RoomsElementAddService } from '@/features/RoomsElementAddService'
 
 interface Props extends IClassName {
 	roomsData: IRoomsCardAllData[]
@@ -47,71 +44,17 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 									maxGuests,
 								}) => {
 									return (
-										<li className={cn(cls.item)} key={slug}>
-											<div className={cn(cls.content)}>
-												<div className={cn(cls.image)}>
-													<img src={previewImg} alt={title} />
-													<Typography
-														weight='M'
-														className={cn(cls.available)}
-														tag='h2'
-													>
-														{availableRooms}
-													</Typography>
-													<div className={cn(cls.guests)}>
-														<Typography weight='B'>{maxGuests}</Typography>
-														<User color='var(--blue)' width={16} height={16} />
-													</div>
-												</div>
-												<div className={cn(cls.info)}>
-													<Typography weight='SB' tag='h2'>
-														{title}
-													</Typography>
-													<Typography weight='R' tag='h3'>
-														{previewDescription}
-													</Typography>
-													<div className={cn(cls.conditions)}>
-														{conditions.map(({ description, title }) => (
-															<Typography weight='M'>
-																<strong>{title}: </strong>
-																{description}
-															</Typography>
-														))}
-													</div>
-													{services.length > 2 && (
-														<Button className={cn(cls.servicesBtn)}>
-															<Typography weight='SB'>Все сервисы</Typography>
-														</Button>
-													)}
-												</div>
-												{services.length > 0 && (
-													<div className={cn(cls.services)}>
-														{services.slice(0, 2).map(service => (
-															<RoomsElementAddService
-																key={service.title}
-																service={service}
-																slug={slug}
-															/>
-														))}
-													</div>
-												)}
-											</div>
-											{services.length > 2 && (
-												<div className={cn(cls.services)}>
-													{services.slice(2).map(service => (
-														<div
-															className={cn(cls.service)}
-															key={service.title}
-														>
-															<RoomsElementAddService
-																service={service}
-																slug={slug}
-															/>
-														</div>
-													))}
-												</div>
-											)}
-										</li>
+										<AdaptiveRoomsCard
+											availableRooms={availableRooms}
+											conditions={conditions}
+											maxGuests={maxGuests}
+											previewDescription={previewDescription}
+											previewImg={previewImg}
+											services={services}
+											slug={slug}
+											title={title}
+											key={slug}
+										/>
 									)
 								}
 						  )
