@@ -47,7 +47,7 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 									maxGuests,
 								}) => {
 									return (
-										<li className={cn(cls.item)}>
+										<li className={cn(cls.item)} key={slug}>
 											<div className={cn(cls.content)}>
 												<div className={cn(cls.image)}>
 													<img src={previewImg} alt={title} />
@@ -88,6 +88,7 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 													<div className={cn(cls.services)}>
 														{services.slice(0, 2).map(service => (
 															<RoomsElementAddService
+																key={service.title}
 																service={service}
 																slug={slug}
 															/>
@@ -98,7 +99,10 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 											{services.length > 2 && (
 												<div className={cn(cls.services)}>
 													{services.slice(2).map(service => (
-														<div className={cn(cls.service)}>
+														<div
+															className={cn(cls.service)}
+															key={service.title}
+														>
 															<RoomsElementAddService
 																service={service}
 																slug={slug}
