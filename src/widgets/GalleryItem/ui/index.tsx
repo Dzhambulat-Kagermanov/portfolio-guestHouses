@@ -43,8 +43,10 @@ const GalleryItem: FC<Props> = ({
 						key={index}
 					/>
 				))}
-				loop
+				loop={photos.length > 4}
+				centeredSlides={photos.length > 4}
 				slidesPerView={'auto'}
+				spaceBetween={15}
 				navigation={{
 					nextEl: `.${cls.rightBtn}-${title.replaceAll(' ', '-')}`,
 					prevEl: `.${cls.leftBtn}-${title}`,

@@ -3,7 +3,6 @@
 }
 .title {
 	width: 100%;
-	max-width: 410px;
 	background-color: var(--yellow);
 	border-radius: 8px 8px 0 0;
 	padding: 12px 80px;
@@ -17,12 +16,14 @@
 	box-shadow: 0 0 8px 0 var(--black-opacity);
 }
 .slider {
-	width: 180px;
+	width: 65%;
 }
 .slide {
 	width: 180px;
 	height: 180px;
 	img {
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
 	}
 }
@@ -35,6 +36,9 @@
 	top: 50%;
 	translate: 0 -50%;
 	z-index: 2;
+	&:hover {
+		scale: 1.5 1.1;
+	}
 	img {
 		width: 100%;
 		height: 100%;
