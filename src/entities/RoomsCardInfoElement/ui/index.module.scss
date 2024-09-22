@@ -16,8 +16,24 @@
 		text-align: center;
 	}
 }
-.description {
+.content {
 	margin: 25px 0 40px 0;
 }
+.sliderWrapper {
+	width: 100%;
+}
 .slider {
+	width: 65%;
+}
+.slide {
+	width: 180px;
+	height: 150px;
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+.galleryItem {
+	scale: 1;
 }

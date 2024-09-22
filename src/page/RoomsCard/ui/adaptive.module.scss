@@ -1,0 +1,171 @@
+.infoElement {
+	.contentWrapper {
+		.titleWrapper {
+			.title {
+			}
+			& > p {
+			}
+		}
+		.content {
+			.descriptions {
+				.item {
+				}
+			}
+			.conditions {
+				.item {
+				}
+			}
+		}
+
+		.gallery {
+			.sliderWrapper {
+				.slider {
+					.slide {
+					}
+				}
+			}
+		}
+		.table {
+		}
+	}
+}
+
+@media screen and (min-width: 0) {
+}
+@media screen and (min-width: 361px) {
+}
+@media screen and (min-width: 421px) {
+}
+@media screen and (min-width: 481px) {
+}
+@media screen and (min-width: 601px) {
+	.infoElement {
+		.contentWrapper {
+			.titleWrapper {
+				.title {
+					font-size: 30px;
+				}
+				& > p {
+					font-size: 16px;
+				}
+			}
+			.content {
+				.descriptions {
+					.item {
+						font-size: 16px;
+					}
+				}
+				.conditions {
+					.item {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 769px) {
+	.infoElement {
+		.contentWrapper {
+			.titleWrapper {
+				.title {
+					font-size: 30px;
+				}
+				& > p {
+					font-size: 16px;
+				}
+			}
+			.content {
+				.descriptions {
+					.item {
+						font-size: 16px;
+					}
+				}
+				.conditions {
+					.item {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+		.gallery {
+			.title {
+				max-width: 410px;
+			}
+			.sliderWrapper {
+				.slider {
+					width: 85%;
+				}
+			}
+		}
+		.table {
+			max-width: 600px;
+			margin-right: auto;
+			margin-left: auto;
+			caption {
+				padding: 15px 10px;
+			}
+			td {
+				padding: 15px 10px !important;
+				h2 {
+					font-size: 20px;
+				}
+				h3 {
+					font-size: 18px;
+				}
+				p {
+					font-size: 16px !important;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 901px) {
+	.infoElement {
+		.gallery {
+			.title {
+				font-size: 20px;
+			}
+			.sliderWrapper {
+				padding: 30px;
+				button {
+					width: 12px;
+					height: 30px;
+					left: 20px;
+					svg {
+						width: 100%;
+						height: 100%;
+					}
+					&:last-child {
+						left: auto;
+						right: 20px;
+					}
+					&:hover {
+						scale: 1.5 1.2;
+					}
+				}
+				.slider {
+					width: 85%;
+					.slide {
+						width: 250px;
+						height: 270px;
+					}
+				}
+			}
+		}
+		.bookingBtn {
+			height: 50px;
+			width: 200px;
+			border-radius: 22px;
+			p {
+				font-size: 18px;
+			}
+		}
+	}
+}
+@media screen and (min-width: 1025px) {
+}
+@media screen and (min-width: 1281px) {
+}
+@media screen and (min-width: 1441px) {
+}

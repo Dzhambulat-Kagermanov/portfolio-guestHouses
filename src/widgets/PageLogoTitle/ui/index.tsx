@@ -18,7 +18,7 @@ const PageLogoTitle: FC<Props> = ({
 	const Tag = tag
 	return (
 		<Tag className={cn(cls.wrapper, [className])}>
-			<Typography weight='SB' className={cn(cls.title, [titleClass])}>
+			<Typography tag='h2' weight='SB' className={cn(cls.title, [titleClass])}>
 				{title}
 			</Typography>
 			{children}

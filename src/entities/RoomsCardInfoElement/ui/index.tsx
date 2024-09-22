@@ -1,51 +1,66 @@
 import { cn } from '@/shared/lib'
 import { IClassName, IRoomsCardAllData } from '@/shared/types'
-import { Container, Typography } from '@/shared/ui'
+import { Container, Slider, Typography } from '@/shared/ui'
 import { PageLogoTitle } from '@/widgets/PageLogoTitle'
 import { FC, ReactNode } from 'react'
 import Content from './Content'
 import cls from './index.module.scss'
-import Slider from './Slider'
 import Table from './Table'
+import { GalleryItem } from '@/widgets/GalleryItem'
 
 export type TTableItem = { title: ReactNode; items: ReactNode[] }
 export interface IRoomsCardInfoProps
 	extends Omit<
-			IRoomsCardAllData,
-			| 'availableRooms'
-			| 'maxGuests'
-			| 'previewDescription'
-			| 'previewImg'
-			| 'services'
-			| 'slug'
-		>,
-		IClassName {
+		IRoomsCardAllData,
+		| 'availableRooms'
+		| 'maxGuests'
+		| 'previewDescription'
+		| 'previewImg'
+		| 'services'
+		| 'slug'
+	> {
 	selectedService: string
 	tableData: [TTableItem, TTableItem]
+	classNames?: {
+		descriptionParagraph?: string
+		descriptionItem?: string
+		conditionsParagraph?: string
+		conditionsItem?: string
+		titleWrapper?: string
+		title?: string
+		content?: string
+		contentWrapper?: string
+		table?: string
+		gallery?: string
+		slider?: string
+		sliderWrapper?: string
+		slide?: string
+		main?: string
+	}
 }
 
 const RoomsCardInfoElement: FC<
 	IRoomsCardInfoProps & { featureBtn: ReactNode }
 > = ({
-	className,
 	selectedService,
 	conditions,
 	description,
 	roomImages,
+	title,
 	tableData,
 	featureBtn,
-	title,
+	classNames,
 }) => {
 	return (
 		<Container
 			containerClass={cn(cls.container)}
-			innerClass={cn(cls.cardInfo, [className])}
+			innerClass={cn(cls.cardInfo, [classNames?.main])}
 		>
-			<div className={cn(cls.contentWrapper)}>
+			<div className={cn(cls.contentWrapper, [classNames?.contentWrapper])}>
 				<PageLogoTitle
 					title={title}
-					className={cn(cls.titleWrapper)}
-					titleClass={cn(cls.title)}
+					className={cn(cls.titleWrapper, [classNames?.titleWrapper])}
+					titleClass={cn(cls.title, [classNames?.title])}
 				>
 					<Typography weight='M' className={cn(cls.roomsVariant)}>
 						{selectedService}
@@ -54,14 +69,36 @@ const RoomsCardInfoElement: FC<
 				<Content
 					conditions={conditions}
 					description={description}
-					className={cn(cls.description)}
+					classNames={{
+						conditions: classNames?.conditionsItem,
+						conditionsParagraph: classNames?.conditionsParagraph,
+						description: classNames?.descriptionItem,
+						descriptionParagraph: classNames?.descriptionParagraph,
+						main: cn(cls.content, [classNames?.content]),
+					}}
 				/>
 			</div>
-			{roomImages && <Slider images={roomImages} className={cn(cls.slider)} />}
+			{roomImages && (
+				<GalleryItem
+					sliderClasses={{
+						slide: classNames?.slide,
+						slider: classNames?.slider,
+						wrapper: classNames?.sliderWrapper,
+					}}
+					titleClass={classNames?.title}
+					photos={roomImages}
+					title={title}
+					className={cn(cls.galleryItem, [classNames?.gallery])}
+				/>
+			)}
 
 			<Table
-				caption={<Typography weight='SB'>Цена за 1 ночь</Typography>}
-				className={cn(cls.table)}
+				caption={
+					<Typography weight='SB' tag='h2'>
+						Цена за 1 ночь
+					</Typography>
+				}
+				className={cn(cls.table, [classNames?.table])}
 				groups={tableData}
 			/>
 			{featureBtn}

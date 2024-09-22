@@ -4,22 +4,29 @@ import { IClassName } from '@/shared/types/shared'
 import { Paragraph, Typography } from '@/shared/ui'
 import React, { FC } from 'react'
 import cls from './index.module.scss'
-import { title } from 'process'
 
-interface Props
-	extends IClassName,
-		Pick<IRoomsCardInfoData, 'conditions' | 'description'> {}
-const Content: FC<Props> = ({ conditions, description, className }) => {
+interface Props extends Pick<IRoomsCardInfoData, 'conditions' | 'description'> {
+	classNames?: {
+		main?: string
+		descriptionParagraph?: string
+		description?: string
+		conditionsParagraph?: string
+		conditions?: string
+	}
+}
+const Content: FC<Props> = ({ conditions, description, classNames }) => {
 	return (
-		<div className={cn(cls.content, [className])}>
+		<div className={cn(cls.content, [classNames?.main])}>
 			<Paragraph
+				className={cn(classNames?.descriptionParagraph || '')}
 				paragraphs={description}
-				paragraphsClass={cn(cls.descriptionText)}
+				paragraphsClass={cn(cls.descriptionText, [classNames?.description])}
 				rowGap={15}
 			/>
 
 			<Paragraph
-				paragraphsClass={cn(cls.conditionsText)}
+				className={cn(classNames?.conditionsParagraph || '')}
+				paragraphsClass={cn(cls.conditionsText, [classNames?.conditions])}
 				rowGap={15}
 				paragraphs={conditions.map(({ description, title }, index) => (
 					<React.Fragment key={index}>

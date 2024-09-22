@@ -10,7 +10,7 @@ import { Typography } from '@/shared/ui'
 import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
-// import adaptive from './adaptive.module.scss'
+import adt from './adaptive.module.scss'
 
 interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 	selectedService: string
@@ -21,7 +21,11 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 
 	const TABLE_DATA: TTableItemsGroup = [
 		{
-			title: <Typography weight='SB'>Сервис</Typography>,
+			title: (
+				<Typography tag='h3' weight='SB'>
+					Сервис
+				</Typography>
+			),
 			// @ts-ignore
 			items: card.services.map(({ title }, index) => {
 				return (
@@ -32,7 +36,11 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 			}),
 		},
 		{
-			title: <Typography weight='SB'>Цены</Typography>,
+			title: (
+				<Typography tag='h3' weight='SB'>
+					Цены
+				</Typography>
+			),
 			// @ts-ignore
 			items: card.services.map(({ price }, index) => {
 				return (
@@ -47,9 +55,24 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 	return (
 		<div className={cn(cls.roomsCard, [className])}>
 			<RoomsCardInfoElement
+				classNames={{
+					conditionsItem: adt.item,
+					conditionsParagraph: adt.conditions,
+					content: adt.content,
+					contentWrapper: adt.contentWrapper,
+					descriptionItem: adt.item,
+					descriptionParagraph: adt.descriptions,
+					gallery: adt.gallery,
+					slide: adt.slide,
+					slider: adt.slider,
+					sliderWrapper: adt.sliderWrapper,
+					table: adt.table,
+					title: adt.title,
+					titleWrapper: adt.titleWrapper,
+					main: cn(cls.cardInfo, [adt.infoElement]),
+				}}
 				selectedService={selectedService}
 				tableData={TABLE_DATA}
-				className={cn(cls.cardInfo)}
 				// @ts-ignore
 				conditions={card.conditions}
 				// @ts-ignore
@@ -61,7 +84,7 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 				featureBtn={
 					<RoomsCardInfoBooking
 						slug={slug}
-						className={cn(cls.btn)}
+						className={cn(cls.btn, [adt.bookingBtn])}
 						selectedService={selectedService}
 					/>
 				}
