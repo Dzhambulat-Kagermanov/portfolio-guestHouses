@@ -6,7 +6,7 @@ export const cn = (
 	mods: Record<string, boolean | undefined> = {}
 ): string => {
 	return [
-		main,
+		...(main ? [main] : []),
 		...additional.filter(Boolean),
 		...Object.entries(mods)
 			.filter(([key, val]) => Boolean(val))
