@@ -1,19 +1,16 @@
-export const pathValidating = (
-	path: string,
-	pathValidating: string
-): boolean => {
+export const pathValidating = (path: string, activePath: string): boolean => {
 	let result = false
 	const pathParts = path.substring(1).split('/')
-	const pathValidatingParts = pathValidating.substring(1).split('/')
+	const activePathParts = activePath.substring(1).split('/')
 
 	const loopStartLength =
-		pathParts.length >= pathValidatingParts.length
+		pathParts.length >= activePathParts.length
 			? pathParts.length
-			: pathValidatingParts.length
+			: activePathParts.length
 
 	for (let i = 0; i < loopStartLength; i++) {
 		const part = pathParts[i]
-		const partValidating = pathValidatingParts[i]
+		const partValidating = activePathParts[i]
 
 		if (partValidating === '?') {
 			result = true

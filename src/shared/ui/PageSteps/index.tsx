@@ -24,7 +24,7 @@ const PageSteps: FC<Props> = ({
 
 	function checkPathIsActive(activePaths: TActivePathsProps) {
 		if (Array.isArray(activePaths)) {
-			return activePaths.find((el, index) => {
+			return activePaths.find(el => {
 				return pathValidating(PATH, el)
 			})
 		}
