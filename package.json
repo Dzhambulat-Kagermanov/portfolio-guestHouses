@@ -7,16 +7,12 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"json-server": "json-server --watch db.json --port 5000",
-		"serve-dev": "concurrently \"npm run dev\" \"npm run json-server\"",
-		"deploy": "concurrently \"npm run json-server\" \"npm run build && npm run start\"",
 		"test": "jest"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.0",
 		"@pbe/react-yandex-maps": "^1.2.5",
 		"axios": "^1.7.3",
-		"concurrently": "^8.2.2",
 		"moment": "^2.30.1",
 		"next": "14.2.5",
 		"react": "^18",
