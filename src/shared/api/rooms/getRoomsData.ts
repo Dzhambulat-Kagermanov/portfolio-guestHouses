@@ -5,9 +5,5 @@ import { baseURL } from '../urls'
 export const getRooms = () =>
 	axios.get<IRoomsCardAllData[]>('/rooms', { baseURL })
 
-export const getRoomsBySlug = (slug: string) =>
+export const getRoomsBySlug = (slug: Pick<IRoomsCardAllData, 'slug'>) =>
 	axios.get<IRoomsCardAllData>(`/rooms/${slug}`, { baseURL })
-
-export const patchRoomsBySlug = (
-	newAvailableRooms: Pick<IRoomsCardAllData, 'availableRooms'>
-) => axios.patch('/rooms', { newAvailableRooms }, { baseURL })

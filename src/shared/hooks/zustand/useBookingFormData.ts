@@ -1,4 +1,4 @@
-import { TService } from '@/shared/types'
+import { IRoomsCardAllData, TService } from '@/shared/types'
 import moment from 'moment'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
@@ -18,6 +18,7 @@ export type TBookingForm = {
 	nightsQnt?: number
 	title?: string
 	currentService?: TService
+	slug?: Pick<IRoomsCardAllData, 'slug'>
 }
 const currentServiceTemplate: TService = {
 	price: { withoutTaxes: 0, withTaxes: 0 },
@@ -56,6 +57,7 @@ export const useBookingFormData = create<IUseBookingFormData & TBookingForm>()(
 					currentService: undefined,
 					nightsQnt: undefined,
 					title: undefined,
+					slug: undefined,
 				})),
 			getNightsQnt: () => {
 				const dateIn = get().dateIn

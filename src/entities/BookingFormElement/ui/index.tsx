@@ -1,7 +1,7 @@
 'use client'
 import { TBookingForm, useBookingFormData } from '@/shared/hooks'
 import { cn } from '@/shared/lib'
-import { IClassName, TService } from '@/shared/types'
+import { IClassName, IRoomsCardAllData, TService } from '@/shared/types'
 import { Typography, ValidationCheckbox } from '@/shared/ui'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FC, ReactNode, useEffect } from 'react'
@@ -14,12 +14,14 @@ import cls from './index.module.scss'
 interface Props extends IClassName, Pick<TBookingForm, 'title'> {
 	dropDownServices: TService[]
 	submitBtn: ReactNode
+	slug: Pick<IRoomsCardAllData, 'slug'>
 }
 const BookingFormElement: FC<Props> = ({
 	className,
 	title,
 	dropDownServices,
 	submitBtn,
+	slug,
 }) => {
 	const setBookingFormValue = useBookingFormData(state => state.setValue)
 	const formMethods = useForm({
@@ -43,6 +45,7 @@ const BookingFormElement: FC<Props> = ({
 		mode: 'onChange',
 	})
 	useEffect(() => {
+		setBookingFormValue('slug', slug)
 		setBookingFormValue('title', title)
 		setBookingFormValue('formContext', formMethods)
 	}, [formMethods])

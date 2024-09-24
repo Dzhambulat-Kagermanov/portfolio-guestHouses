@@ -14,7 +14,7 @@ import {
 	validateSecondNameValidation,
 	validateServicesValidation,
 } from '@/shared/utils'
-import { useRouter } from 'next/navigation'
+import { notFound, useRouter } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
 
@@ -33,9 +33,11 @@ const BookingFormCompletion: FC<Props> = ({
 	isPayLater,
 	patronymic,
 	phone,
+	slug,
 	secondName,
 	selectedService,
 }) => {
+	if (!slug) notFound()
 	const router = useRouter()
 	const reset = useBookingFormData(state => state.resetValues)
 	return (
@@ -63,6 +65,7 @@ const BookingFormCompletion: FC<Props> = ({
 						phone,
 						selectedService,
 						patronymic,
+						slug,
 					})
 
 					reset()

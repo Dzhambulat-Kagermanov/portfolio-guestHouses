@@ -24,6 +24,7 @@ const BookingFormDetails: FC<Props> = ({ className }) => {
 	const nightsQnt = useBookingFormData(state => state.getNightsQnt)()
 	const title = useBookingFormData(state => state.title)
 	const currentService = useBookingFormData(state => state.currentService)
+	const slug = useBookingFormData(state => state.slug)
 
 	return (
 		<Container
@@ -45,6 +46,7 @@ const BookingFormDetails: FC<Props> = ({ className }) => {
 				title={title}
 				featureBtn={
 					<BookingFormCompletion
+						slug={slug}
 						className={cn(cls.btn)}
 						email={email}
 						firstName={firstName}

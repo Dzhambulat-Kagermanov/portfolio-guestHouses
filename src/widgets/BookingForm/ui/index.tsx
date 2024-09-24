@@ -4,11 +4,13 @@ import { IClassName, IRoomsCardAllData } from '@/shared/types'
 import { Container } from '@/shared/ui/'
 import { FC } from 'react'
 import { BookingFormElement } from '@/entities/BookingFormElement'
-import cls from './index.module.scss'
 import { getRoomsBySlug } from '@/shared/api'
 import { notFound } from 'next/navigation'
+import cls from './index.module.scss'
 
-interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {}
+interface Props extends IClassName {
+	slug: Pick<IRoomsCardAllData, 'slug'>
+}
 const BookingForm: FC<Props> = async ({ className, slug }) => {
 	const data = await getRoomsBySlug(slug)
 	if (!data) return notFound()
@@ -19,6 +21,7 @@ const BookingForm: FC<Props> = async ({ className, slug }) => {
 			innerClass={cn(cls.wrapper, [className])}
 		>
 			<BookingFormElement
+				slug={slug}
 				title={data.data.title}
 				className={cn(cls.form, [className])}
 				dropDownServices={data.data.services}

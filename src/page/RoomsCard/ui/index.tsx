@@ -17,9 +17,9 @@ interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 	selectedService: string
 }
 const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
+	// @ts-ignore
 	const card = await getRoomsBySlug(decodeURIComponent(slug))
 	if (!card || !selectedService) return notFound()
-	console.log(card.data)
 
 	const TABLE_DATA: TTableItemsGroup = [
 		{
