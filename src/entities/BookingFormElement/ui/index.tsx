@@ -49,7 +49,6 @@ const BookingFormElement: FC<Props> = ({
 		setBookingFormValue('title', title)
 		setBookingFormValue('formContext', formMethods)
 	}, [formMethods])
-	console.log(dropDownServices)
 
 	return (
 		<FormProvider {...formMethods}>

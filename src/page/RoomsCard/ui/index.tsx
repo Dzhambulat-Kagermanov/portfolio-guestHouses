@@ -11,7 +11,6 @@ import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
 import adt from './adaptive.module.scss'
-import console from 'console'
 
 interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 	selectedService: string

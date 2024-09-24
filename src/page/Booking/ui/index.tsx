@@ -9,7 +9,9 @@ import { FC } from 'react'
 import cls from './index.module.scss'
 // import adaptive from './adaptive.module.scss'
 
-interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {}
+interface Props extends IClassName {
+	slug: Pick<IRoomsCardAllData, 'slug'>
+}
 const Booking: FC<Props> = async ({ className, slug }) => {
 	const data = await getRoomsBySlug(slug)
 	if (!data) return notFound()
