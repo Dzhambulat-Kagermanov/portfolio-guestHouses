@@ -19,11 +19,9 @@ const BookingForm: FC<Props> = async ({ className, slug }) => {
 			innerClass={cn(cls.wrapper, [className])}
 		>
 			<BookingFormElement
-				// @ts-ignore
-				title={data.title}
+				title={data.data.title}
 				className={cn(cls.form, [className])}
-				// @ts-ignore
-				dropDownServices={data.services}
+				dropDownServices={data.data.services}
 				submitBtn={<BookingFormSaveDataOnSubmit className={cn(cls.button)} />}
 			/>
 		</Container>

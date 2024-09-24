@@ -1,6 +1,6 @@
 import { cn } from '@/shared/lib'
-import { IClassName, IRoomsCardAllData } from '@/shared/types'
-import { Container, Slider, Typography } from '@/shared/ui'
+import { IRoomsCardAllData } from '@/shared/types'
+import { Container, Typography } from '@/shared/ui'
 import { PageLogoTitle } from '@/widgets/PageLogoTitle'
 import { FC, ReactNode } from 'react'
 import Content from './Content'
@@ -51,6 +51,8 @@ const RoomsCardInfoElement: FC<
 	featureBtn,
 	classNames,
 }) => {
+	console.log(conditions)
+
 	return (
 		<Container
 			containerClass={cn(cls.container)}
