@@ -7,6 +7,7 @@ import { RoomsDataChangeModal } from '@/widgets/RoomsDataChangeModal'
 import { FC } from 'react'
 import cls from './index.module.scss'
 import adt from './adaptive.module.scss'
+import { Loader } from '@/widgets/Loader'
 
 interface Props extends IClassName {
 	isFilter?: boolean
