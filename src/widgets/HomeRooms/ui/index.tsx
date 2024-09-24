@@ -1,4 +1,4 @@
-import { getCards } from '@/shared/api'
+import { getRooms } from '@/shared/api'
 import { cn } from '@/shared/lib'
 import { IClassName } from '@/shared/types'
 import { Container, Typography } from '@/shared/ui'
@@ -9,7 +9,7 @@ import Content from './Content'
 
 interface Props extends IClassName {}
 const HomeRooms: FC<Props> = async ({ className }) => {
-	const roomsData = await getCards()
+	const roomsData = await getRooms()
 
 	return (
 		<Container

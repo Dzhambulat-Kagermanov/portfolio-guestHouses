@@ -1,4 +1,4 @@
-import { getCardsBySlug } from '@/shared/api'
+import { getRoomsBySlug } from '@/shared/api'
 import { cn } from '@/shared/lib'
 import { IClassName, IRoomsCardAllData } from '@/shared/types'
 import { Typography } from '@/shared/ui'
@@ -11,7 +11,7 @@ import cls from './index.module.scss'
 
 interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {}
 const Booking: FC<Props> = async ({ className, slug }) => {
-	const data = await getCardsBySlug(slug)
+	const data = await getRoomsBySlug(slug)
 	if (!data) return notFound()
 
 	return (

@@ -3,7 +3,7 @@ import {
 	TTableItemsGroup,
 } from '@/entities/RoomsCardInfoElement'
 import { RoomsCardInfoBooking } from '@/features/RoomsCardInfoBooking'
-import { getCardsBySlug } from '@/shared/api'
+import { getRoomsBySlug } from '@/shared/api'
 import { cn } from '@/shared/lib'
 import { IClassName, IRoomsCardAllData } from '@/shared/types'
 import { Typography } from '@/shared/ui'
@@ -16,7 +16,7 @@ interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 	selectedService: string
 }
 const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
-	const card = await getCardsBySlug(decodeURIComponent(slug))
+	const card = await getRoomsBySlug(decodeURIComponent(slug))
 	if (!card || !selectedService) return notFound()
 
 	const TABLE_DATA: TTableItemsGroup = [

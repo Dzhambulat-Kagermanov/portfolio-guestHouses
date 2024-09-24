@@ -5,12 +5,12 @@ import { Container } from '@/shared/ui/'
 import { FC } from 'react'
 import { BookingFormElement } from '@/entities/BookingFormElement'
 import cls from './index.module.scss'
-import { getCardsBySlug } from '@/shared/api'
+import { getRoomsBySlug } from '@/shared/api'
 import { notFound } from 'next/navigation'
 
 interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {}
 const BookingForm: FC<Props> = async ({ className, slug }) => {
-	const data = await getCardsBySlug(slug)
+	const data = await getRoomsBySlug(slug)
 	if (!data) return notFound()
 
 	return (

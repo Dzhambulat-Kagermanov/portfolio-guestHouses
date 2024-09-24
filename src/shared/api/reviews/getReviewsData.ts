@@ -1,5 +1,6 @@
 import { IReviewsData } from '@/shared/types'
 import axios from 'axios'
-import { reviewsBreakpointUrl } from '../urls/urls'
+import { baseURL } from '../urls'
 
-export const getReviews = () => axios.get<IReviewsData[]>(reviewsBreakpointUrl)
+export const getReviews = () =>
+	axios.get<IReviewsData[]>('/reviews', { baseURL })
