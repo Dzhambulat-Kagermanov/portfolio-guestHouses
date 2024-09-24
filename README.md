@@ -10,7 +10,6 @@
 - #### TypeScript;
 - #### Zustand;
 - #### SCSS;
-- #### StoryBook;
 - #### Jest, react-testing-Library;
 - #### Swiper, Yup, react-hook-form, Moment.Js, Axios, YMap;
 - #### FSD (Feature Sliced Design)
@@ -32,6 +31,7 @@
 - #### Типография (Текст)
 - #### Контейнер
 - #### Кнопка меню
+- #### Спиннер загрузки
 
 ---
 
