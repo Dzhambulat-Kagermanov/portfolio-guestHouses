@@ -1,0 +1,14 @@
+.subtitle {
+	font-size: 25px;
+	margin: 10px 0 20px 0;
+	span {
+		color: var(--grey-light-100);
+	}
+	a {
+		color: var(--blue-hover);
+		text-decoration: underline;
+		text-decoration-thickness: 3px;
+		text-underline-offset: 5px;
+		text-decoration-color: var(--blue-hover);
+	}
+}

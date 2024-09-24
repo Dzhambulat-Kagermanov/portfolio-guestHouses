@@ -39,7 +39,8 @@ html {
 	}
 }
 .body {
-	position: relative;
+	display: flex;
+	flex-flow: wrap column;
 }
 @media screen and (min-width: 0) {
 	.body {

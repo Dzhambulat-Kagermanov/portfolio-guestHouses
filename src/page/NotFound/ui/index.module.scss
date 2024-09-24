@@ -1,0 +1,13 @@
+.container {
+	flex-grow: 1;
+	min-height: 400px;
+}
+.notFound {
+}
+.title {
+	font-size: 40px;
+	span {
+		color: var(--red);
+		font-family: MontserratB;
+	}
+}
