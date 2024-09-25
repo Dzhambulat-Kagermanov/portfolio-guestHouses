@@ -1,3 +1,4 @@
+import { baseURL } from './urls'
 export { getAboutGalleries } from './aboutGalleries/'
 export { getArticles } from './articles/getArticlesData'
 export { getRooms, getRoomsBySlug } from './rooms/getRoomsData'
