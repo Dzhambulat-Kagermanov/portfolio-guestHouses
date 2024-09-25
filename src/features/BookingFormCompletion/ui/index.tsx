@@ -17,6 +17,7 @@ import {
 import { notFound, useRouter } from 'next/navigation'
 import { FC } from 'react'
 import cls from './index.module.scss'
+import { getRoomsBySlug, patchAvailableRoomsBySlug } from '@/shared/api/rooms'
 
 interface Props
 	extends IClassName,
@@ -67,11 +68,20 @@ const BookingFormCompletion: FC<Props> = ({
 						patronymic,
 						slug,
 					})
+					const patchData = async () => {
+						const room = await getRoomsBySlug(slug)
 
-					reset()
-					setTimeout(() => {
-						router.replace('/rooms')
-					}, 10)
+						// @ts-ignore
+						patchAvailableRoomsBySlug(slug, room.data.availableRooms - 1)
+					}
+					patchData()
+						.then(() => {
+							reset()
+							return undefined
+						})
+						.then(() => {
+							router.replace('/rooms')
+						})
 				} catch (err) {
 					alert(`Ошибка на стадии отправки. ${err}`)
 				}
