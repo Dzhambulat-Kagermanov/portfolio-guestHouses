@@ -1,6 +1,6 @@
 import { IReviewsData } from '@/shared/types'
 import axios from 'axios'
-import { baseURL } from '../urls'
+import { baseApiURL } from '../urls'
 
 export const getReviews = () =>
-	axios.get<IReviewsData[]>('/reviews', { baseURL })
+	axios.get<IReviewsData[]>('/reviews', { baseURL: baseApiURL })

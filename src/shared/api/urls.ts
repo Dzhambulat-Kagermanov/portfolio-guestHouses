@@ -1,1 +1,3 @@
-export const baseURL = `${process.env.NEXT_PUBLIC_PATH}/api`
+import { baseURL } from '@/shared/constants/baseUrl'
+
+export const baseApiURL = `${baseURL}/api`
