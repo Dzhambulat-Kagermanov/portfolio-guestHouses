@@ -48,8 +48,12 @@ const GalleryItem: FC<Props> = ({
 				slidesPerView={'auto'}
 				spaceBetween={15}
 				navigation={{
-					nextEl: `.${cls.rightBtn}-${title.replaceAll(' ', '-')}`,
-					prevEl: `.${cls.leftBtn}-${title}`,
+					nextEl: `.${cls.rightBtn}-${title
+						.replaceAll(' ', '-')
+						.replaceAll('+', '')}`,
+					prevEl: `${cls.leftBtn}-${title
+						.replaceAll(' ', '-')
+						.replaceAll('+', '')}`,
 				}}
 				modules={[Navigation]}
 				wrapperClass={cn(cls.sliderWrapper, [sliderClasses?.wrapper])}
@@ -61,7 +65,9 @@ const GalleryItem: FC<Props> = ({
 							theme='clear'
 							className={cn(cls.sliderBtn, [
 								cls.leftBtn,
-								`${cls.leftBtn}-${title.replaceAll(' ', '-')}`,
+								`${cls.leftBtn}-${title
+									.replaceAll(' ', '-')
+									.replaceAll('+', '')}`,
 							])}
 						>
 							<Arrow color='var(--grey)' />
@@ -70,7 +76,9 @@ const GalleryItem: FC<Props> = ({
 							theme='clear'
 							className={cn(cls.sliderBtn, [
 								cls.rightBtn,
-								`${cls.rightBtn}-${title.replaceAll(' ', '-')}`,
+								`.${cls.rightBtn}-${title
+									.replaceAll(' ', '-')
+									.replaceAll('+', '')}`,
 							])}
 						>
 							<Arrow color='var(--grey)' />
