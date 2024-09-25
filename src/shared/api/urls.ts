@@ -1,1 +1,1 @@
-export const baseURL = `${process.env.PUBLIC_PATH}/api`
+export const baseURL = `${process.env.NEXT_PUBLIC_ROOT}/api`
