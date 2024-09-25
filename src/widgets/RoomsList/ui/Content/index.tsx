@@ -9,7 +9,7 @@ import cls from './index.module.scss'
 import adt from '@/page/Rooms/ui/adaptive.module.scss'
 
 interface Props extends IClassName {
-	roomsData: IRoomsCardAllData[]
+	roomsData: IRoomsCardAllData[] | []
 	isFilter?: boolean
 }
 const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
@@ -17,11 +17,13 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 	const filterGuests = isFilter ? userSelectedGuests : undefined
 	const { isMdMedium } = useWindow()
 	const cardsByProp = isFilter
-		? roomsData.filter(({ maxGuests }) => {
-				//@ts-ignore
-				if (filterGuests > maxGuests) return false
-				return true
-		  })
+		? roomsData.length
+			? roomsData.filter(({ maxGuests }) => {
+					//@ts-ignore
+					if (filterGuests > maxGuests) return false
+					return true
+			  })
+			: []
 		: roomsData
 
 	return (

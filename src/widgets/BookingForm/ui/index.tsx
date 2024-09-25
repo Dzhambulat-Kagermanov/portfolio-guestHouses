@@ -12,7 +12,13 @@ interface Props extends IClassName {
 	slug: Pick<IRoomsCardAllData, 'slug'>
 }
 const BookingForm: FC<Props> = async ({ className, slug }) => {
-	const data = await getRoomsBySlug(slug)
+	let data: IRoomsCardAllData | undefined
+
+	try {
+		data = (await getRoomsBySlug(slug)).data
+	} catch {
+		data = undefined
+	}
 	if (!data) return notFound()
 
 	return (
@@ -22,9 +28,9 @@ const BookingForm: FC<Props> = async ({ className, slug }) => {
 		>
 			<BookingFormElement
 				slug={slug}
-				title={data.data.title}
+				title={data.title}
 				className={cn(cls.form, [className])}
-				dropDownServices={data.data.services}
+				dropDownServices={data.services}
 				submitBtn={<BookingFormSaveDataOnSubmit className={cn(cls.button)} />}
 			/>
 		</Container>

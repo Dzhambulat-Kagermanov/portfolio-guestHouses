@@ -16,9 +16,15 @@ interface Props extends IClassName, Pick<IRoomsCardAllData, 'slug'> {
 	selectedService: string
 }
 const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
-	// @ts-ignore
-	const card = await getRoomsBySlug(decodeURIComponent(slug))
-	if (!card || !selectedService) return notFound()
+	let data: IRoomsCardAllData | undefined
+
+	try {
+		// @ts-ignore
+		data = (await getRoomsBySlug(decodeURIComponent(slug))).data
+	} catch {
+		data = undefined
+	}
+	if (!data || !selectedService) return notFound()
 
 	const TABLE_DATA: TTableItemsGroup = [
 		{
@@ -27,7 +33,7 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 					Сервис
 				</Typography>
 			),
-			items: card.data.services.map(({ title }, index) => {
+			items: data.services.map(({ title }, index) => {
 				return (
 					<Typography key={index} weight='SB'>
 						{title}
@@ -41,7 +47,7 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 					Цены
 				</Typography>
 			),
-			items: card.data.services.map(({ price }, index) => {
+			items: data.services.map(({ price }, index) => {
 				return (
 					<Typography key={index} weight='SB'>
 						{price.withoutTaxes}
@@ -72,10 +78,10 @@ const RoomsCard: FC<Props> = async ({ className, slug, selectedService }) => {
 				}}
 				selectedService={selectedService}
 				tableData={TABLE_DATA}
-				conditions={card.data.conditions}
-				description={card.data.description}
-				roomImages={card.data.roomImages}
-				title={card.data.title}
+				conditions={data.conditions}
+				description={data.description}
+				roomImages={data.roomImages}
+				title={data.title}
 				featureBtn={
 					<RoomsCardInfoBooking
 						slug={slug}

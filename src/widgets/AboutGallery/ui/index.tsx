@@ -1,6 +1,6 @@
 import { getAboutGalleries } from '@/shared/api'
 import { cn } from '@/shared/lib'
-import { IClassName, ITag } from '@/shared/types'
+import { IAboutGalleriesData, IClassName, ITag } from '@/shared/types'
 import { GalleryItem } from '@/widgets/GalleryItem'
 import { FC } from 'react'
 import cls from './index.module.scss'
@@ -20,23 +20,31 @@ const AboutGallery: FC<Props> = async ({
 	galleryItemClasses,
 }) => {
 	const Tag = tag
-	const { data } = await getAboutGalleries()
+	let data: IAboutGalleriesData[] | []
+
+	try {
+		data = (await getAboutGalleries()).data
+	} catch {
+		data = []
+	}
+
 	return (
 		<Tag className={cn(cls.galleryGroup, [className])}>
-			{data.map(({ id, images, title }) => (
-				<GalleryItem
-					sliderClasses={{
-						slide: galleryItemClasses?.slide,
-						slider: galleryItemClasses?.slider,
-						wrapper: galleryItemClasses?.sliderWrapper,
-					}}
-					titleClass={galleryItemClasses?.title}
-					key={id}
-					photos={images}
-					title={title}
-					className={cn(cls.galleryItem, [galleryItemClasses?.wrapper])}
-				/>
-			))}
+			{data.length &&
+				data.map(({ id, images, title }) => (
+					<GalleryItem
+						sliderClasses={{
+							slide: galleryItemClasses?.slide,
+							slider: galleryItemClasses?.slider,
+							wrapper: galleryItemClasses?.sliderWrapper,
+						}}
+						titleClass={galleryItemClasses?.title}
+						key={id}
+						photos={images}
+						title={title}
+						className={cn(cls.galleryItem, [galleryItemClasses?.wrapper])}
+					/>
+				))}
 		</Tag>
 	)
 }

@@ -13,7 +13,14 @@ interface Props extends IClassName {
 	slug: Pick<IRoomsCardAllData, 'slug'>
 }
 const Booking: FC<Props> = async ({ className, slug }) => {
-	const data = await getRoomsBySlug(slug)
+	let data: IRoomsCardAllData | undefined
+
+	try {
+		data = (await getRoomsBySlug(slug)).data
+	} catch {
+		data = undefined
+	}
+
 	if (!data) return notFound()
 
 	return (

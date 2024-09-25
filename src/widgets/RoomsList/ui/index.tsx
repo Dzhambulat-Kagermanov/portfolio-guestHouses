@@ -1,5 +1,5 @@
 import { getRooms } from '@/shared/api'
-import { IClassName } from '@/shared/types'
+import { IClassName, IRoomsCardAllData } from '@/shared/types'
 import { FC } from 'react'
 import Content from './Content'
 
@@ -7,11 +7,15 @@ interface Props {
 	isFilter?: boolean
 }
 const RoomsList: FC<Props & IClassName> = async ({ className, isFilter }) => {
-	const roomsData = (await getRooms()).data
+	let data: IRoomsCardAllData[]
 
-	return (
-		<Content roomsData={roomsData} className={className} isFilter={isFilter} />
-	)
+	try {
+		data = (await getRooms()).data
+	} catch {
+		data = []
+	}
+
+	return <Content roomsData={data} className={className} isFilter={isFilter} />
 }
 
 export { RoomsList }

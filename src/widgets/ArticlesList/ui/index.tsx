@@ -6,7 +6,7 @@ import { FC } from 'react'
 import cls from './index.module.scss'
 
 interface Props extends IClassName {
-	data: IArticlesCardData[][]
+	data: IArticlesCardData[][] | []
 	containerClass?: string
 	articleCardClass?: string
 	contentClass?: string
@@ -31,22 +31,23 @@ const ArticlesList: FC<Props> = ({
 				Статьи
 			</Typography>
 			<div className={cn(cls.content, [contentClass])}>
-				{data.map(array => {
-					return (
-						<div className={cn(cls.group, [groupClass])}>
-							{array.map(({ description, id, title }) => {
-								return (
-									<ArticleCard
-										key={id}
-										description={description}
-										title={title}
-										className={cn(cls.item, [articleCardClass])}
-									/>
-								)
-							})}
-						</div>
-					)
-				})}
+				{data.length &&
+					data.map((array, index) => {
+						return (
+							<div className={cn(cls.group, [groupClass])} key={index}>
+								{array.map(({ description, id, title }) => {
+									return (
+										<ArticleCard
+											key={id}
+											description={description}
+											title={title}
+											className={cn(cls.item, [articleCardClass])}
+										/>
+									)
+								})}
+							</div>
+						)
+					})}
 			</div>
 		</Container>
 	)

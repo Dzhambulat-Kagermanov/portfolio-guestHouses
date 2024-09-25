@@ -8,7 +8,13 @@ import adt from './adaptive.module.scss'
 
 interface Props extends IClassName {}
 const Articles: FC<Props> = async ({ className }) => {
-	const data = arrayChunks<IArticlesCardData>((await getArticles()).data, 2)
+	let data: IArticlesCardData[][] | []
+
+	try {
+		data = arrayChunks<IArticlesCardData>((await getArticles()).data, 2)
+	} catch {
+		data = []
+	}
 
 	return (
 		<div className={cn(cls.articlesPage, [className])}>
