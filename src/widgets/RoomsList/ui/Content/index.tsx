@@ -34,64 +34,68 @@ const Content: FC<Props> = ({ className, roomsData, isFilter }) => {
 			{cardsByProp.length !== 0 ? (
 				<ul className={cn(cls.roomsData, [adt.group])}>
 					{isMdMedium
-						? cardsByProp.map(
-								({
-									availableRooms,
-									conditions,
-									previewDescription,
-									previewImg,
-									services,
-									slug,
-									title,
-									maxGuests,
-								}) => {
-									return (
-										<AdaptiveRoomsCard
-											availableRooms={availableRooms}
-											conditions={conditions}
-											maxGuests={maxGuests}
+						? cardsByProp
+								.filter(({ availableRooms }) => availableRooms > 0)
+								.map(
+									({
+										availableRooms,
+										conditions,
+										previewDescription,
+										previewImg,
+										services,
+										slug,
+										title,
+										maxGuests,
+									}) => {
+										return (
+											<AdaptiveRoomsCard
+												availableRooms={availableRooms}
+												conditions={conditions}
+												maxGuests={maxGuests}
+												previewDescription={previewDescription}
+												previewImg={previewImg}
+												services={services}
+												slug={slug}
+												title={title}
+												key={slug}
+											/>
+										)
+									}
+								)
+						: cardsByProp
+								.filter(({ availableRooms }) => availableRooms > 0)
+								.map(
+									(
+										{
+											availableRooms,
+											previewDescription,
+											maxGuests,
+											previewImg,
+											services,
+											title,
+											slug,
+										},
+										index
+									) => (
+										<RoomsCard
+											tag='li'
 											previewDescription={previewDescription}
+											availableRooms={availableRooms}
+											maxGuests={maxGuests}
 											previewImg={previewImg}
 											services={services}
 											slug={slug}
 											title={title}
-											key={slug}
+											roomsElemClass={cn(cls.item, [adt.item])}
+											key={index}
+											roomsElemWrapperClass={cn(adt.itemWrapper)}
+											roomsElementHeadClass={cn(adt.head)}
+											roomsElementContentClass={cn(adt.content)}
+											roomsElementServicesClass={cn(adt.services)}
+											roomsElementServicesBtnClass={cn(adt.btn)}
 										/>
 									)
-								}
-						  )
-						: cardsByProp.map(
-								(
-									{
-										availableRooms,
-										previewDescription,
-										maxGuests,
-										previewImg,
-										services,
-										title,
-										slug,
-									},
-									index
-								) => (
-									<RoomsCard
-										tag='li'
-										previewDescription={previewDescription}
-										availableRooms={availableRooms}
-										maxGuests={maxGuests}
-										previewImg={previewImg}
-										services={services}
-										slug={slug}
-										title={title}
-										roomsElemClass={cn(cls.item, [adt.item])}
-										key={index}
-										roomsElemWrapperClass={cn(adt.itemWrapper)}
-										roomsElementHeadClass={cn(adt.head)}
-										roomsElementContentClass={cn(adt.content)}
-										roomsElementServicesClass={cn(adt.services)}
-										roomsElementServicesBtnClass={cn(adt.btn)}
-									/>
-								)
-						  )}
+								)}
 				</ul>
 			) : (
 				<Typography weight='SB' className={cn(cls.notFoundTitle)}>

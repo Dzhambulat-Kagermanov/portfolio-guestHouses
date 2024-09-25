@@ -46,33 +46,35 @@ const BookingFormCompletion: FC<Props> = ({
 			className={cn(cls.button, [className])}
 			onClick={() => {
 				try {
-					validateFirstNameValidation.validateSync(firstName)
-					validateSecondNameValidation.validateSync(secondName)
-					validateAboutMeInfo.validateSync(aboutMeInfo)
-					validateEmailValidation.validateSync(email)
-					validateGuestsValidation.validateSync(guests)
-					validateIsPayLaterValidation.validateSync(isPayLater)
-					validatePhoneValidation.validateSync(phone)
-					validateServicesValidation.validateSync(selectedService)
-					validatePatronymicValidation.validateSync(patronymic)
-					alert('Данные выведены в консоль')
-					console.log({
-						email,
-						firstName,
-						secondName,
-						aboutMeInfo,
-						guests,
-						isPayLater,
-						phone,
-						selectedService,
-						patronymic,
-						slug,
-					})
 					const patchData = async () => {
-						const room = await getRoomsBySlug(slug)
+						const room = (await getRoomsBySlug(slug)).data
+						if (room.availableRooms < 1) notFound()
+
+						validateFirstNameValidation.validateSync(firstName)
+						validateSecondNameValidation.validateSync(secondName)
+						validateAboutMeInfo.validateSync(aboutMeInfo)
+						validateEmailValidation.validateSync(email)
+						validateGuestsValidation.validateSync(guests)
+						validateIsPayLaterValidation.validateSync(isPayLater)
+						validatePhoneValidation.validateSync(phone)
+						validateServicesValidation.validateSync(selectedService)
+						validatePatronymicValidation.validateSync(patronymic)
+						alert('Данные выведены в консоль')
+						console.log({
+							email,
+							firstName,
+							secondName,
+							aboutMeInfo,
+							guests,
+							isPayLater,
+							phone,
+							selectedService,
+							patronymic,
+							slug,
+						})
 
 						// @ts-ignore
-						patchAvailableRoomsBySlug(slug, room.data.availableRooms - 1)
+						patchAvailableRoomsBySlug(slug, room.availableRooms - 1)
 					}
 					patchData()
 						.then(() => {

@@ -21,7 +21,8 @@ const Booking: FC<Props> = async ({ className, slug }) => {
 		data = undefined
 	}
 
-	if (!data) return notFound()
+	if (!data) notFound()
+	else if (!(data.availableRooms > 0)) notFound()
 
 	return (
 		<div className={cn(cls.booking, [className])}>
@@ -32,7 +33,7 @@ const Booking: FC<Props> = async ({ className, slug }) => {
 					data.title
 				}
 			</Typography>
-			<BookingForm className={cn(cls.form)} slug={slug} />
+			<BookingForm className={cn(cls.form)} slug={slug} data={data} />
 		</div>
 	)
 }
