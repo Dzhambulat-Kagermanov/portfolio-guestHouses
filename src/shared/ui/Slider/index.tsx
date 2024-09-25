@@ -40,6 +40,7 @@ const Slider: FC<Props> = ({
 	return (
 		<div className={cn(cls.wrapper, [wrapperClass])}>
 			<Swiper
+				initialSlide={1}
 				className={cn(cls.slider, [className])}
 				{...other}
 				onSwiper={swiper => {

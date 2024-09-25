@@ -80,6 +80,7 @@ const Content: FC<Props> = ({
 				</ul>
 			) : (
 				<Slider
+					initialSlide={1}
 					loopAdditionalSlides={1}
 					loop
 					wrapperClass={cn(cls.sliderWrapper, [adt.sliderWrapper])}
