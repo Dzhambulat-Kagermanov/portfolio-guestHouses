@@ -82,6 +82,9 @@ const BookingFormCompletion: FC<Props> = ({
 						.then(() => {
 							router.replace('/rooms')
 						})
+						.then(() => {
+							router.refresh()
+						})
 				} catch (err) {
 					alert(`Ошибка на стадии отправки. ${err}`)
 				}
