@@ -2,7 +2,7 @@ export const roomsData = [
 	{
 		slug: '2х-местный',
 		title: '2х-местный',
-		availableRooms: 6,
+		availableRooms: 5,
 		conditions: [
 			{
 				title: 'Оснащение номера',
@@ -220,7 +220,7 @@ export const roomsData = [
 	{
 		slug: 'delux+',
 		title: 'Delux+',
-		availableRooms: 4,
+		availableRooms: 1,
 		conditions: [
 			{
 				title: 'Оснащение номера',
