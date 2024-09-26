@@ -3,7 +3,7 @@ import { Container, Typography } from '@/shared/ui'
 import { Timer } from './Timer'
 import { NotFoundPath } from './NotFoundPath'
 import cls from './index.module.scss'
-import { baseURL } from '@/shared/api/urls'
+import { baseURL } from '@/shared/constants/baseUrl'
 
 interface Props {}
 const NotFound: FC<Props> = () => {
