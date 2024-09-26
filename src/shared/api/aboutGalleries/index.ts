@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { IAboutGalleriesData } from '../../types/aboutGalleries'
-import { baseURL } from '../urls'
+import { baseApiURL } from '../urls'
 
 export const getAboutGalleries = () =>
-	axios.get<IAboutGalleriesData[]>('/aboutGalleries', { baseURL })
+	axios.get<IAboutGalleriesData[]>('/aboutGalleries', { baseURL: baseApiURL })
