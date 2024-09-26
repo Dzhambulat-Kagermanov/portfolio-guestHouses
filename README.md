@@ -35,7 +35,7 @@
 
 ---
 
-### Ссылка на сайт: [Нажми на меня](https://google.com/)
+### Ссылка на сайт: [Нажми на меня](https://protfolio-guest-house.vercel.app/)
 
 ---
 
