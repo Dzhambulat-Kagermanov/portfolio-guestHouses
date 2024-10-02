@@ -86,7 +86,7 @@ export const roomsData = [
 			'Для детей до 3-х лет бесплатно предоставляется детская кроватка (по предварительному запросу). Указывайте в поле бронирования "Особе пожелания"',
 		],
 		maxGuests: 5,
-		previewImg: '/images/Home/Rooms/item-1.png',
+		previewImg: '/images/Home/Rooms/item-2.png',
 		roomImages: [
 			'/images/Home/Rooms/item-1.png',
 			'/images/Home/Rooms/item-1.png',
@@ -158,7 +158,7 @@ export const roomsData = [
 			'Продуманная система освещения, включающая настенные лампы и потолочные светильники, создает приятную атмосферу в любое время суток.',
 		],
 		maxGuests: 6,
-		previewImg: '/images/Home/Rooms/item-1.png',
+		previewImg: '/images/Home/Rooms/item-3.png',
 		roomImages: [
 			'/images/Home/Rooms/item-1.png',
 			'/images/Home/Rooms/item-1.png',
@@ -245,7 +245,7 @@ export const roomsData = [
 			'Современная и функциональная ванная комната с душевой кабиной, большой ванной и двумя раковинами обеспечивает высокий уровень удобства.',
 		],
 		maxGuests: 6,
-		previewImg: '/images/Home/Rooms/item-1.png',
+		previewImg: '/images/Home/Rooms/item-4.png',
 		roomImages: [
 			'/images/Home/Rooms/item-1.png',
 			'/images/Home/Rooms/item-1.png',
