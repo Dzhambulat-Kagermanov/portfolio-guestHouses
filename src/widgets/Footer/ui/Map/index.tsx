@@ -2,12 +2,7 @@ import { FC } from 'react'
 import { IClassName } from '@/shared/types'
 import { cn } from '@/shared/lib'
 import { Typography } from '@/shared/ui'
-import {
-	FullscreenControl,
-	Map as YMap,
-	YMaps,
-	ZoomControl,
-} from '@pbe/react-yandex-maps'
+import { Map as YMap, YMaps, ZoomControl } from '@pbe/react-yandex-maps'
 import cls from './index.module.scss'
 
 interface Props extends IClassName {}
@@ -27,7 +22,6 @@ const Map: FC<Props> = ({ className }) => {
 							zoom: 9,
 						}}
 					>
-						<FullscreenControl />
 						<ZoomControl />
 					</YMap>
 				</YMaps>
